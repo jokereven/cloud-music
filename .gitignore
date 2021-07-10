@@ -1,5 +1,5 @@
 # 忽略文件夹
-/.idea
+/.idea/
 
 #IntelliJ IDEA Files
 *.iml
