@@ -1,8 +1,0 @@
-# 忽略文件夹
-/.idea/
-
-#IntelliJ IDEA Files
-*.iml
-*.ipr
-*.iws
-*.idea

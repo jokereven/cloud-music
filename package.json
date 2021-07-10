@@ -8,13 +8,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jokereven/code520.git"
+    "url": "git+https://github.com/jokereven/code520.git",
+    "url": "git+https://gitee.com/jokereven/code520.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jokereven/code520/issues"
+    "url": "https://github.com/jokereven/code520/issues",
+    "url": "https://gitee.com/jokereven/code520/issues"
   },
-  "homepage": "https://github.com/jokereven/code520#readme"
+  "homepage": "https://github.com/jokereven/code520#readme",
+  "homepage": "https://gitee.com/jokereven/code520#readme"
 }
