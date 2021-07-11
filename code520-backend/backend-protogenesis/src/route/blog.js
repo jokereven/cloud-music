@@ -1,10 +1,8 @@
-const { GetList } = require('../controller/blog');
+const { GetList, GetDetail } = require('../controller/blog');
 const { SuccessModel, ErrorModel } = require('../model/resModel');
 
 const HandleBlogRoute = (req, res) => {
 	const method = req.method;
-	const url = req.url;
-	const path = url.split('?')[0];
 
 	//获取博客列表
 	if (method === 'GET' && req.path === '/api/blog/list') {
@@ -16,9 +14,9 @@ const HandleBlogRoute = (req, res) => {
 
 	//获取博客详情
 	if (method === 'GET' && req.path === '/api/blog/detail') {
-		return {
-			msg: '这是获取博客详情的接口',
-		};
+		const id = req.query.id;
+		const data = GetDetail(id);
+		return new SuccessModel(data);
 	}
 
 	//新建一篇博客
