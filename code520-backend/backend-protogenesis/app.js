@@ -1,3 +1,4 @@
+const querystring = require('querystring');
 //引入接口
 const HandleBlogRoute = require('./src/route/blog');
 const HandleUserRoute = require('./src/route/user');
@@ -9,6 +10,9 @@ const ServerHandle = (req, res) => {
 	//获取path
 	const url = req.url;
 	req.path = url.split('?')[0];
+
+	//解析query
+	req.query = querystring.parse(url.split('?')[1]);
 
 	//处理blog路由
 	const blogdata = HandleBlogRoute(req, res);
