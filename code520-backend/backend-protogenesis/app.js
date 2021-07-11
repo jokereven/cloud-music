@@ -4,9 +4,9 @@ const HandleBlogRoute = require('./src/route/blog');
 const HandleUserRoute = require('./src/route/user');
 
 // 处理postdata
-const GetPostData = (req) => {
+const GetPostData = (req) => { 
 	const promise = new Promise((resolve, reject) => {
-		if (req.methos !== 'POST') {
+		if (req.method !== 'POST') {
 			resolve({});
 			return;
 		}
