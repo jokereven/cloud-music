@@ -1,43 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="theme-color" content="#000000" />
+		<meta name="description" content="personal website code520.com.cn" />
+		<meta name="author" content="周靖" />
+		<meta name="keywords" content="code520 jokereven zhou125disorder" />
+		<title>Code520</title>
+	</head>
+	<body>
+		<noscript>You need to enable JavaScript to run this app.</noscript>
+		<div id="root"></div>
+		<script>
+			{
+				var color = 'rgb(0,161,214);';
+				let message =
+					'被逼到墙角然后欣赏自己谋求生路...冲出去又发现歧路蔓延...\n' +
+					'但终点不远却暗色...选择直线是我的风格...\n' +
+					'哪怕双脚离地被挂在荆棘上...但冷静会让人退缩...\n' +
+					'所以装分卖傻绕行之不让人察觉我这几年的伤心...\n' +
+					'暂时我要的生活不是这样的...但我决定要干什么都会很像样的...\n' +
+					'别劝我...我无悔...为理想坚持吧...哈...';
+				console.log('%c' + message, 'color:' + color);
+			}
+			{
+				let date = new Date();
+				let a = 'background: #606060; color: #fff; border-radius: 3px 0 0 3px;';
+				let b = 'background: #1475B2; color: #fff; border-radius: 0 3px 3px 0;';
+				console.log(`%c Now Time : %c ${date} `, a, b);
+			}
+			{
+				var Code520 = 'code520.com.cn';
+				console.log(Code520);
+			}
+		</script>
+	</body>
 </html>

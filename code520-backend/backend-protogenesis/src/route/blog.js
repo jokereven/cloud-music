@@ -15,6 +15,7 @@ const HandleBlogRoute = (req, res) => {
 	if (method === 'GET' && req.path === '/api/blog/list') {
 		const author = req.query.author || '';
 		const keyword = req.query.keyword || '';
+		console.log('获取博客信息');
 		// const ListData = GetList(author, keyword);
 		// return new SuccessModel(ListData);
 		const result = GetList(author, keyword);
