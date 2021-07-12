@@ -4,7 +4,7 @@ const HandleBlogRoute = require('./src/route/blog');
 const HandleUserRoute = require('./src/route/user');
 
 // 处理postdata
-const GetPostData = (req) => { 
+const GetPostData = (req) => {
 	const promise = new Promise((resolve, reject) => {
 		if (req.method !== 'POST') {
 			resolve({});
@@ -45,15 +45,30 @@ const ServerHandle = (req, res) => {
 		req.body = postDate;
 
 		//处理blog路由
-		const blogdata = HandleBlogRoute(req, res);
-		if (blogdata) {
-			res.end(JSON.stringify(blogdata));
+		// const blogdata = HandleBlogRoute(req, res);
+		// if (blogdata) {
+		// 	res.end(JSON.stringify(blogdata));
+		// 	return;
+		// }
+		const BlogResult = HandleBlogRoute(req, res);
+		if (BlogResult) {
+			BlogResult.then((blogdata) => {
+				res.end(JSON.stringify(blogdata));
+			});
 			return;
 		}
+
 		//处理user路由
-		const userdate = HandleUserRoute(req, res);
-		if (userdate) {
-			res.end(JSON.stringify(userdate));
+		// const userdate = HandleUserRoute(req, res);
+		// if (userdate) {
+		// 	res.end(JSON.stringify(userdate));
+		// 	return;
+		// }
+		const UserRessult = HandleUserRoute(req, res);
+		if (UserRessult) {
+			UserRessult.then((userdate) => {
+				res.end(JSON.stringify(userdate));
+			});
 			return;
 		}
 		//未命中路由 返回 404
