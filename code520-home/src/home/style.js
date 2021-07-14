@@ -50,7 +50,7 @@ export const HomeWapperCollect = styled.div`
 	border-radius: 6px;
 	border: 1px #ccc solid;
 	padding: 4px;
-	overflow: auto;
+	overflow: hidden;
 `;
 
 export const HomeWapperCollectList = styled.a`
