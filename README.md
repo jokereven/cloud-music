@@ -2,8 +2,6 @@
 
 ## `jokereven`
 
-### `React+Node+Go(全栈项目)`
-
 #### `技术栈GoReactTaro`
 
 #### `个人博客`
