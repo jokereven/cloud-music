@@ -11,3 +11,4 @@
 #### `个人网站`
 
 [code520.com.cn📌](http://code520.com.cn)
+[home.code520.com.cn📌](http://home.code520.com.cn)
