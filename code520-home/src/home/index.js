@@ -114,8 +114,8 @@ class Home extends Component {
 						>
 							<img
 								src='https://pic1.zhimg.com/50/7da9ae42b_720w.jpg?source=54b3c3a5'
-								alt='code520-home'
-								title='code520-home'
+								alt='icourse163'
+								title='icourse163'
 							></img>
 						</HomeWapperCollectList>
 						<HomeWapperCollectList href='https://xdclass.net/' target='_new'>
@@ -253,7 +253,7 @@ class Home extends Component {
 								src='https://cdn2.iconfinder.com/data/icons/flat-icons-web/40/OK-256.png'
 								alt='前端学习线路'
 								title='前端学习线路'
-								style={{background:"#fff"}}
+								style={{ background: '#fff' }}
 							></img>
 						</HomeWapperCollectList>
 						<HomeWapperCollectList
