@@ -6,6 +6,7 @@ import {
 	HomeWapper,
 	HomeWapperCollect,
 	HomeWapperCollectList,
+	HomeWapperExplain,
 	HomeWapperSearch,
 } from './style';
 
@@ -276,6 +277,16 @@ class Home extends Component {
 							></img>
 						</HomeWapperCollectList>
 					</HomeWapperCollect>
+					<HomeWapperExplain>
+						<a
+							href='http://github.com/jokereven/code520'
+							target='_blank'
+							alt='项目详情'
+							title='项目详情'
+						>
+							code520
+						</a>
+					</HomeWapperExplain>
 				</HomeWapper>
 			</Fragment>
 		);

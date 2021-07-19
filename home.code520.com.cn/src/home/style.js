@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const HomeWapper = styled.div`
-	width: 98vw;
-	height: 96vh;
+	width: 95vw;
+	height: 95vh;
 	position: absolute;
 	opacity: 0.95;
 	top: 0;
@@ -10,7 +10,6 @@ export const HomeWapper = styled.div`
 	bottom: 0;
 	left: 0;
 	margin: auto;
-	border: 1px solid rgb(0, 161, 214, 0.2);
 	border-radius: 4px;
 	box-shadow: 0 0 1px rgb(0, 161, 214, 0.2);
 	background-image: url('https://gitee.com/jokereven/PicGo_img/raw/master/PicGo/home.jpg');
@@ -36,8 +35,8 @@ export const HomeWapperSearch = styled.input`
 `;
 
 export const HomeWapperCollect = styled.div`
-	width: 64vw;
-	height: 50vh;
+	width: 75vw;
+	height: 72vh;
 	position: absolute;
 	opacity: 0.95;
 	top: 0;
@@ -51,12 +50,13 @@ export const HomeWapperCollect = styled.div`
 	border: 1px #ccc solid;
 	padding: 4px;
 	overflow: auto;
+	box-sizing: border-box;
 `;
 
 export const HomeWapperCollectList = styled.a`
 	float: left;
-	margin-left: 12px;
-	margin-top: 16px;
+	margin-left: 32px;
+	margin-top: 32px;
 	width: 56px;
 	height: 56px;
 	border-radius: 50%;
@@ -69,9 +69,28 @@ export const HomeWapperCollectList = styled.a`
 		opacity: 1;
 		cursor: pointer;
 	}
-	img{
+	img {
 		width: 35px;
 		height: 35px;
 		margin: 8px auto;
+	}
+`;
+
+export const HomeWapperExplain = styled.div`
+	position: absolute;
+	bottom: 8px;
+	right: 4px;
+	a {
+		width: 100px;
+		height: 20px;
+		color: #fff;
+		text-decoration: line-through;
+		text-align: center;
+		line-height: 20px;
+		display: block;
+		background-color: rgb(0, 161, 214);
+	}
+	a:hover{
+		background-color: #096;
 	}
 `;
