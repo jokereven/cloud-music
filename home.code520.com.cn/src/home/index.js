@@ -280,7 +280,7 @@ class Home extends Component {
 					<HomeWapperExplain>
 						<a
 							href='http://github.com/jokereven/code520'
-							target='_blank'
+							target='_new'
 							alt='项目详情'
 							title='项目详情'
 						>
