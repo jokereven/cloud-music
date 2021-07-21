@@ -52,8 +52,8 @@ class Nav extends Component {
 							</span>
 						</div>
 						<div>
-							<a href='/login' id='login'>
-								登录
+							<a href='https://github.com/jokereven' id='me' target="_new">
+								关于我
 							</a>
 						</div>
 					</NavWapperWarp>

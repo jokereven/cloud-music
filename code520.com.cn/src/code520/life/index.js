@@ -1,13 +1,26 @@
 import React, { Fragment, PureComponent } from 'react';
+import { LifeWapper, LifeWapperHeader } from './style';
 
-class Life extends PureComponent {
+class More extends PureComponent {
 	render() {
 		return (
 			<Fragment>
-				<h1 style={{ textAlign: 'center', fontFamily: '宋体' }}>生活</h1>
+				<LifeWapper>
+					<LifeWapperHeader>
+						<h1
+							style={{
+								textAlign: 'center',
+								fontFamily: '宋体',
+								lineHeight: '36px',
+							}}
+						>
+							生活
+						</h1>
+					</LifeWapperHeader>
+				</LifeWapper>
 			</Fragment>
 		);
 	}
 }
 
-export default Life;
+export default More;

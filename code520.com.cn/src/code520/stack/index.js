@@ -1,13 +1,26 @@
 import React, { Fragment, PureComponent } from 'react';
+import { StackWapper, StackWapperHeader } from './style';
 
-class Stack extends PureComponent {
+class More extends PureComponent {
 	render() {
 		return (
 			<Fragment>
-				<h1 style={{ textAlign: 'center', fontFamily: '宋体' }}>项目</h1>
+				<StackWapper>
+					<StackWapperHeader>
+						<h1
+							style={{
+								textAlign: 'center',
+								fontFamily: '宋体',
+								lineHeight: '36px',
+							}}
+						>
+							项目
+						</h1>
+					</StackWapperHeader>
+				</StackWapper>
 			</Fragment>
 		);
 	}
 }
 
-export default Stack;
+export default More;

@@ -1,13 +1,26 @@
 import React, { Fragment, PureComponent } from 'react';
+import { FrontWapper, FrontWapperHeader } from './style';
 
-class Front extends PureComponent {
+class More extends PureComponent {
 	render() {
 		return (
 			<Fragment>
-				<h1 style={{ textAlign: 'center', fontFamily: '宋体' }}>前端</h1>
+				<FrontWapper>
+					<FrontWapperHeader>
+						<h1
+							style={{
+								textAlign: 'center',
+								fontFamily: '宋体',
+								lineHeight: '36px',
+							}}
+						>
+							前端
+						</h1>
+					</FrontWapperHeader>
+				</FrontWapper>
 			</Fragment>
 		);
 	}
 }
 
-export default Front;
+export default More;

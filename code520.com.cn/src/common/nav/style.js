@@ -27,7 +27,7 @@ export const NavWapperWarp = styled.div`
 		cursor: text;
 		font-size: 12px;
 	}
-	#login {
+	#me {
 		color: #787878;
 		font-size: 12px;
 		text-decoration: line-through;

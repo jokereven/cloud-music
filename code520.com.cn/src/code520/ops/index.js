@@ -1,13 +1,26 @@
 import React, { Fragment, PureComponent } from 'react';
+import { OpsWapper, OpsWapperHeader } from './style';
 
-class Ops extends PureComponent {
+class More extends PureComponent {
 	render() {
 		return (
 			<Fragment>
-				<h1 style={{ textAlign: 'center', fontFamily: '宋体' }}>运维</h1>
+				<OpsWapper>
+					<OpsWapperHeader>
+						<h1
+							style={{
+								textAlign: 'center',
+								fontFamily: '宋体',
+								lineHeight: '36px',
+							}}
+						>
+							运维
+						</h1>
+					</OpsWapperHeader>
+				</OpsWapper>
 			</Fragment>
 		);
 	}
 }
 
-export default Ops;
+export default More;
