@@ -4,7 +4,7 @@ class Stack extends PureComponent {
 	render() {
 		return (
 			<Fragment>
-				<h1 style={{ textAlign: 'center' }}>GoReactTaro</h1>
+				<h1 style={{ textAlign: 'center', fontFamily: '宋体' }}>项目</h1>
 			</Fragment>
 		);
 	}

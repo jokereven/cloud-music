@@ -4,7 +4,7 @@ class Life extends PureComponent {
 	render() {
 		return (
 			<Fragment>
-				<h1 style={{ textAlign: 'center' }}>程序人生</h1>
+				<h1 style={{ textAlign: 'center', fontFamily: '宋体' }}>生活</h1>
 			</Fragment>
 		);
 	}

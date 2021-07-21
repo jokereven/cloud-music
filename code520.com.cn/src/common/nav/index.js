@@ -2,6 +2,7 @@ import { Input } from 'antd';
 import 'antd/dist/antd.css';
 import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
+import { IconfontStyle } from '../../static/iconfont/iconfont';
 import {
 	NavWapper,
 	NavWapperWarp,
@@ -15,6 +16,7 @@ class Nav extends Component {
 	render() {
 		return (
 			<Fragment>
+				<IconfontStyle />
 				<NavWapper>
 					<NavWapperWarp>
 						<Link to={'/'}>
@@ -34,18 +36,25 @@ class Nav extends Component {
 								<NavWapperWarpList>运维</NavWapperWarpList>
 							</Link>
 							<Link to={'/stack'}>
-								<NavWapperWarpList>GoReactTaro</NavWapperWarpList>
+								<NavWapperWarpList>项目</NavWapperWarpList>
 							</Link>
 							<Link to={'/life'}>
-								<NavWapperWarpList>程序人生</NavWapperWarpList>
+								<NavWapperWarpList>生活</NavWapperWarpList>
 							</Link>
 							<Link to={'/more'}>
 								<NavWapperWarpList>...</NavWapperWarpList>
 							</Link>
 						</NavWapperWarpListWapper>
-						<Input placeholder='code520' />
+						<div id='serach-box'>
+							<Input placeholder='code520' />
+							<span className='iconfont' id='iconfont-search'>
+								&#xe617;
+							</span>
+						</div>
 						<div>
-							<a href='/login'>登录</a>
+							<a href='/login' id='login'>
+								登录
+							</a>
 						</div>
 					</NavWapperWarp>
 				</NavWapper>

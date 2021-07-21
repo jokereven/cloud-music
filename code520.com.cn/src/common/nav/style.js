@@ -16,18 +16,38 @@ export const NavWapperWarp = styled.div`
 	margin: 0 auto;
 	Input {
 		float: left;
-		width: 160px;
+		width: 158px;
 		height: 32px;
-		border-radius: 16px;
+		border-radius: 32px;
 		outline: none;
 		border: none;
 		margin-top: 18.5px;
+		padding-left: 24px;
+		color: #9b9b9b;
+		cursor: text;
+		font-size: 12px;
 	}
-	div a {
+	#login {
 		color: #787878;
-		text-decoration: none;
+		font-size: 12px;
+		text-decoration: line-through;
 		line-height: 69px;
 		padding-left: 16px;
+		:hover {
+			color: #fff;
+		}
+	}
+	#serach-box {
+		position: relative;
+		float: left;
+		width: 175px;
+		height: 69px;
+	}
+	#iconfont-search {
+		position: absolute;
+		line-height: 69px;
+		left: 2px;
+		float: left;
 	}
 `;
 
@@ -82,19 +102,20 @@ export const NavWapperWarpListWapper = styled.div`
 	display: flex;
 	a {
 		width: 15%;
-		height: 100%;
+		height: 69px;
 	}
 `;
 
 export const NavWapperWarpList = styled.div`
 	:hover {
 		background: #242424;
+		color: #fff;
 	}
 	background: #333;
 	text-align: center;
 	width: 100%;
 	height: 100%;
 	font: normal 300 14px/69px 宋体;
-	color: #ffffff;
+	color: #787878;
 	cursor: pointer;
 `;

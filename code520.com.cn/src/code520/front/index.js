@@ -4,7 +4,7 @@ class Front extends PureComponent {
 	render() {
 		return (
 			<Fragment>
-				<h1 style={{ textAlign: 'center' }}>前端</h1>
+				<h1 style={{ textAlign: 'center', fontFamily: '宋体' }}>前端</h1>
 			</Fragment>
 		);
 	}
