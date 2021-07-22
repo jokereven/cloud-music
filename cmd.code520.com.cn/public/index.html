@@ -4,7 +4,10 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="theme-color" content="#000000" />
-		<meta name="description" content="personal website code520.com.cn" />
+		<meta
+			name="description"
+			content="cmd.code520.com.nc www.code520.com.cn home.code520.com.cn code520.com.cn"
+		/>
 		<meta name="author" content="周靖" />
 		<meta name="keywords" content="code520 jokereven zhou125disorder" />
 
@@ -56,36 +59,38 @@
 				var code520 =
 					'code520.com.cn' +
 					'\n' +
+					'www.code520.com.cn' +
+					'\n' +
+					'cmd.code520.com.cn' +
+					'\n' +
 					'home.code520.com.cn' +
 					'\n' +
-					'cmd.code520.com.cn';
+					'music.code520.com.cn' +
+					'\n' +
+					'doc.code520.com.cn';
 				console.log(code520);
 			}
 			{
 				$('body').terminal(
 					{
-						Hello: function (name) {
-							this.echo('Hello, ' + name + ' Welcome to code520');
-						},
 						Author: function () {
 							this.echo('周靖');
 						},
 						Open: function (url) {
-							window.open("http://"+url);
+							window.open('http://' + url);
 						},
-						HELP: function () {
+						Help: function () {
 							this.echo(
 								'技术栈GoReactTaro' +
 									'\n' +
-									'github🧧:' +
+									'github💻:' +
 									'github.com/jokereven' +
-									'\n' +
-									'Help🗓️:' +
-									'输入Hello+name打印Hello' +
-									'\t' +
-									'输入Author查看作者'+
-									'\t' +
-									'输入Open+baidu.com打开百度'
+									' ' +
+									'输入Author查看作者' +
+									' ' +
+									'输入Open+baidu.com打开百度'+
+									' ' +
+									'更多功能加载中...'
 							);
 						},
 					},
@@ -93,7 +98,7 @@
 						greetings:
 							'主站⚙️code520.com.cn' +
 							'\n' +
-							'输入HELP查看帮助📌' +
+							'输入Help查看帮助📌' +
 							'\n' +
 							'邮箱: zhou125disorder@163.com' +
 							'📭',
