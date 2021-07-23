@@ -1,6 +1,6 @@
 import { Input } from 'antd';
 import 'antd/dist/antd.css';
-import React, { Component, Fragment } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import { IconfontStyle } from '../../static/iconfont/iconfont';
 import {
@@ -12,7 +12,7 @@ import {
 	NavWapperWarpLogoWapper,
 } from './style';
 
-class Nav extends Component {
+class Nav extends PureComponent {
 	render() {
 		return (
 			<Fragment>

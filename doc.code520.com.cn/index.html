@@ -110,6 +110,21 @@
 					// 匹配到的字符串将被用来识别索引
 					pathNamespaces: /^(\/(zh-cn|ru-ru))?(\/(v1|v2))?/,
 				},
+				plugins: [
+					function (hook) {
+						var footer = [
+							'<hr/>',
+							'<footer>',
+							'<span><a href="https://github.com/jokereven">code520</a> &copy;2017.</span>',
+							'<span>Proudly published with <a href="https://github.com/docsifyjs/docsify" target="_blank">docsify</a>.</span>',
+							'</footer>',
+						].join('');
+
+						hook.afterEach(function (html) {
+							return html + footer;
+						});
+					},
+				],
 			};
 		</script>
 		<!-- Docsify v4 -->
