@@ -2,7 +2,7 @@
 
 - [首页](/)
 
-  `HTMLCSS`
+  # `HTMLCSS`
 
   - [01-基础标签](/HTMLCSS/01-基础标签.md)
   - [02-css基础知识](/HTMLCSS/02-css基础知识.md)
@@ -22,5 +22,9 @@
   - [HTML+CSS规范](/HTMLCSS/HTML+CSS规范.md)
 
   `JavaScript`
+  - [正则表达式](/JavaScript/正则表达式.md)
+
+  `ES6`
+  - [正则表达式扩展](/ES6/正则表达式扩展.md)
 
   `GO`
