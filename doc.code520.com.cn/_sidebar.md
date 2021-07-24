@@ -22,12 +22,6 @@
   - [HTML+CSS规范](/HTMLCSS/HTML+CSS规范.md)
 
   `JavaScript`
-  - [1.初识JavaScript](/JavaScript/01-初识JavaScript.md)
-  - [2.输出和数据类型](/JavaScript/02-输出和数据类型.md)
-  - [3.数据类型转换](/JavaScript/03-数据类型转换.md)
-  - [4.数据类型转换、数值操作](/JavaScript/04-数据类型转换、数值操作.md)
-  - [5.运算符](/JavaScript/05-运算符.md)
-  - [6.特殊运算符](/JavaScript/06-特殊运算符.md)
 
   `ES6`
 
