@@ -34,9 +34,10 @@ export const PrimaryWapperList = styled.div`
 		height: 100%;
 		display: block;
 		color: #eee;
-		font-weight: 700;
+		font-weight: 500;
 		font-size: 12px;
 		line-height: 72px;
+		text-decoration: underline;
 		font-family: Arial, Helvetica, sans-serif;
 		text-align: center;
 		:hover {
@@ -47,7 +48,7 @@ export const PrimaryWapperList = styled.div`
 
 export const PrimaryWapperBack = styled.div`
 	width: 960px;
-	height: 400px;
+	height: 345px;
 	background-color: #096;
 	position: absolute;
 	top: 0;
@@ -66,5 +67,6 @@ export const PrimaryWapperBack = styled.div`
 		color: #333;
 		font-weight: 800;
 		cursor: pointer;
+		text-decoration: underline;
 	}
 `;
