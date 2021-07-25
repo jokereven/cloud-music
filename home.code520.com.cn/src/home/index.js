@@ -30,26 +30,6 @@ class Home extends Component {
 								title='code520'
 							></img>
 						</HomeWapperCollectList>
-						<HomeWapperCollectList
-							href='http://home.code520.com.cn'
-							target='_new'
-						>
-							<img
-								src='https://cdn1.iconfinder.com/data/icons/seo-and-web-development-5/32/development_code_coding_laptop-256.png'
-								alt='code520-home'
-								title='code520-home'
-							></img>
-						</HomeWapperCollectList>
-						<HomeWapperCollectList
-							href='http://zhou125disorder.icu'
-							target='_new'
-						>
-							<img
-								src='https://gitee.com/jokereven/PicGo_img/raw/master/PicGo/joker.png'
-								alt='zhou125disorder.icu'
-								title='zhou125disorder'
-							></img>
-						</HomeWapperCollectList>
 						<HomeWapperCollectList href='https://github.com/' target='_new'>
 							<img
 								src='https://tse1-mm.cn.bing.net/th?id=OIP-C.GUGGy2yp-EOTiI6JdGeH2gAAAA&w=96&h=97&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2'
@@ -83,7 +63,7 @@ class Home extends Component {
 						</HomeWapperCollectList>
 						<HomeWapperCollectList href='https://www.google.com/' target='_new'>
 							<img
-								src='https://www.google.com/favicon.ico'
+								src='https://tse1-mm.cn.bing.net/th/id/OIP-C.0brfSLR2G_uagfKE1p40tgHaHa?w=196&h=196&c=7&o=5&dpr=1.5&pid=1.7'
 								alt='google'
 								title='google'
 							></img>
@@ -205,11 +185,14 @@ class Home extends Component {
 								title='编程导航'
 							></img>
 						</HomeWapperCollectList>
-						<HomeWapperCollectList href='https://www.zhihu.com/' target='_new'>
+						<HomeWapperCollectList
+							href='https://www.golangroadmap.com/'
+							target='_new'
+						>
 							<img
-								src='https://pic3.zhimg.com/50/v2-4cd83ae3d6ca76dabecf001244a62310_720w.png?source=54b3c3a5'
-								alt='zhihu'
-								title='zhihu'
+								src='https://image-1302243118.cos.ap-beijing.myqcloud.com/public/img/BLUE_GLASSES_GOPHER-1616727843503.png'
+								alt='golang'
+								title='golang'
 							></img>
 						</HomeWapperCollectList>
 						<HomeWapperCollectList

@@ -33,16 +33,13 @@ export const PrimaryWapperList = styled.div`
 		width: 100%;
 		height: 100%;
 		display: block;
-		color: #eee;
-		font-weight: 500;
-		font-size: 12px;
-		line-height: 72px;
-		text-decoration: underline;
-		font-family: Arial, Helvetica, sans-serif;
+		color: #fff;
+		font-weight: 400;
+		font-size: 8px;
+		font-family: 宋体;
+		line-height: 75px;
+		text-decoration: line-through;
 		text-align: center;
-		:hover {
-			color: #fff;
-		}
 	}
 `;
 
@@ -58,15 +55,15 @@ export const PrimaryWapperBack = styled.div`
 	margin: auto;
 	background: url('https://tse3-mm.cn.bing.net/th/id/OIP-C.U8rYfpRJjX0K4XXheu_KcgHaF5?pid=ImgDet&rs=1');
 	background-size: 245.5px 145.5px;
-	P{
+	P {
 		position: fixed;
 		bottom: 14px;
 		right: 16px;
 		font-size: 12px;
-		font-family: Arial, Helvetica, sans-serif;
-		color: #333;
-		font-weight: 800;
+		font-family: 宋体;
+		color: rgb(194, 12, 12);
+		font-weight: 600;
 		cursor: pointer;
-		text-decoration: underline;
+		text-decoration: line-through;
 	}
 `;

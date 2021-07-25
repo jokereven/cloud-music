@@ -17,8 +17,8 @@ class Primary extends PureComponent {
 						</a>
 					</PrimaryWapperList>
 					<PrimaryWapperList>
-						<a href='http://doc.code520.com.cn' target='_new'>
-							doc.code520.com.cn
+						<a href='http://code520.com.cn' target='_new'>
+							code520.com.cn
 						</a>
 					</PrimaryWapperList>
 					<PrimaryWapperList>
@@ -43,12 +43,12 @@ class Primary extends PureComponent {
 					</PrimaryWapperList>
 					<PrimaryWapperList>
 						<a href='/' target='_blank'>
-							加载中...
+							...
 						</a>
 					</PrimaryWapperList>
 					<PrimaryWapperList>
 						<a href='/' target='_blank'>
-							加载中...
+							...
 						</a>
 					</PrimaryWapperList>
 				</PrimaryWapper>
