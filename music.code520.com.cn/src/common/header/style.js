@@ -6,6 +6,13 @@ export const HeaderWapper = styled.div`
 	height: 69px;
 	background-color: rgb(36, 36, 36);
 	min-width: 1280px;
+	Input {
+		width: 175px;
+		height: 32px;
+		margin-top: 16px;
+		outline: none;
+		padding: 0px 24px 0px 4px;
+	}
 `;
 
 export const HeaderWapperLogo = styled.a.attrs({
@@ -37,5 +44,35 @@ export const HeaderWapperLogo = styled.a.attrs({
 		color: #fff;
 		padding-left: 42px;
 		font-weight: 500;
+	}
+`;
+
+export const HeaderWapperSearch = styled.div`
+	margin-left: 45px;
+	float: left;
+	width: 456px;
+	height: 69px;
+`;
+
+export const HeaderFireBox = styled.div`
+	width: 300px;
+	height: 375px;
+	background-color: #096;
+	border: 1px solid #fff;
+	box-sizing: 0 0 1px #fff;
+	z-index: 999;
+	position: relative;
+	top: 4px;
+	border-radius: 4px;
+	display: flex;
+	overflow: auto;
+	display: none;
+	::-webkit-scrollbar {
+		width: 6px;
+		height: 6px;
+		background-color: rgba(240, 240, 240, 1);
+	}
+	&.focused{
+		display: block;
 	}
 `;
