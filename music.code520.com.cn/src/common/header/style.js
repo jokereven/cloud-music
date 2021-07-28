@@ -15,9 +15,7 @@ export const HeaderWapper = styled.div`
 	}
 `;
 
-export const HeaderWapperLogo = styled.a.attrs({
-	href: '/',
-})`
+export const HeaderWapperLogo = styled.div`
 	width: 175px;
 	height: 69px;
 	float: left;
@@ -55,11 +53,9 @@ export const HeaderWapperSearch = styled.div`
 `;
 
 export const HeaderFireBox = styled.div`
-	width: 300px;
-	height: 375px;
-	background-color: #096;
-	border: 1px solid #fff;
-	box-sizing: 0 0 1px #fff;
+	width: 456px;
+	height: 450px;
+	background-color: #fff;
 	z-index: 999;
 	position: relative;
 	top: 4px;
@@ -67,12 +63,60 @@ export const HeaderFireBox = styled.div`
 	display: flex;
 	overflow: auto;
 	display: none;
+	cursor: pointer;
 	::-webkit-scrollbar {
 		width: 6px;
 		height: 6px;
 		background-color: rgba(240, 240, 240, 1);
 	}
-	&.focused{
+	&.focused {
 		display: block;
+	}
+	&.searchenter {
+		display: block;
+	}
+	&#onchange {
+		display: none;
+	}
+`;
+
+export const HeaderFireBoxWare = styled.div`
+	width: 400px;
+	height: 50px;
+	margin: 16px auto;
+	border-radius: 2px;
+	position: relative;
+	span {
+		line-height: 50px;
+		font-family: 宋体;
+		font-size: 16px;
+	}
+	div {
+		width: 360px;
+		height: 50px;
+		position: absolute;
+		left: 32px;
+		top: 0;
+		h3 {
+			font-family: 宋体;
+			font-size: 16px;
+			font-weight: 600;
+			padding: 4px;
+			float: left;
+		}
+		.number {
+			color: rgb(204, 204, 204);
+			float: left;
+			padding-top: 4px;
+			padding-left: 12px;
+			font-size: 12px;
+		}
+		.content {
+			color: rgb(179, 179, 179);
+			font-size: 14px;
+			float: left;
+			position: absolute;
+			top: 32px;
+		}
 	}
 `;

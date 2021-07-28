@@ -1,6 +1,7 @@
 import React, { Fragment, PureComponent } from 'react';
 import { Provider } from 'react-redux';
 /* 组件 */
+import { BrowserRouter,Route } from 'react-router-dom';
 import Footer from './common/footer/index';
 import Header from './common/header/index';
 import Content from './content/index';
@@ -15,9 +16,11 @@ class App extends PureComponent {
 				{/* 全局样式 */}
 				<GlobalStyle />
 				<Provider store={store}>
-					<Header />
-					<Footer />
-					<Content />
+					<BrowserRouter>
+						<Header />
+						<Route path='/' component={Content}></Route>
+						<Footer />
+					</BrowserRouter>
 				</Provider>
 			</Fragment>
 		);

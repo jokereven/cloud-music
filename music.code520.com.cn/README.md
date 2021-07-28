@@ -10,4 +10,6 @@
 5. redux-thunk `middleware库`
 6. immutable `immutable对象`
 7. redux-immutable `state -> immutable`
+8. redux-thunk `可以在redux中写函数`
+9. react-router-dom `路由`
 ```

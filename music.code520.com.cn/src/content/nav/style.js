@@ -6,6 +6,12 @@ export const NavWapper = styled.div`
 	background-color: #fff;
 	float: left;
 	overflow: auto;
+	a{
+		text-decoration: none;
+		:visited{
+			color: #000;
+		}
+	}
 	::-webkit-scrollbar {
 		width: 6px;
 		height: 6px;
@@ -19,10 +25,10 @@ export const NavWapperList = styled.div`
 	font-size: 16px;
 	font-family: 宋体;
 	cursor: pointer;
-	line-height: 32px;
+	line-height: 45px;
 	margin: 4px auto;
 	width: 175px;
-	height: 32px;
+	height: 45px;
 	background-color: #fff;
 	margin-top: 4px;
 	:hover {

@@ -1,4 +1,5 @@
 import React, { Fragment, PureComponent } from 'react';
+import { Link } from 'react-router-dom';
 import { NavWapper, NavWapperList } from './style';
 
 class Nav extends PureComponent {
@@ -6,19 +7,21 @@ class Nav extends PureComponent {
 		return (
 			<Fragment>
 				<NavWapper>
-					<NavWapperList>发现</NavWapperList>
-					<NavWapperList>视频</NavWapperList>
-					<NavWapperList>准备</NavWapperList>
-					<NavWapperList>加载中...</NavWapperList>
-					<NavWapperList>加载中...</NavWapperList>
-					<NavWapperList>加载中...</NavWapperList>
-					<NavWapperList>加载中...</NavWapperList>
-					<NavWapperList>加载中...</NavWapperList>
-					<NavWapperList>加载中...</NavWapperList>
-					<NavWapperList>加载中...</NavWapperList>
-					<NavWapperList>加载中...</NavWapperList>
-					<NavWapperList>加载中...</NavWapperList>
-					<NavWapperList>加载中...</NavWapperList>
+					<Link to='/individuation'>
+						<NavWapperList>发现音乐</NavWapperList>
+					</Link>
+					<Link to='/video'>
+						<NavWapperList>视频</NavWapperList>
+					</Link>
+					<NavWapperList>...</NavWapperList>
+					<NavWapperList>...</NavWapperList>
+					<NavWapperList>...</NavWapperList>
+					<NavWapperList>...</NavWapperList>
+					<NavWapperList>...</NavWapperList>
+					<NavWapperList>...</NavWapperList>
+					<NavWapperList>...</NavWapperList>
+					<NavWapperList>...</NavWapperList>
+					<NavWapperList>...</NavWapperList>
 				</NavWapper>
 			</Fragment>
 		);
