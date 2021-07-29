@@ -15,7 +15,9 @@ export const HeaderWapper = styled.div`
 	}
 `;
 
-export const HeaderWapperLogo = styled.div`
+export const HeaderWapperLogo = styled.a.attrs({
+	href: '/individuation',
+})`
 	width: 175px;
 	height: 69px;
 	float: left;
@@ -141,6 +143,9 @@ export const HeaderSearchBox = styled.div`
 	&#onchange {
 		display: block;
 	}
+	&.focused {
+		display: block;
+	}
 	::-webkit-scrollbar {
 		width: 0px;
 		height: 0px;
@@ -206,7 +211,7 @@ export const HeaderSearchBoxWare = styled.div`
 		width: 345px;
 		height: auto;
 		margin-top: 8px;
-		font-family: 宋体;
+		border-top: 1px solid #ddd;
 	}
 	.songs_songer {
 		font-size: 12px;
@@ -239,7 +244,7 @@ export const HeaderSearchBoxWare = styled.div`
 	}
 	.albums_name {
 		font-size: 13px;
-		color: #232323;
+		color: rgb(12, 115, 194);
 		font-weight: 500;
 		padding-top: 4px;
 	}

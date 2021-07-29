@@ -7,7 +7,7 @@ import {
 import { Input } from 'antd';
 import React, { Fragment, PureComponent } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { actionCreators } from './store';
 import {
 	HeaderFireBox,
@@ -41,12 +41,10 @@ class Header extends PureComponent {
 		return (
 			<Fragment>
 				<HeaderWapper>
-					<Link to='/individuation'>
 						<HeaderWapperLogo>
 							<div></div>
 							<p>音乐</p>
 						</HeaderWapperLogo>
-					</Link>
 					<HeaderWapperSearch>
 						<Input
 							placeholder='请输入要搜索的内容'

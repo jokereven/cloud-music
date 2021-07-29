@@ -10,7 +10,7 @@ class Nav extends PureComponent {
 					<Link to='/individuation'>
 						<NavWapperList>发现音乐</NavWapperList>
 					</Link>
-					<Link to='/video'>
+					<Link to='/flv-mas'>
 						<NavWapperList>视频</NavWapperList>
 					</Link>
 					<NavWapperList>...</NavWapperList>

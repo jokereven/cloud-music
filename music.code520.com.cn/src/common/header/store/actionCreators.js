@@ -40,7 +40,7 @@ export const GetFireList = () => {
 	};
 };
 
-export const ChangeList = (key,inputvalue) => {
+export const ChangeList = (key, inputvalue) => {
 	return (dispatch) => {
 		axios
 			.get(`http://localhost:3000/search/suggest?keywords=${key}`)
@@ -59,6 +59,7 @@ export const SearchList = (key) => {
 		axios
 			.get(`http://localhost:3000/cloudsearch?keywords=${key}`)
 			.then((res) => {
+				window.open(`/search-list/${key}/songs`, '_self');
 				const data = res;
 				dispatch(ChangeSearchList(data.data));
 			})
