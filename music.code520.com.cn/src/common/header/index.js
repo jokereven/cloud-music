@@ -20,7 +20,6 @@ import {
 } from './style';
 
 class Header extends PureComponent {
-	componentDidMount() {}
 	render() {
 		const {
 			handleInputFocus,

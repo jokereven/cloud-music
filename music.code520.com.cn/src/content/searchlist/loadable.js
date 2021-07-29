@@ -5,7 +5,13 @@ import Loadable from 'react-loadable';
 const LoadableComponent = Loadable({
 	loader: () => import('./'),
 	loading() {
-		return <div>加载中...</div>;
+		return (
+			<span
+				style={{ fontFamily: '宋体', fontSize: '24px', margin:"49px auto" }}
+			>
+				加载中...
+			</span>
+		);
 	},
 });
 
