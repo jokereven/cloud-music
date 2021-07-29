@@ -1,4 +1,4 @@
-import { ZoomInOutlined } from '@ant-design/icons';
+import { RedditOutlined, ZoomInOutlined } from '@ant-design/icons';
 import { Input } from 'antd';
 import React, { Fragment, PureComponent } from 'react';
 import { connect } from 'react-redux';
@@ -7,12 +7,15 @@ import { actionCreators } from './store';
 import {
 	HeaderFireBox,
 	HeaderFireBoxWare,
+	HeaderSearchBox,
+	HeaderSearchBoxWare,
 	HeaderWapper,
 	HeaderWapperLogo,
 	HeaderWapperSearch,
 } from './style';
 
 class Header extends PureComponent {
+	componentDidMount() {}
 	render() {
 		const {
 			handleInputFocus,
@@ -25,6 +28,8 @@ class Header extends PureComponent {
 			handleOver,
 			handleOut,
 			searchenter,
+			changelist_songs,
+			inputvalue,
 		} = this.props;
 		return (
 			<Fragment>
@@ -49,9 +54,9 @@ class Header extends PureComponent {
 						<HeaderFireBox
 							onMouseOver={handleOver}
 							onMouseOut={handleOut}
-							className={
-								`${focused ? 'focused' : ''} + '' + ${searchenter ? 'searchenter' : ''}`
-							}
+							className={`${focused ? 'focused' : ''} + '' + ${
+								searchenter ? 'searchenter' : ''
+							}`}
 							id={onchange ? 'onchange' : ''}
 						>
 							{firelist.map((item, index) => {
@@ -67,6 +72,40 @@ class Header extends PureComponent {
 								);
 							})}
 						</HeaderFireBox>
+						<HeaderSearchBox>
+							<span>搜索"{inputvalue}"相关结果&gt;</span>
+							<HeaderSearchBoxWare>
+								<div id='songs'>
+									<RedditOutlined
+										style={{
+											lineHeight: '32px',
+											float: 'left',
+										}}
+									/>
+									<p className='songs'>单曲</p>
+								</div>
+								<span className='songs_box'>
+									{changelist_songs
+										? changelist_songs.map((item, index) => {
+												return (
+													<div id='songs_box'>
+														<div className='songs_name' key={index}>
+															-{item.get('name')}
+															{
+																<span className='songer'>
+																	{item.getIn(['artists']).map((content) => {
+																		return <div>{content.get('name')}</div>;
+																	})}
+																</span>
+															}
+														</div>
+													</div>
+												);
+										  })
+										: ''}
+								</span>
+							</HeaderSearchBoxWare>
+						</HeaderSearchBox>
 					</HeaderWapperSearch>
 				</HeaderWapper>
 			</Fragment>
@@ -78,9 +117,10 @@ const MapStateToProps = (state) => {
 	return {
 		focused: state.getIn(['header', 'focused']),
 		firelist: state.getIn(['header', 'firelist']),
-		changelist: state.getIn(['header', 'changlist']),
+		changelist_songs: state.getIn(['header', 'changelist', 'songs']),
 		onchange: state.getIn(['header', 'onchange']),
 		searchenter: state.getIn(['header', 'searchenter']),
+		inputvalue: state.getIn(['header', 'inputvalue']),
 	};
 };
 
@@ -107,14 +147,14 @@ const MapDispatchToProps = (dispatch) => {
 			if (event.target.value !== '') {
 				dispatch(actionCreators.OnChange());
 			}
-			dispatch(actionCreators.ChangeList(event.target.defaultValue));
+			dispatch(
+				actionCreators.ChangeList(event.target.defaultValue, event.target.value)
+			);
 		},
 		handleOver() {
-			console.log('over');
 			dispatch(actionCreators.searchOver());
 		},
 		handleOut() {
-			console.log('out');
 			dispatch(actionCreators.searchOut());
 		},
 	};

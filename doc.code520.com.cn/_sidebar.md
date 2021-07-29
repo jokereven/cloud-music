@@ -12,6 +12,8 @@
 
 - [开发笔记](/开发笔记/)
 
+- [Debug](/Debug/)
+
 - [React](/React/)
 
 - [JS-数据结构与算法](/JavaScript数据结构与算法/)

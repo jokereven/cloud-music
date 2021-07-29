@@ -53,20 +53,22 @@ export const HeaderWapperSearch = styled.div`
 `;
 
 export const HeaderFireBox = styled.div`
-	width: 456px;
+	width: 375px;
 	height: 450px;
 	background-color: #fff;
 	z-index: 999;
-	position: relative;
-	top: 4px;
+	position: absolute;
+	top: 72px;
 	border-radius: 4px;
 	display: flex;
 	overflow: auto;
 	display: none;
 	cursor: pointer;
+	border: 1px solid #ddd;
+	box-shadow: 0 0 1px #ddd;
 	::-webkit-scrollbar {
-		width: 6px;
-		height: 6px;
+		width: 4px;
+		height: 4px;
 		background-color: rgba(240, 240, 240, 1);
 	}
 	&.focused {
@@ -81,12 +83,13 @@ export const HeaderFireBox = styled.div`
 `;
 
 export const HeaderFireBoxWare = styled.div`
-	width: 400px;
+	width: 360px;
 	height: 50px;
 	margin: 16px auto;
 	border-radius: 2px;
 	position: relative;
 	span {
+		padding-left: 4px;
 		line-height: 50px;
 		font-family: 宋体;
 		font-size: 16px;
@@ -107,16 +110,92 @@ export const HeaderFireBoxWare = styled.div`
 		.number {
 			color: rgb(204, 204, 204);
 			float: left;
-			padding-top: 4px;
+			padding-top: 6px;
 			padding-left: 12px;
-			font-size: 12px;
+			font-size: 8px;
 		}
 		.content {
 			color: rgb(179, 179, 179);
-			font-size: 14px;
+			font-size: 12px;
 			float: left;
 			position: absolute;
 			top: 32px;
 		}
+	}
+`;
+
+export const HeaderSearchBox = styled.div`
+	width: 375px;
+	height: 380px;
+	background-color: #fff;
+	box-sizing: border-box;
+	z-index: 999;
+	position: absolute;
+	top: 72px;
+	border-radius: 4px;
+	overflow: auto;
+	display: block;
+	cursor: pointer;
+	border: 1px solid #ddd;
+	box-shadow: 0 0 1px #ddd;
+	::-webkit-scrollbar {
+		width: 0px;
+		height: 0px;
+		background-color: rgba(240, 240, 240, 1);
+	}
+	span {
+		box-sizing: border-box;
+		display: block;
+		font-size: 13px;
+		margin-top: 4px;
+		margin-left: 8px;
+		font-family: Arial, Helvetica, sans-serif;
+		color: #666;
+		:hover {
+			color: #333;
+		}
+	}
+`;
+
+export const HeaderSearchBoxWare = styled.div`
+	width: 360px;
+	height: 350px;
+	margin: 4px auto;
+	background-color: #fff;
+	#songs {
+		width: 64px;
+		height: 32px;
+	}
+	.songs {
+		font-size: 12px;
+		font-size: 宋体;
+		font-weight: 500;
+		line-height: 32px;
+		padding-left: 4px;
+		float: left;
+		color: rgb(177, 177, 177);
+	}
+	.songs_box {
+		float: left;
+		width: 100%;
+		height: auto;
+		padding-left: 0px;
+		margin-top: 4px;
+		border-top: 1px solid #ddd;
+	}
+	#songs_box {
+		position: relative;
+		width: 345px;
+		height: auto;
+		margin-top: 8px;
+		font-family: 宋体;
+	}
+	.songer {
+		font-size: 12px;
+		color: rgb(12, 115, 194);
+	}
+	.songs_name {
+		font-size: 12px;
+		color: #333;
 	}
 `;

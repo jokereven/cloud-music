@@ -23,6 +23,7 @@ const reducer = (state = defaultState, action) => {
 		case actionTypes.SEARCH_CHANGE_LIST:
 			return state.merge({
 				changelist: action.data,
+				inputvalue: action.inputvalue,
 			});
 		case actionTypes.NOT_ON_CHANGE:
 			return state.merge({

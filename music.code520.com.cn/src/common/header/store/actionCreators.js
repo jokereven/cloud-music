@@ -12,9 +12,10 @@ export const ChangeSearchList = (data) => ({
 	data: fromJS(data),
 });
 
-export const SearchChangeList = (data) => ({
+export const SearchChangeList = (data, inputvalue) => ({
 	type: actionTypes.SEARCH_CHANGE_LIST,
 	data: fromJS(data),
+	inputvalue: fromJS(inputvalue),
 });
 
 export const searchFocus = () => ({
@@ -39,13 +40,13 @@ export const GetFireList = () => {
 	};
 };
 
-export const ChangeList = (key) => {
+export const ChangeList = (key,inputvalue) => {
 	return (dispatch) => {
 		axios
 			.get(`http://localhost:3000/search/suggest?keywords=${key}`)
 			.then((res) => {
 				const data = res;
-				dispatch(SearchChangeList(data.data));
+				dispatch(SearchChangeList(data.data.result, inputvalue));
 			})
 			.catch(() => {
 				console.error('SearchChangeList failed');
