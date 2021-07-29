@@ -134,10 +134,13 @@ export const HeaderSearchBox = styled.div`
 	top: 72px;
 	border-radius: 4px;
 	overflow: auto;
-	display: block;
+	display: none;
 	cursor: pointer;
 	border: 1px solid #ddd;
 	box-shadow: 0 0 1px #ddd;
+	&#onchange {
+		display: block;
+	}
 	::-webkit-scrollbar {
 		width: 0px;
 		height: 0px;
@@ -176,7 +179,13 @@ export const HeaderSearchBoxWare = styled.div`
 		color: rgb(177, 177, 177);
 	}
 	.songs_box {
-		float: left;
+		width: 100%;
+		height: auto;
+		padding-left: 0px;
+		margin-top: 4px;
+		border-top: 1px solid #ddd;
+	}
+	.songer_box {
 		width: 100%;
 		height: auto;
 		padding-left: 0px;
@@ -184,18 +193,54 @@ export const HeaderSearchBoxWare = styled.div`
 		border-top: 1px solid #ddd;
 	}
 	#songs_box {
+		display: block;
 		position: relative;
 		width: 345px;
 		height: auto;
 		margin-top: 8px;
 		font-family: 宋体;
 	}
-	.songer {
+	.albums {
+		display: block;
+		position: relative;
+		width: 345px;
+		height: auto;
+		margin-top: 8px;
+		font-family: 宋体;
+	}
+	.songs_songer {
 		font-size: 12px;
 		color: rgb(12, 115, 194);
 	}
 	.songs_name {
 		font-size: 12px;
 		color: #333;
+	}
+	#songer {
+		display: block;
+		width: 64px;
+		height: 32px;
+		margin-top: 12px;
+		background-color: #fff;
+	}
+	#albums {
+		display: block;
+		width: 64px;
+		height: 32px;
+		margin-top: 12px;
+		background-color: #fff;
+	}
+	.songer_name {
+		font-size: 12px;
+		font-family: 宋体;
+		color: rgb(12, 115, 194);
+		padding-left: 8px;
+		padding-top: 4px;
+	}
+	.albums_name {
+		font-size: 13px;
+		color: #232323;
+		font-weight: 500;
+		padding-top: 4px;
 	}
 `;

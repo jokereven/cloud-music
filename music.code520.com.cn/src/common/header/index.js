@@ -1,4 +1,9 @@
-import { RedditOutlined, ZoomInOutlined } from '@ant-design/icons';
+import {
+	ReadOutlined,
+	RedditOutlined,
+	UserOutlined,
+	ZoomInOutlined,
+} from '@ant-design/icons';
 import { Input } from 'antd';
 import React, { Fragment, PureComponent } from 'react';
 import { connect } from 'react-redux';
@@ -30,6 +35,8 @@ class Header extends PureComponent {
 			searchenter,
 			changelist_songs,
 			inputvalue,
+			changelist_songer,
+			changelist_albums,
 		} = this.props;
 		return (
 			<Fragment>
@@ -72,7 +79,7 @@ class Header extends PureComponent {
 								);
 							})}
 						</HeaderFireBox>
-						<HeaderSearchBox>
+						<HeaderSearchBox id={onchange ? 'onchange' : ''}>
 							<span>搜索"{inputvalue}"相关结果&gt;</span>
 							<HeaderSearchBoxWare>
 								<div id='songs'>
@@ -92,7 +99,7 @@ class Header extends PureComponent {
 														<div className='songs_name' key={index}>
 															-{item.get('name')}
 															{
-																<span className='songer'>
+																<span className='songs_songer'>
 																	{item.getIn(['artists']).map((content) => {
 																		return <div>{content.get('name')}</div>;
 																	})}
@@ -100,6 +107,42 @@ class Header extends PureComponent {
 															}
 														</div>
 													</div>
+												);
+										  })
+										: ''}
+								</span>
+								<div id='songer'>
+									<UserOutlined
+										style={{
+											lineHeight: '32px',
+											float: 'left',
+										}}
+									/>
+									<p className='songs'>歌手</p>
+								</div>
+								<span className='songer_box'>
+									{changelist_songer
+										? changelist_songer.map((item) => {
+												return (
+													<div className='songer_name'>{item.get('name')}</div>
+												);
+										  })
+										: ''}
+								</span>
+								<div id='albums'>
+									<ReadOutlined
+										style={{
+											lineHeight: '32px',
+											float: 'left',
+										}}
+									/>{' '}
+									<p className='songs'>专辑</p>
+								</div>
+								<span className='albums'>
+									{changelist_albums
+										? changelist_albums.map((item) => {
+												return (
+													<div className='albums_name'>{item.get('name')}</div>
 												);
 										  })
 										: ''}
@@ -121,6 +164,8 @@ const MapStateToProps = (state) => {
 		onchange: state.getIn(['header', 'onchange']),
 		searchenter: state.getIn(['header', 'searchenter']),
 		inputvalue: state.getIn(['header', 'inputvalue']),
+		changelist_songer: state.getIn(['header', 'changelist', 'artists']),
+		changelist_albums: state.getIn(['header', 'changelist', 'albums']),
 	};
 };
 
