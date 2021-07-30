@@ -10,7 +10,7 @@ export const Tosearchsinglelist = (data) => ({
 export const ToSearchSingleList = (key) => {
 	return (dispatch) => {
 		axios
-			.get(`http://localhost:3000/cloudsearch?keywords=${key}`)
+			.get(`http://localhost:3000/cloudsearch?keywords=${key}&type=1`)
 			.then((res) => {
 				const data = res;
 				dispatch(Tosearchsinglelist(data.data));

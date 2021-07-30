@@ -38,7 +38,8 @@ class SearchList extends PureComponent {
 													{item.getIn(['ar']).map((content) => {
 														return <td>{content.get('name')}</td>;
 													})}
-													{/* <td>{name}</td> */}
+													<td>{item.getIn(["al", "name"])}</td>
+													<td>{item.get("dt")}</td>
 												</SearchListWapperSingleList>
 											);
 									  })
@@ -75,7 +76,6 @@ const MapStateToProps = (state) => {
 			'result',
 			'songs',
 		]),
-		// name: state.get('name'),
 	};
 };
 

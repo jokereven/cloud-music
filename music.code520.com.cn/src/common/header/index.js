@@ -1,22 +1,28 @@
 import {
+	GithubOutlined,
 	ReadOutlined,
 	RedditOutlined,
 	UserOutlined,
 	ZoomInOutlined,
+	GooglePlusOutlined,
 } from '@ant-design/icons';
 import { Input } from 'antd';
 import React, { Fragment, PureComponent } from 'react';
 import { connect } from 'react-redux';
-// import { Link } from 'react-router-dom';
 import { actionCreators } from './store';
 import {
 	HeaderFireBox,
 	HeaderFireBoxWare,
+	HeaderLoginWapper,
 	HeaderSearchBox,
 	HeaderSearchBoxWare,
 	HeaderWapper,
 	HeaderWapperLogo,
 	HeaderWapperSearch,
+	LoginWapperGitee,
+	LoginWapperGithub,
+	LoginWapperWarp,
+	HeaderCenter
 } from './style';
 
 class Header extends PureComponent {
@@ -40,10 +46,10 @@ class Header extends PureComponent {
 		return (
 			<Fragment>
 				<HeaderWapper>
-						<HeaderWapperLogo>
-							<div></div>
-							<p>音乐</p>
-						</HeaderWapperLogo>
+					<HeaderWapperLogo>
+						<div></div>
+						<p>音乐</p>
+					</HeaderWapperLogo>
 					<HeaderWapperSearch>
 						<Input
 							placeholder='请输入要搜索的内容'
@@ -147,6 +153,55 @@ class Header extends PureComponent {
 							</HeaderSearchBoxWare>
 						</HeaderSearchBox>
 					</HeaderWapperSearch>
+					<HeaderLoginWapper>
+						<a href='/individuation/login' target="_self">
+							<LoginWapperWarp className='son'>
+								<UserOutlined
+									style={{
+										color: '#fff',
+										lineHeight: '32px',
+										display: 'block',
+										textAlign: 'center',
+									}}
+								/>
+							</LoginWapperWarp>
+						</a>
+						<a
+							href='http://github.com/jokereven/code520'
+							target='_new'
+							title='github'
+						>
+							<LoginWapperGithub className='son'>
+								<GithubOutlined
+									style={{
+										color: '#fff',
+										lineHeight: '32px',
+										display: 'block',
+										textAlign: 'center',
+									}}
+								/>
+							</LoginWapperGithub>
+						</a>
+						<a
+							href='http://gitee.com/jokereven/code520'
+							target='_new'
+							title='gitee'
+						>
+							<LoginWapperGitee className='son'>
+								<GooglePlusOutlined
+									style={{
+										color: '#fff',
+										lineHeight: '32px',
+										display: 'block',
+										textAlign: 'center',
+									}}
+								/>
+							</LoginWapperGitee>
+						</a>
+					</HeaderLoginWapper>
+					<HeaderCenter>
+						生活到处是磨难，为难我的人多了，你算老几。
+					</HeaderCenter>
 				</HeaderWapper>
 			</Fragment>
 		);

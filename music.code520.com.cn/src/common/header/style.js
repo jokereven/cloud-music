@@ -249,3 +249,45 @@ export const HeaderSearchBoxWare = styled.div`
 		padding-top: 4px;
 	}
 `;
+
+export const HeaderCenter = styled.div`
+	width: 256px;
+	font-size: 12px;
+	line-height: 69px;
+	font-family: 宋体;
+	text-align: center;
+	height: 69px;
+	float: right;
+	color:#fff;
+	margin-right: 12px;
+`;
+
+export const HeaderLoginWapper = styled.div`
+	width: 175px;
+	height: 69px;
+	float: right;
+	background-color: #232323;
+	display: flex;
+	justify-content: space-between;
+	margin-right: 32px;
+	align-items: center;
+	.son {
+		border-radius: 50%;
+		cursor: pointer;
+	}
+`;
+
+export const LoginWapperWarp = styled.div`
+	width: 32px;
+	height: 32px;
+`;
+
+export const LoginWapperGitee = styled.div`
+	width: 32px;
+	height: 32px;
+`;
+
+export const LoginWapperGithub = styled.div`
+	width: 32px;
+	height: 32px;
+`;

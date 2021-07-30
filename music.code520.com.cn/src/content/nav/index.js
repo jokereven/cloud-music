@@ -13,15 +13,6 @@ class Nav extends PureComponent {
 					<Link to='/flv-mas'>
 						<NavWapperList>视频</NavWapperList>
 					</Link>
-					<NavWapperList>...</NavWapperList>
-					<NavWapperList>...</NavWapperList>
-					<NavWapperList>...</NavWapperList>
-					<NavWapperList>...</NavWapperList>
-					<NavWapperList>...</NavWapperList>
-					<NavWapperList>...</NavWapperList>
-					<NavWapperList>...</NavWapperList>
-					<NavWapperList>...</NavWapperList>
-					<NavWapperList>...</NavWapperList>
 				</NavWapper>
 			</Fragment>
 		);
