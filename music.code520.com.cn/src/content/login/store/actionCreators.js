@@ -18,7 +18,6 @@ export const login = (account, password) => {
 				const data = res.data;
 				if (data.code === 200) {
 					alert('登录成功');
-					console.log(data);
 					localStorage.setItem('data',`${JSON.stringify(data)}`)
 					dispatch(ChangeLogin(data, value));
 				} else {
@@ -33,4 +32,8 @@ export const login = (account, password) => {
 
 export const LogOut = () => ({
 	type: actionTypes.LOG_OUT,
+});
+
+export const localstorage = () => ({
+	type: actionTypes.LOCAL_STORAGE,
 });

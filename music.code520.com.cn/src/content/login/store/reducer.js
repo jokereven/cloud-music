@@ -12,6 +12,10 @@ const reducer = (state = defaultState, action) => {
 				login: true,
 				userdata: action.data,
 			});
+		case actionTypes.LOCAL_STORAGE:
+			return state.merge({
+				login: true,
+			});
 		case actionTypes.LOG_OUT:
 			return state.set('login', false);
 		default:

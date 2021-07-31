@@ -223,6 +223,10 @@ class Header extends PureComponent {
 			</Fragment>
 		);
 	}
+	componentDidMount() {
+		this.props.localstorage();
+		// JSON.parse(localStorage.getItem('data'));
+	}
 }
 
 const MapStateToProps = (state) => {
@@ -274,6 +278,9 @@ const MapDispatchToProps = (dispatch) => {
 		},
 		logout() {
 			dispatch(LoginactionCreators.LogOut());
+		},
+		localstorage() {
+			dispatch(LoginactionCreators.localstorage());
 		},
 	};
 };
