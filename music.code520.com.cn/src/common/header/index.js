@@ -1,16 +1,19 @@
 import {
 	GithubOutlined,
+	GooglePlusOutlined,
+	PoweroffOutlined,
 	ReadOutlined,
 	RedditOutlined,
 	UserOutlined,
 	ZoomInOutlined,
-	GooglePlusOutlined,
 } from '@ant-design/icons';
 import { Input } from 'antd';
 import React, { Fragment, PureComponent } from 'react';
 import { connect } from 'react-redux';
+import { actionCreators as LoginactionCreators } from '../../content/login/store';
 import { actionCreators } from './store';
 import {
+	HeaderCenter,
 	HeaderFireBox,
 	HeaderFireBoxWare,
 	HeaderLoginWapper,
@@ -22,11 +25,11 @@ import {
 	LoginWapperGitee,
 	LoginWapperGithub,
 	LoginWapperWarp,
-	HeaderCenter
 } from './style';
 
 class Header extends PureComponent {
 	render() {
+		console.log(JSON.parse(localStorage.getItem('data'))['code']);
 		const {
 			handleInputFocus,
 			handleInputBlur,
@@ -42,6 +45,8 @@ class Header extends PureComponent {
 			inputvalue,
 			changelist_songer,
 			changelist_albums,
+			login,
+			logout,
 		} = this.props;
 		return (
 			<Fragment>
@@ -154,9 +159,10 @@ class Header extends PureComponent {
 						</HeaderSearchBox>
 					</HeaderWapperSearch>
 					<HeaderLoginWapper>
-						<a href='/individuation/login' target="_self">
-							<LoginWapperWarp className='son'>
-								<UserOutlined
+						<LoginWapperWarp className='son'>
+							{login ? (
+								<PoweroffOutlined
+									onClick={logout}
 									style={{
 										color: '#fff',
 										lineHeight: '32px',
@@ -164,8 +170,19 @@ class Header extends PureComponent {
 										textAlign: 'center',
 									}}
 								/>
-							</LoginWapperWarp>
-						</a>
+							) : (
+								<a href='/individuation/login' target='_self'>
+									<UserOutlined
+										style={{
+											color: '#fff',
+											lineHeight: '32px',
+											display: 'block',
+											textAlign: 'center',
+										}}
+									/>
+								</a>
+							)}
+						</LoginWapperWarp>
 						<a
 							href='http://github.com/jokereven/code520'
 							target='_new'
@@ -218,6 +235,7 @@ const MapStateToProps = (state) => {
 		inputvalue: state.getIn(['header', 'inputvalue']),
 		changelist_songer: state.getIn(['header', 'changelist', 'artists']),
 		changelist_albums: state.getIn(['header', 'changelist', 'albums']),
+		login: state.getIn(['login', 'login']),
 	};
 };
 
@@ -253,6 +271,9 @@ const MapDispatchToProps = (dispatch) => {
 		},
 		handleOut() {
 			dispatch(actionCreators.searchOut());
+		},
+		logout() {
+			dispatch(LoginactionCreators.LogOut());
 		},
 	};
 };
