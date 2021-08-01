@@ -8,7 +8,7 @@
 		<meta name="author" content="周靖" />
 		<meta name="keywords" content="code520 zhou125disorder" />
 
-		<link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+		<link rel="icon" href="./favicon.ico" />
 		<link
 			rel="stylesheet"
 			href="https://unpkg.com/jquery.terminal/css/jquery.terminal.min.css"
@@ -27,7 +27,7 @@
 
 			.terminal,
 			span {
-				--size: 1.2;
+				--size: 1;
 			}
 		</style>
 	</head>
@@ -59,9 +59,6 @@
 			{
 				$('body').terminal(
 					{
-						Author: function () {
-							this.echo('周靖');
-						},
 						Open: function (url) {
 							window.open('http://' + url);
 						},
@@ -74,21 +71,27 @@
 						console: function (value) {
 							console.log(value);
 						},
+						小恐龙: function () {
+							window.open('https://chromedino.com/', '_new');
+						},
 						Help: function () {
 							this.echo(
-								'技术栈GoReactTaro' +
-									'\n' +
-									'github💻:' +
+								'技术栈GoReactTaro💻' +
+									' ' +
+									'github📆:' +
 									'github.com/jokereven' +
 									' ' +
-									'输入Author查看作者' +
-									' ' +
-									'输入Open+baidu.com打开百度' +
-									' ' +
-									'输入Search+code520搜索问题 ' +
+									'gitee📆:' +
+									'gitee.com/jokereven' +
 									'\n' +
-									'alert console' +
+									'Open+baidu.com' +
 									' ' +
+									'Search+question' +
+									' ' +
+									'alert console' +
+									'\n' +
+									'小恐龙🦖' +
+									'\n' +
 									'更多功能加载中...'
 							);
 						},
@@ -99,7 +102,7 @@
 							'\n' +
 							'输入Help查看帮助📌' +
 							'\n' +
-							'邮箱: zhou125disorder@163.com' +
+							'邮箱: zhou125disorder@gmail.com' +
 							'📭',
 					}
 				);
