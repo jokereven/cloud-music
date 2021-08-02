@@ -3,26 +3,27 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 		<meta name="theme-color" content="#000000" />
 		<meta name="description" content="cmd.code520.com.cn" />
 		<meta name="author" content="周靖" />
 		<meta name="keywords" content="code520 zhou125disorder" />
+		<link rel="icon" href="./public/favicon.ico" />
+		<title>cmd-code520</title>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<script src="https://unpkg.com/jquery.terminal/js/jquery.terminal.min.js"></script>
 
-		<link rel="icon" href="./favicon.ico" />
 		<link
 			rel="stylesheet"
 			href="https://unpkg.com/jquery.terminal/css/jquery.terminal.min.css"
 		/>
 
-		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-		<script src="https://unpkg.com/jquery.terminal/js/jquery.terminal.min.js"></script>
-		<title>cmd-code520</title>
 		<style type="text/css">
 			.terminal,
 			span,
 			.cmd,
 			div {
-				--color: #fff;
+				--color: rgb(242, 242, 242);
 			}
 
 			.terminal,
@@ -33,7 +34,7 @@
 	</head>
 	<body>
 		<noscript>You need to enable JavaScript to run this app.</noscript>
-		<div id="root"></div>
+		</div>
 		<script>
 			{
 				var color = 'rgb(0,161,214);';
@@ -57,26 +58,26 @@
 				console.log(code520);
 			}
 			{
+				var GameArr = ["https://chromedino.com","https://nointernetgame.net/"]
 				$('body').terminal(
 					{
-						Open: function (url) {
+						open: function (url) {
 							window.open('http://' + url);
 						},
-						Search: function (value) {
+						search: function (value) {
 							window.open('http://cn.bing.com/search?q=' + value);
-						},
-						alert: function (value) {
-							alert(value);
-						},
-						console: function (value) {
-							console.log(value);
 						},
 						小恐龙: function () {
 							window.open('https://chromedino.com/', '_new');
 						},
-						Help: function () {
+						RGame: function(){
+							window.open(GameArr[parseInt(Math.random()*GameArr.length)],"_new");
+						},
+						help: function () {
 							this.echo(
-								'技术栈GoReactTaro💻' +
+								'周靖🗓️' +
+									' ' +
+									'技术栈-Go-React-Taro🗓️' +
 									' ' +
 									'github📆:' +
 									'github.com/jokereven' +
@@ -84,13 +85,13 @@
 									'gitee📆:' +
 									'gitee.com/jokereven' +
 									'\n' +
-									'Open+baidu.com' +
+									'open+baidu.com' +
 									' ' +
-									'Search+question' +
+									'search+question' +
 									' ' +
-									'alert console' +
-									'\n' +
-									'小恐龙🦖' +
+									'小恐龙🦖'+
+									' '+
+									'RGame随机游戏'+
 									'\n' +
 									'更多功能加载中...'
 							);
@@ -98,12 +99,13 @@
 					},
 					{
 						greetings:
-							'主站⚙️code520.com.cn' +
+							'主站📚code520.com.cn' +
 							'\n' +
-							'输入Help查看帮助📌' +
+							'输入help查看帮助📌' +
 							'\n' +
-							'邮箱: zhou125disorder@gmail.com' +
+							'邮箱:zhou125disorder@gmail.com' +
 							'📭',
+						prompt: '>>>',
 					}
 				);
 			}
