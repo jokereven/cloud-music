@@ -292,3 +292,4 @@ export const LoginWapperGithub = styled.div`
 	width: 32px;
 	height: 32px;
 `;
+

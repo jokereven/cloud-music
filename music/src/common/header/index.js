@@ -29,7 +29,6 @@ import {
 
 class Header extends PureComponent {
 	render() {
-		// console.log(JSON.parse(localStorage.getItem('data'))['code']);
 		const {
 			handleInputFocus,
 			handleInputBlur,
@@ -224,8 +223,7 @@ class Header extends PureComponent {
 		);
 	}
 	componentDidMount() {
-		this.props.localstorage(JSON.parse(localStorage.getItem('data')));
-		// JSON.parse(localStorage.getItem('data'));
+		this.props.localstorage(JSON.parse(localStorage.getItem('login')));
 	}
 }
 
@@ -277,11 +275,16 @@ const MapDispatchToProps = (dispatch) => {
 			dispatch(actionCreators.searchOut());
 		},
 		logout() {
-			dispatch(LoginactionCreators.LogOut());
+			// eslint-disable-next-line no-restricted-globals
+			var quit = confirm('退出');
+			if (quit) {
+				window.localStorage.removeItem('login');
+				dispatch(LoginactionCreators.LogOut());
+			}
 		},
-		localstorage(data) {
-			if (data) {
-				if (data['code'] === 200) {
+		localstorage(login) {
+			if (login) {
+				if (login['code'] === 200) {
 					dispatch(LoginactionCreators.localstorage());
 				}
 			}

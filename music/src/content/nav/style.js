@@ -6,7 +6,7 @@ export const NavWapper = styled.div`
 	background-color: #fff;
 	float: left;
 	overflow: auto;
-	border-right: 1px solid #ddd;
+	border-right: 1.618px solid #ddd;
 	a {
 		text-decoration: none;
 		:visited {
