@@ -18,7 +18,7 @@ export const login = (account, password) => {
 				const data = res.data;
 				if (data.code === 200) {
 					alert('登录成功');
-					localStorage.setItem('login',`${JSON.stringify(data)}`)
+					localStorage.setItem('login', `${JSON.stringify(data)}`);
 					dispatch(ChangeLogin(data, value));
 				} else {
 					alert(data.message);

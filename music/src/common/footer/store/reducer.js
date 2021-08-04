@@ -30,8 +30,8 @@ const reducer = (state = defaultState, action) => {
 		case actionTypes.ADD_MUSIC:
 			const musiclist = [...state.get("MusicList")];
 			musiclist.push(action.data);
-			console.log(musiclist);
-			localStorage.setItem('musiclist', musiclist);
+			let SET = new Set(musiclist)
+			localStorage.setItem('musiclist', Array.from(SET));
 			// const newState = JSON.parse(JSON.stringify(state));
 			// console.log(newState.MusicList);
 			// newState.MusicList.push(action.data);

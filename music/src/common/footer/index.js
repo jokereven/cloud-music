@@ -21,17 +21,23 @@ import {
 	MusicWapperLeftPic,
 	MusicWapperRight,
 	PlayList,
+	MusicWapperLeftDes,
 } from './style';
 
 class Footer extends PureComponent {
 	render() {
 		const { changeplaytype, count, onplay, play, bannermusicid } = this.props;
+		let list = localStorage.getItem('musiclist');
+		console.log(list);
 		return (
 			<Fragment>
 				<FooterWapper>
 					<MusicWapper>
 						<MusicWapperLeft>
-							<MusicWapperLeftPic></MusicWapperLeftPic>
+							<MusicWapperLeftPic>
+								<img src=''></img>
+							</MusicWapperLeftPic>
+							<MusicWapperLeftDes></MusicWapperLeftDes>
 						</MusicWapperLeft>
 						<MusicWapperCenter>
 							<MusicWapperCenterBox>
@@ -65,9 +71,13 @@ class Footer extends PureComponent {
 									this.audio = audio;
 								}}
 								controls
-								src={`http://music.163.com/song/media/outer/url?id=${
-									bannermusicid[bannermusicid.length - 1]
-								}.mp3`}
+								src={
+									list
+										? `http://music.163.com/song/media/outer/url?id=${
+												bannermusicid[bannermusicid.length - 1]
+										  }.mp3`
+										: ''
+								}
 							></audio>
 						</MusicWapperCenter>
 						<MusicWapperRight></MusicWapperRight>

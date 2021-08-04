@@ -19,9 +19,9 @@ export const MusicWapper = styled.div`
 `;
 
 export const MusicWapperLeft = styled.div`
-	width: 300px;
+	width: 256px;
 	height: 100%;
-	background-color: #096;
+	/* background-color: #096; */
 	position: relative;
 `;
 
@@ -35,7 +35,20 @@ export const MusicWapperLeftPic = styled.div`
 	bottom: 0;
 	left: 0;
 	margin: auto;
-	margin-left:12px;
+	margin-left: 12px;
+`;
+
+export const MusicWapperLeftDes = styled.div`
+	width: 149px;
+	height: 49px;
+	background-color: red;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	margin-right: 24px;
 `;
 
 export const MusicWapperCenter = styled.div`

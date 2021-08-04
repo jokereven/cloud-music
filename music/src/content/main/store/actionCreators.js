@@ -10,7 +10,7 @@ export const DisbannerList = (data) => ({
 export const Disbanner = () => {
 	return (dispatch) => {
 		axios
-			.get(`http://localhost:3000/banner`)
+			.get(`http://localhost:3000/banner&t=${new Date().getTime()}`)
 			.then((res) => {
 				const data = res;
 				dispatch(DisbannerList(data.data));
