@@ -11,3 +11,12 @@ export const changeplay = (data) => ({
 	type: actionTypes.CHANGE_TYPE,
 	data: fromJS(data),
 });
+
+export const AddMusic = (data) => ({
+	type: actionTypes.ADD_MUSIC,
+	data: fromJS(data),
+})
+
+export const BannerMusicPlay = () => ({
+	type: actionTypes.BANNER_MUSIC_PLAY,
+})

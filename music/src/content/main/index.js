@@ -2,6 +2,7 @@ import { Carousel, Tabs } from 'antd';
 import 'antd/dist/antd.css';
 import React, { Fragment, PureComponent } from 'react';
 import { connect } from 'react-redux';
+import { actionCreators as FooteractionCreators } from '../../common/footer/store';
 import { actionCreators } from './store';
 import { MainFindWapper, RecommendWapper } from './style';
 
@@ -12,7 +13,7 @@ const { TabPane } = Tabs;
 
 class Main extends PureComponent {
 	render() {
-		const { bannerpic } = this.props;
+		const { bannerpic, addmusic } = this.props;
 		return (
 			<Fragment>
 				<MainFindWapper>
@@ -21,17 +22,26 @@ class Main extends PureComponent {
 							<RecommendWapper>
 								<Carousel autoplay className='carousel'>
 									{bannerpic
-										? bannerpic.map((item,index) => {
-												return (
-													<div key={index}>
-														<img
+										? bannerpic.map((item, index) => {
+												if (
+													item.get('targetType') === 1 &&
+													item.get('typeTitle') !== 'VIP专享'
+												) {
+													return (
+														<div
 															key={index}
-															style={contentStyle}
-															src={item.get('imageUrl')}
-															alt={item.get('typeTitle')}
-														></img>
-													</div>
-												);
+															onClick={() => addmusic(item.get('targetId'))}
+														>
+															<img
+																key={index}
+																style={contentStyle}
+																src={item.get('imageUrl')}
+																alt={item.get('typeTitle')}
+																title={item.get('typeTitle')}
+															></img>
+														</div>
+													);
+												}
 										  })
 										: ''}
 								</Carousel>
@@ -69,6 +79,10 @@ export const MapDispatchToProps = (dispatch) => {
 	return {
 		disbanner() {
 			dispatch(actionCreators.Disbanner());
+		},
+		addmusic(targetid) {
+			dispatch(FooteractionCreators.BannerMusicPlay());
+			dispatch(FooteractionCreators.AddMusic(targetid));
 		},
 	};
 };

@@ -18,18 +18,21 @@ import {
 	MusicWapperCenter,
 	MusicWapperCenterBox,
 	MusicWapperLeft,
+	MusicWapperLeftPic,
 	MusicWapperRight,
 	PlayList,
 } from './style';
 
 class Footer extends PureComponent {
 	render() {
-		const { changeplaytype, count, onplay, play } = this.props;
+		const { changeplaytype, count, onplay, play, bannermusicid } = this.props;
 		return (
 			<Fragment>
 				<FooterWapper>
 					<MusicWapper>
-						<MusicWapperLeft></MusicWapperLeft>
+						<MusicWapperLeft>
+							<MusicWapperLeftPic></MusicWapperLeftPic>
+						</MusicWapperLeft>
 						<MusicWapperCenter>
 							<MusicWapperCenterBox>
 								<PlayList onClick={() => changeplaytype(count)}>
@@ -46,11 +49,9 @@ class Footer extends PureComponent {
 								<PlayList>
 									<StepBackwardOutlined className='LastSong' />
 								</PlayList>
-								<PlayList onClick={() => onplay(play)}>
+								<PlayList onClick={() => onplay(play, this.audio)}>
 									{play === 0 && <YoutubeOutlined className='PlaySong' />}
-									{play === 1 && (
-										<PauseCircleOutlined className='PlaySong' />
-									)}
+									{play === 1 && <PauseCircleOutlined className='PlaySong' />}
 								</PlayList>
 								<PlayList>
 									<StepForwardOutlined className='NextSong' />
@@ -60,8 +61,13 @@ class Footer extends PureComponent {
 								</PlayList>
 							</MusicWapperCenterBox>
 							<audio
+								ref={(audio) => {
+									this.audio = audio;
+								}}
 								controls
-								src='http://music.163.com/song/media/outer/url?id=1864588584.mp3'
+								src={`http://music.163.com/song/media/outer/url?id=${
+									bannermusicid[bannermusicid.length - 1]
+								}.mp3`}
 							></audio>
 						</MusicWapperCenter>
 						<MusicWapperRight></MusicWapperRight>
@@ -70,12 +76,18 @@ class Footer extends PureComponent {
 			</Fragment>
 		);
 	}
+	componentDidUpdate() {
+		if (this.props.play === 1) {
+			this.audio.play();
+		}
+	}
 }
 
 const MapStateToProps = (state) => {
 	return {
 		count: state.getIn(['playtype', 'playtypecount']),
 		play: state.getIn(['playtype', 'playstatuscount']),
+		bannermusicid: state.getIn(['playtype', 'MusicList']),
 	};
 };
 
@@ -84,8 +96,19 @@ const MapDispatchToProps = (dispatch) => {
 		changeplaytype(count) {
 			dispatch(actionCreators.playtype(count));
 		},
-		onplay(playcount) {
-				dispatch(actionCreators.changeplay(playcount));
+		onplay(playcount, audioElem) {
+			if (playcount === 0) {
+				audioElem.play().catch(() => {
+					console.log('error');
+					//  when an exception is played, the exception flow is followed
+				});
+			}
+			if (playcount === 1) {
+				audioElem.pause();
+			}
+			// console.log(playcount);
+			// console.log(audioElem);
+			dispatch(actionCreators.changeplay(playcount));
 		},
 	};
 };

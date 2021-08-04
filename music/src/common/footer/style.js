@@ -22,6 +22,20 @@ export const MusicWapperLeft = styled.div`
 	width: 300px;
 	height: 100%;
 	background-color: #096;
+	position: relative;
+`;
+
+export const MusicWapperLeftPic = styled.div`
+	width: 49px;
+	height: 49px;
+	background-color: red;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	margin-left:12px;
 `;
 
 export const MusicWapperCenter = styled.div`
@@ -29,6 +43,7 @@ export const MusicWapperCenter = styled.div`
 	height: 100%;
 	//播放按钮
 	audio {
+		outline: none;
 		width: 500px;
 		height: 36%;
 		color: rgb(73, 73, 76);
