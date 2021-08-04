@@ -5,7 +5,7 @@ import Nav from './nav/index';
 import Login from './login/index';
 import SearchList from './searchlist/loadable';
 import { ContentWapper } from './style';
-import Video from './video/index';
+import Video from './flv-mas/index';
 
 class Content extends PureComponent {
 	render() {

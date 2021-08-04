@@ -48,6 +48,27 @@ export const HeaderWapperLogo = styled.a.attrs({
 	}
 `;
 
+export const HeaderWapperHistory = styled.div`
+	width: 64px;
+	height: 69px;
+	display:flex;
+	justify-content: space-between;
+	align-items: center;
+	float: left;
+	.historyleft,
+	.historyright {
+		width: 24px;
+		height:24px;
+		line-height: 24px;
+		cursor: pointer;
+		font-size: 12px;
+		color: #fff;
+		border-radius: 50%;
+	}
+	.historyright {
+	}
+`;
+
 export const HeaderWapperSearch = styled.div`
 	margin-left: 45px;
 	float: left;
@@ -259,15 +280,14 @@ export const HeaderCenter = styled.div`
 	text-align: center;
 	height: 69px;
 	float: right;
-	color:#fff;
+	color: #fff;
 	margin-right: 12px;
 `;
 
 export const HeaderLoginWapper = styled.div`
-	width: 175px;
+	width: 125px;
 	height: 69px;
 	float: right;
-	background-color: #232323;
 	display: flex;
 	justify-content: space-between;
 	margin-right: 32px;
@@ -292,4 +312,3 @@ export const LoginWapperGithub = styled.div`
 	width: 32px;
 	height: 32px;
 `;
-

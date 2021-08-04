@@ -1,6 +1,13 @@
 import React, { Fragment, PureComponent } from 'react';
 import { Link } from 'react-router-dom';
-import { NavWapper, NavWapperList } from './style';
+import {
+	ILikeMusicWapper,
+	MyMusicWapper,
+	NavWapper,
+	NavWapperList,
+	SongListWapper,
+	CollectionSongListWapper,
+} from './style';
 
 class Nav extends PureComponent {
 	render() {
@@ -13,6 +20,33 @@ class Nav extends PureComponent {
 					<Link to='/flv-mas'>
 						<NavWapperList>视频</NavWapperList>
 					</Link>
+					<Link to='/companion '>
+						<NavWapperList>朋友</NavWapperList>
+					</Link>
+					<Link to='/live-broadcast'>
+						<NavWapperList>直播</NavWapperList>
+					</Link>
+					<Link to='/private-fm'>
+						<NavWapperList>私人FM</NavWapperList>
+					</Link>
+					<MyMusicWapper>我的音乐</MyMusicWapper>
+					<Link to='/recently-played'>
+						<NavWapperList>最近播放</NavWapperList>
+					</Link>
+					<Link to='/music-cloud-tray'>
+						<NavWapperList>音乐云盘</NavWapperList>
+					</Link>
+					<Link to='/my-collection'>
+						<NavWapperList>我的收藏</NavWapperList>
+					</Link>
+					<SongListWapper>
+						<summary style={{ cursor: 'pointer' }}>创建的歌单</summary>
+						<ILikeMusicWapper>我喜欢的音乐</ILikeMusicWapper>
+					</SongListWapper>
+					<CollectionSongListWapper>
+						<summary style={{ cursor: 'pointer' }}>收藏的歌单</summary>
+						<ILikeMusicWapper>code520</ILikeMusicWapper>
+					</CollectionSongListWapper>
 				</NavWapper>
 			</Fragment>
 		);

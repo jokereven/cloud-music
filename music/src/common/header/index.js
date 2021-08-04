@@ -1,9 +1,11 @@
 import {
 	GithubOutlined,
 	GooglePlusOutlined,
+	LeftOutlined,
 	PoweroffOutlined,
 	ReadOutlined,
 	RedditOutlined,
+	RightOutlined,
 	UserOutlined,
 	ZoomInOutlined,
 } from '@ant-design/icons';
@@ -20,6 +22,7 @@ import {
 	HeaderSearchBox,
 	HeaderSearchBoxWare,
 	HeaderWapper,
+	HeaderWapperHistory,
 	HeaderWapperLogo,
 	HeaderWapperSearch,
 	LoginWapperGitee,
@@ -46,6 +49,8 @@ class Header extends PureComponent {
 			changelist_albums,
 			login,
 			logout,
+			historytolast,
+			historytonext,
 		} = this.props;
 		return (
 			<Fragment>
@@ -54,6 +59,10 @@ class Header extends PureComponent {
 						<div></div>
 						<p>音乐</p>
 					</HeaderWapperLogo>
+					<HeaderWapperHistory>
+						<LeftOutlined className='historyleft' onClick={historytolast} />
+						<RightOutlined className='historyright' onClick={historytonext} />
+					</HeaderWapperHistory>
 					<HeaderWapperSearch>
 						<Input
 							placeholder='请输入要搜索的内容'
@@ -288,6 +297,14 @@ const MapDispatchToProps = (dispatch) => {
 					dispatch(LoginactionCreators.localstorage());
 				}
 			}
+		},
+		historytolast() {
+			// eslint-disable-next-line no-restricted-globals
+			history.go(-1);
+		},
+		historytonext() {
+			// eslint-disable-next-line no-restricted-globals
+			history.go(1);
 		},
 	};
 };

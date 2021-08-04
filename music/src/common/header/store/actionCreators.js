@@ -29,7 +29,7 @@ export const searchBlur = () => ({
 export const GetFireList = () => {
 	return (dispatch) => {
 		axios
-			.get(`http://localhost:3000/search/hot/detail&t=${new Date().getTime()}`)
+			.get('http://localhost:3000/search/hot/detail')
 			.then((res) => {
 				const data = res.data;
 				dispatch(ChangeFireList(data.data));
@@ -43,9 +43,7 @@ export const GetFireList = () => {
 export const ChangeList = (key, inputvalue) => {
 	return (dispatch) => {
 		axios
-			.get(
-				`http://localhost:3000/search/suggest?keywords=${key}&t=${new Date().getTime()}`
-			)
+			.get(`http://localhost:3000/search/suggest?keywords=${key}`)
 			.then((res) => {
 				const data = res;
 				dispatch(SearchChangeList(data.data.result, inputvalue));
@@ -59,9 +57,7 @@ export const ChangeList = (key, inputvalue) => {
 export const SearchList = (key) => {
 	return (dispatch) => {
 		axios
-			.get(
-				`http://localhost:3000/cloudsearch?keywords=${key}&t=${new Date().getTime()}`
-			)
+			.get(`http://localhost:3000/cloudsearch?keywords=${key}`)
 			.then((res) => {
 				window.open(`/search-list/${key}/songs`, '_self');
 				const data = res;
