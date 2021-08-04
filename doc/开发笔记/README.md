@@ -22,6 +22,8 @@ position 父级relative 子级absolute 垂直水平居中时需要设置宽高
 
 [react页面发生改变触发的生命周期函数📆](https://blog.csdn.net/star_zone/article/details/105037101)
 
-[TypeError: list.push is not a function](https://stackoverflow.com/questions/61642660/typeerror-list-push-is-not-a-function)
+[TypeError: list.push is not a function📆](https://stackoverflow.com/questions/61642660/typeerror-list-push-is-not-a-function)
 
-[在对象上使用扩展运算符的问题](https://blog.csdn.net/q850593913/article/details/106303852)
+[在对象上使用扩展运算符的问题📆](https://blog.csdn.net/q850593913/article/details/106303852)
+
+[Immutable.js了解一下📆](https://www.jianshu.com/p/0fa8c7456c15)

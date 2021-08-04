@@ -289,6 +289,7 @@ const MapDispatchToProps = (dispatch) => {
 			if (quit) {
 				window.localStorage.removeItem('login');
 				dispatch(LoginactionCreators.LogOut());
+				dispatch(LoginactionCreators.Logout());
 			}
 		},
 		localstorage(login) {
