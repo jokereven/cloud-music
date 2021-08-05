@@ -27,3 +27,5 @@ position 父级relative 子级absolute 垂直水平居中时需要设置宽高
 [在对象上使用扩展运算符的问题📆](https://blog.csdn.net/q850593913/article/details/106303852)
 
 [Immutable.js了解一下📆](https://www.jianshu.com/p/0fa8c7456c15)
+
+[html audio缓冲效果实现📆](https://blog.csdn.net/qq_21108311/article/details/102561832)

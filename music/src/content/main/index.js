@@ -66,6 +66,7 @@ class Main extends PureComponent {
 	}
 	componentDidMount() {
 		this.props.disbanner();
+		this.props.getmusiclisttostate();
 	}
 }
 
@@ -81,9 +82,12 @@ export const MapDispatchToProps = (dispatch) => {
 			dispatch(actionCreators.Disbanner());
 		},
 		addmusic(targetid) {
-			dispatch(FooteractionCreators.BannerMusicPlay());
 			dispatch(FooteractionCreators.AddMusic(targetid));
+			dispatch(FooteractionCreators.BannerMusicPlay());
 		},
+		getmusiclisttostate() {
+			dispatch(actionCreators.GetMusicListToState())
+		}
 	};
 };
 export default connect(MapStateToProps, MapDispatchToProps)(Main);

@@ -18,17 +18,18 @@ import {
 	MusicWapperCenter,
 	MusicWapperCenterBox,
 	MusicWapperLeft,
+	MusicWapperLeftDes,
 	MusicWapperLeftPic,
 	MusicWapperRight,
 	PlayList,
-	MusicWapperLeftDes,
 } from './style';
 
 class Footer extends PureComponent {
 	render() {
-		const { changeplaytype, count, onplay, play, bannermusicid } = this.props;
+		const { changeplaytype, count, onplay, play, bannermusicid, audioPicshow } =
+			this.props;
 		let list = localStorage.getItem('musiclist');
-		console.log(list);
+		// console.log(list);
 		return (
 			<Fragment>
 				<FooterWapper>
@@ -89,6 +90,8 @@ class Footer extends PureComponent {
 	componentDidUpdate() {
 		if (this.props.play === 1) {
 			this.audio.play();
+			this.props.audioPicshow(this.audio);
+			// this.audio.play();
 		}
 	}
 }
@@ -109,7 +112,7 @@ const MapDispatchToProps = (dispatch) => {
 		onplay(playcount, audioElem) {
 			if (playcount === 0) {
 				audioElem.play().catch(() => {
-					console.log('error');
+					console.log('audio play error');
 					//  when an exception is played, the exception flow is followed
 				});
 			}
@@ -119,6 +122,10 @@ const MapDispatchToProps = (dispatch) => {
 			// console.log(playcount);
 			// console.log(audioElem);
 			dispatch(actionCreators.changeplay(playcount));
+		},
+		audioPicshow(audioElem) {
+			const musicid = audioElem.src.split('=')[1].split('.')[0];
+			// dispatch(actionCreators.audiopicshow(musicid));
 		},
 	};
 };

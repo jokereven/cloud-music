@@ -5,6 +5,7 @@ const defaultState = fromJS({
 	playtypecount: 0,
 	playstatuscount: 0,
 	MusicList: [],
+	onplaymusic: [],
 });
 
 const reducer = (state = defaultState, action) => {
@@ -28,9 +29,9 @@ const reducer = (state = defaultState, action) => {
 			}
 			return state.set('playstatuscount', action.data);
 		case actionTypes.ADD_MUSIC:
-			const musiclist = [...state.get("MusicList")];
+			const musiclist = [...state.get('MusicList')];
 			musiclist.push(action.data);
-			let SET = new Set(musiclist)
+			let SET = new Set(musiclist);
 			localStorage.setItem('musiclist', Array.from(SET));
 			// const newState = JSON.parse(JSON.stringify(state));
 			// console.log(newState.MusicList);
@@ -39,6 +40,8 @@ const reducer = (state = defaultState, action) => {
 			return state.set('MusicList', musiclist);
 		case actionTypes.BANNER_MUSIC_PLAY:
 			return state.set('playstatuscount', 1);
+		// case actionTypes.AUDIO_PIC_SHOW:
+		// 	return state.set('onplaymusic', action.data);
 		default:
 			return state;
 	}

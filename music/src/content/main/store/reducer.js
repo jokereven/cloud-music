@@ -2,7 +2,7 @@ import { fromJS } from 'immutable';
 import * as actionTypes from './actionTypes';
 
 const defaultState = fromJS({
-	bannerlist:[],
+	bannerlist: [],
 });
 
 const reducer = (state = defaultState, action) => {
@@ -11,6 +11,8 @@ const reducer = (state = defaultState, action) => {
 			return state.merge({
 				bannerlist: action.data,
 			});
+		case actionTypes.GET_MUSIC_LIST_TO_STATE:
+			
 		default:
 			return state;
 	}

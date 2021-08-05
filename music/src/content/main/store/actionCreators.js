@@ -20,3 +20,7 @@ export const Disbanner = () => {
 			});
 	};
 };
+
+export const GetMusicListToState = () => ({
+	type: actionTypes.GET_MUSIC_LIST_TO_STATE,
+});

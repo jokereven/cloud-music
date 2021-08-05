@@ -1,2 +1,2 @@
 export const DIS_BANNEER_LIST = 'main/DIS_BANNEER_LIST';
-
+export const GET_MUSIC_LIST_TO_STATE = 'main/GET_MUSIC_LIST_TO_STATE';

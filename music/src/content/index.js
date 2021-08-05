@@ -14,7 +14,7 @@ class Content extends PureComponent {
 				<ContentWapper>
 					<BrowserRouter>
 						<Nav />
-						<Route path='/individuation' exact component={Main}></Route>
+						<Route path='/' exact component={Main}></Route>
 						<Route path='/individuation/login' exact component={Login}></Route>
 						<Route path='/flv-mas' exact component={Video}></Route>
 						<Route path='/search-list/:key' component={SearchList}></Route>
