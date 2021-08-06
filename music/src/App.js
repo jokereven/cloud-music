@@ -1,9 +1,11 @@
 import React, { Fragment, PureComponent } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
-import Footer from './common/footer';
-import Header from './common/header';
+import { Provider } from 'react-redux';
 /* 组件 */
-import Main from './main';
+import { BrowserRouter,Route } from 'react-router-dom';
+import Footer from './common/footer/index';
+import Header from './common/header/index';
+import Content from './content/index';
+import store from './store/index';
 /* 全局样式 */
 import { GlobalStyle } from './style';
 
@@ -13,11 +15,13 @@ class App extends PureComponent {
 			<Fragment>
 				{/* 全局样式 */}
 				<GlobalStyle />
-				<BrowserRouter>
-					<Route path='/' component={Header}></Route>
-					<Footer />
-					<Main />
-				</BrowserRouter>
+				<Provider store={store}>
+					<BrowserRouter>
+						<Header />
+						<Route path='/' component={Content}></Route>
+						<Footer />
+					</BrowserRouter>
+				</Provider>
 			</Fragment>
 		);
 	}

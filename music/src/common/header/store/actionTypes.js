@@ -1,0 +1,10 @@
+export const SEARCH_FOCUS = 'header/SEARCH_FOCUS';
+export const SEARCH_BLUR = 'header/SEARCH_BLUR';
+export const GET_FIRE_LIST = 'header/GET_FIRE_LIST';
+export const CHANGE_FIRE_LIST = 'header/CHANGE_FIRE_LIST';
+export const CHANGE_SEARCH_LIST = 'header/CHANGE_SEARCH_LIST';
+export const SEARCH_CHANGE_LIST = 'header/SEARCH_CHANGE_LIST';
+export const NOT_ON_CHANGE = 'header/NOT_ON_CHANGE';
+export const ON_CHANGE = 'header/ON_CHANGE';
+export const SEARCH_OVER = 'header/SEARCH_OVER';
+export const SEARCH_OUT = 'header/SEARCH_OUT';
