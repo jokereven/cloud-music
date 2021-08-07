@@ -11,8 +11,8 @@ export const MainFindWapper = styled.div`
 	}
 	.carousel {
 		border-radius: 4px;
-		width: 520px;
-		height: 200px;
+		width: 600px;
+		height: 250px;
 		margin: 2px auto;
 		div {
 			width: 100%;
@@ -35,13 +35,13 @@ export const RecommendWapper = styled.div`
 	/* height: auto; */
 	/* overflow: auto; */
 	margin-top: -8px;
-	margin-bottom: 200px;
+	margin-bottom: 45px;
 `;
 
 export const AddASongListWapper = styled.div`
 	width: auto;
 	height: auto;
-	margin-top: 36px;
+	margin-top: 60px;
 	/* background-color: #096; */
 	display: block;
 `;
@@ -50,7 +50,7 @@ export const AddTitle = styled.a.attrs({
 	href: 'song-list',
 })`
 	height: 32px;
-	color: #333;
+	color: rgb(55, 55, 55);
 	display: block;
 	line-height: 32px;
 	padding-left: 4px;
@@ -58,7 +58,7 @@ export const AddTitle = styled.a.attrs({
 	font-size: 20px;
 	font-weight: 600;
 	:hover {
-		color: #232323;
+		color: rgb(0, 0, 0);
 	}
 `;
 
@@ -68,6 +68,7 @@ export const RecommendListWapper = styled.div`
 	border-radius: 2px;
 	/* background-color: #096; */
 	display: grid;
+	margin-bottom: 32px;
 	/*  声明了三列，宽度分别为 200px 100px 200px */
 	grid-template-columns: 175px 175px 175px 175px 175px;
 	grid-gap: 25px;
@@ -76,16 +77,18 @@ export const RecommendListWapper = styled.div`
 `;
 
 export const RecommendList = styled.div`
-	background-color: red;
-	border-radius: 12px;
+	/* background-color: red; */
+	border-radius: 4px;
+	margin: 4px;
 	img {
 		width: 175px;
 		height: 175px;
 		cursor: pointer;
-		border-radius: 12px;
+		border-radius: 4px;
 	}
 	p {
 		font-size: 12px;
+		font-family: 宋体;
 	}
 	.redommend-box {
 		/* background-color: #096; */
@@ -95,7 +98,7 @@ export const RecommendList = styled.div`
 export const ExclusiveWapper = styled.div`
 	width: 960px;
 	height: auto;
-	margin-top: 49px;
+	margin-top: 60px;
 	/* background-color: #096; */
 `;
 
@@ -103,7 +106,7 @@ export const ExclusiveTitle = styled.a.attrs({
 	href: '/exclusive-delivery',
 })`
 	height: 32px;
-	color: #333;
+	color: rgb(55, 55, 55);
 	display: block;
 	line-height: 32px;
 	padding-left: 4px;
@@ -111,7 +114,7 @@ export const ExclusiveTitle = styled.a.attrs({
 	font-size: 20px;
 	font-weight: 600;
 	:hover {
-		color: #232323;
+		color: #000;
 	}
 `;
 
@@ -126,13 +129,14 @@ export const ExclusiveListWapper = styled.div`
 export const ExclusiveList = styled.div`
 	width: 33%;
 	height: 175px;
-	background-color: red;
-	border-radius: 4px;
+	/* background-color: red; */
+	margin-left:8px;
+	border-radius: 6px;
 	cursor: pointer;
 	img {
 		width: 100%;
 		height: 175px;
-		border-radius: 4px;
+		border-radius: 6px;
 	}
 `;
 
@@ -147,7 +151,7 @@ export const UpToDateTitle = styled.a.attrs({
 	href: '/latest-music',
 })`
 	height: 32px;
-	color: #333;
+	color: rgb(55, 55, 55);
 	/* display: block; */
 	line-height: 32px;
 	padding-left: 4px;
@@ -155,7 +159,7 @@ export const UpToDateTitle = styled.a.attrs({
 	font-size: 20px;
 	font-weight: 600;
 	:hover {
-		color: #232323;
+		color: #000;
 	}
 `;
 
@@ -173,48 +177,48 @@ export const UpToDateBox = styled.div`
 `;
 
 export const UpToDateList = styled.div`
-background-color: #fff;
-border-radius: 4px;
-position:relative;
-float:left;
-cursor: pointer;
-overflow: hidden;
-box-sizing: border-box;
-:hover{
-	background-color: rgb(234,234,234);
-}
-img{
-	width: 49px;
-	height: 49px;
+	background-color: #fff;
 	border-radius: 4px;
-	position:absolute;
-	display: block;
-	top:0;
-	right:0;
-	bottom:0;
-	left:0;
-	margin: auto;
-	float:left;
-	margin-left: 4px;
-}
-.uptodatename{
-	float: right;
-	width: 235px;
-	height: 100%;
-	margin-right: 49px;
-	border-radius: 4px;
-	display:block;
-	/* background-color: #096; */
-	p{
-		font-size: 14px;
-		color:#232323;
+	position: relative;
+	float: left;
+	cursor: pointer;
+	overflow: hidden;
+	box-sizing: border-box;
+	:hover {
+		background-color: rgb(234, 234, 234);
 	}
-	span{
-		line-height: 32px;
-		color:rgb(159,159,203);
-		font-size: 12px;
+	img {
+		width: 49px;
+		height: 49px;
+		border-radius: 4px;
+		position: absolute;
+		display: block;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		margin: auto;
+		float: left;
+		margin-left: 4px;
 	}
-}
+	.uptodatename {
+		float: right;
+		width: 235px;
+		height: 100%;
+		margin-right: 49px;
+		border-radius: 4px;
+		display: block;
+		/* background-color: #096; */
+		p {
+			font-size: 14px;
+			color: #232323;
+		}
+		span {
+			line-height: 32px;
+			color: rgb(159, 159, 203);
+			font-size: 12px;
+		}
+	}
 `;
 
 export const RecommendedMvWapper = styled.div`
@@ -228,7 +232,7 @@ export const RecommendedMvTitle = styled.a.attrs({
 	href: '/latest-mv',
 })`
 	height: 32px;
-	color: #333;
+	color: rgb(55, 55, 55);
 	/* display: block; */
 	line-height: 32px;
 	padding-left: 4px;
@@ -236,12 +240,12 @@ export const RecommendedMvTitle = styled.a.attrs({
 	font-size: 20px;
 	font-weight: 600;
 	:hover {
-		color: #232323;
+		color: #000;
 	}
 `;
 
 export const RecommendedMvBox = styled.div`
-	width:auto;
+	width: auto;
 	height: auto;
 	overflow: hidden;
 	/* background-color: red; */
@@ -253,71 +257,29 @@ export const RecommendedMvBox = styled.div`
 export const RecommendedMvList = styled.div`
 	width: 300px;
 	height: auto;
-	border-radius: 4px;
+	border-radius: 6px;
 	margin-right: 32px;
 	cursor: pointer;
 	/* background-color: #096; */
 	img {
-		width: 300px;
+		width: 317px;
 		height: 175px;
-		border-radius: 4px;
+		border-radius: 6px;
 	}
-	p{
+	p {
 		font-size: 14px;
 	}
-	span{
-		color:rgb(103,103,159);
+	span {
+		color: rgb(103, 103, 159);
 		font-size: 12px;
 	}
 `;
 
-export const ListenWapper = styled.div`
-	width: auto;
+export const CodeMusicWapper = styled.div`
+	width:auto;
 	height: auto;
-	/* background-color: #096; */
-	margin-top: 10px;
-`;
-
-export const ListenTitle = styled.a.attrs({
-	href: 'https://look.163.com/hot',
-	target:"_new",
-})`
-	height: 32px;
-	color: #333;
-	/* display: block; */
-	line-height: 32px;
-	padding-left: 4px;
-	/* background-color: red; */
-	font-size: 20px;
-	font-weight: 600;
-	:hover {
-		color: #232323;
-	}
-`;
-
-export const ListenBox = styled.div`
-	width: auto;
-	height: auto;
-	overflow: hidden;
-	/* background-color: red; */
-	border-radius: 4px;
-	display: flex;
-	justify-content: space-between;
-`;
-
-export const ListenBoxList = styled.div`
-	width: 175px;
-	height: auto;
-	/* background-color: #096; */
-	border-radius: 4px;
-	margin-right: 24px;
-	cursor: pointer;
-	img {
-		width: 175px;
-		height: 175px;
-		border-radius: 4px;
-	}
-	p {
-		color: #333;
-	}
+	text-align: center;
+	margin: 32px auto;
+	font-size: 14px;
+	font-family: 宋体;
 `;

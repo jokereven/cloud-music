@@ -31,10 +31,6 @@ const reducer = (state = defaultState, action) => {
 			return state.merge({
 				latestMV: action.data,
 			});
-		case actionTypes.LISTEN_LIST:
-			return state.merge({
-				listenlist: action.data,
-			});
 		default:
 			return state;
 	}

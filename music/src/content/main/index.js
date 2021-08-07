@@ -11,8 +11,6 @@ import {
 	ExclusiveListWapper,
 	ExclusiveTitle,
 	ExclusiveWapper,
-	ListenBox,
-	ListenBoxList,
 	ListenTitle,
 	ListenWapper,
 	MainFindWapper,
@@ -27,6 +25,7 @@ import {
 	UpToDateList,
 	UpToDateTitle,
 	UpToDateWapper,
+	CodeMusicWapper,
 } from './style';
 
 const contentStyle = {
@@ -43,7 +42,6 @@ class Main extends PureComponent {
 			exclusivede,
 			latestmusic,
 			latestmv,
-			listenlist,
 		} = this.props;
 		return (
 			<Fragment>
@@ -153,28 +151,9 @@ class Main extends PureComponent {
 											: ''}
 									</RecommendedMvBox>
 								</RecommendedMvWapper>
-								<ListenWapper>
-									<ListenTitle>听听 &gt;</ListenTitle>
-									<ListenBox>
-										{listenlist
-											? listenlist.map((item, index) => {
-													return (
-														<ListenBoxList key={index}>
-															<a
-																href={`https://look.163.com/live?id=${item.get(
-																	'id'
-																)}`}
-																target='_new'
-															>
-																<img src={item.get('avatarUrl')}></img>
-																<p>{item.get('nickName')}</p>
-															</a>
-														</ListenBoxList>
-													);
-											  })
-											: ''}
-									</ListenBox>
-								</ListenWapper>
+								<CodeMusicWapper>
+									生活到处是磨难，为难我的人多了，你算老几。
+								</CodeMusicWapper>
 							</RecommendWapper>
 						</TabPane>
 						<TabPane tab='歌单' key='2'>
@@ -200,7 +179,6 @@ class Main extends PureComponent {
 		this.props.exclusivedelivery();
 		this.props.latestMusic();
 		this.props.latestMv();
-		this.props.listen();
 	}
 }
 
@@ -231,9 +209,6 @@ export const MapDispatchToProps = (dispatch) => {
 		},
 		latestMv() {
 			dispatch(actionCreators.LatestMv());
-		},
-		listen() {
-			dispatch(actionCreators.Listen());
 		},
 		addmusic(targetid) {
 			dispatch(FooteractionCreators.AddMusic(targetid));

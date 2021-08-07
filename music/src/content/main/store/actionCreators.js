@@ -27,11 +27,6 @@ export const LatestMVList = (data) => ({
 	data: fromJS(data),
 });
 
-export const ListenList = (data) => ({
-	type: actionTypes.LISTEN_LIST,
-	data:fromJS(data),
-})
-
 export const Disbanner = () => {
 	return (dispatch) => {
 		axios
@@ -101,21 +96,6 @@ export const LatestMv = () => {
 			})
 			.catch(() => {
 				console.log('获取推荐mv失败');
-			});
-	};
-};
-
-export const Listen = () => {
-	return (dispatch) => {
-		axios
-			.get(`http://localhost:3000/dj/toplist/popular?limit=5`)
-			.then((res) => {
-				const data = res.data;
-				// console.log(data);
-				dispatch(ListenList(data.data));
-			})
-			.catch(() => {
-				console.log('获取听听失败');
 			});
 	};
 };
