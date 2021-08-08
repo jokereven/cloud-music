@@ -1,116 +1,117 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-		<meta name="theme-color" content="#000000" />
-		<meta name="description" content="cmd.code520.com.cn" />
-		<meta name="author" content="周靖" />
-		<meta name="keywords" content="code520 zhou125disorder" />
-		<link rel="icon" href="./favicon.ico" />
-		<title>cmd-code520</title>
-		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-		<script src="https://unpkg.com/jquery.terminal/js/jquery.terminal.min.js"></script>
 
-		<link
-			rel="stylesheet"
-			href="https://unpkg.com/jquery.terminal/css/jquery.terminal.min.css"
-		/>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<meta name="theme-color" content="#000000" />
+	<meta name="description" content="cmd.code520.com.cn" />
+	<meta name="author" content="周靖" />
+	<meta name="keywords" content="code520 zhou125disorder" />
+	<link rel="icon" href="./favicon.ico" />
+	<title>cmd-code520</title>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://unpkg.com/jquery.terminal/js/jquery.terminal.min.js"></script>
 
-		<style type="text/css">
-			.terminal,
-			span,
-			.cmd,
-			div {
-				--color: rgb(242, 242, 242);
-			}
+	<link rel="stylesheet" href="https://unpkg.com/jquery.terminal/css/jquery.terminal.min.css" />
 
-			.terminal,
-			span {
-				--size: 1;
-			}
-		</style>
-	</head>
-	<body>
-		<noscript>You need to enable JavaScript to run this app.</noscript>
-		</div>
-		<script>
-			{
-				var color = 'rgb(0,161,214);';
-				let message =
-					'被逼到墙角然后欣赏自己谋求生路...冲出去又发现歧路蔓延...\n' +
-					'但终点不远却暗色...选择直线是我的风格...\n' +
-					'哪怕双脚离地被挂在荆棘上...但冷静会让人退缩...\n' +
-					'所以装分卖傻绕行之不让人察觉我这几年的伤心...\n' +
-					'暂时我要的生活不是这样的...但我决定要干什么都会很像样的...\n' +
-					'别劝我...我无悔...为理想坚持吧...哈...';
-				console.log('%c' + message, 'color:' + color);
-			}
-			{
-				let date = new Date();
-				let a = 'background: #606060; color: #fff; border-radius: 3px 0 0 3px;';
-				let b = 'background: #1475B2; color: #fff; border-radius: 0 3px 3px 0;';
-				console.log(`%c Now Time : %c ${date} `, a, b);
-			}
-			{
-				var code520 = 'code520.com.cn';
-				console.log(code520);
-			}
-			{
-				var GameArr = ["https://chromedino.com","https://nointernetgame.net/"]
-				$('body').terminal(
-					{
-						open: function (url) {
-							window.open('http://' + url);
-						},
-						search: function (value) {
-							window.open('http://cn.bing.com/search?q=' + value);
-						},
-						小恐龙: function () {
-							window.open('https://chromedino.com/', '_new');
-						},
-						RGame: function(){
-							window.open(GameArr[parseInt(Math.random()*GameArr.length)],"_new");
-						},
-						help: function () {
-							this.echo(
-								'周靖🗓️' +
-									' ' +
-									'技术栈-Go-React-Taro🗓️' +
-									' ' +
-									'github📆:' +
-									'github.com/jokereven' +
-									' ' +
-									'gitee📆:' +
-									'gitee.com/jokereven' +
-									'\n' +
-									'open+baidu.com' +
-									' ' +
-									'search+question' +
-									' ' +
-									'小恐龙🦖'+
-									' '+
-									'RGame随机游戏'+
-									'\n' +
-									'更多功能加载中...'
-							);
-						},
+	<style type="text/css">
+		.terminal,
+		span,
+		.cmd,
+		div {
+			--color: rgb(242, 242, 242);
+		}
+
+		.terminal,
+		span {
+			--size: 1;
+		}
+
+	</style>
+</head>
+
+<body>
+	<noscript>You need to enable JavaScript to run this app.</noscript>
+	</div>
+	<script>
+		{
+			var color = 'rgb(0,161,214);';
+			let message =
+				'被逼到墙角然后欣赏自己谋求生路...冲出去又发现歧路蔓延...\n' +
+				'但终点不远却暗色...选择直线是我的风格...\n' +
+				'哪怕双脚离地被挂在荆棘上...但冷静会让人退缩...\n' +
+				'所以装分卖傻绕行之不让人察觉我这几年的伤心...\n' +
+				'暂时我要的生活不是这样的...但我决定要干什么都会很像样的...\n' +
+				'别劝我...我无悔...为理想坚持吧...哈...';
+			console.log('%c' + message, 'color:' + color);
+		}
+		{
+			let date = new Date();
+			let a = 'background: #606060; color: #fff; border-radius: 3px 0 0 3px;';
+			let b = 'background: #1475B2; color: #fff; border-radius: 0 3px 3px 0;';
+			console.log(`%c Now Time : %c ${date} `, a, b);
+		}
+		{
+			var code520 = 'code520.com.cn';
+			console.log(code520);
+		}
+		{
+			var WebArr = ["https://chromedino.com", "https://nointernetgame.net", "https://aidn.jp", "https://photomosh.com","https://iogames.space","https://toonme.com","http://weavesilk.com","https://learningmusic.ableton.com","https://theuselessweb.com","https://youquhome.com"]
+			$('body').terminal(
+				{
+					open: function (url) {
+						window.open('http://' + url);
 					},
-					{
-						greetings:
-							'主站📚code520.com.cn' +
+					search: function (value) {
+						window.open('http://cn.bing.com/search?q=' + value);
+					},
+					小恐龙: function () {
+						window.open('https://chromedino.com/', '_new');
+					},
+					RSite: function () {
+						window.open(WebArr[parseInt(Math.random() * WebArr.length)], "_new");
+					},
+					help: function () {
+						this.echo(
+							'周靖🗓️' +
+							' ' +
+							'技术栈-Go-React-Taro🗓️' +
+							' ' +
+							'github📆:' +
+							'github.com/jokereven' +
+							' ' +
+							'gitee📆:' +
+							'gitee.com/jokereven' +
 							'\n' +
-							'分站📑doc.code520.com.cn'+
-							'\n'+
-							'输入help查看帮助📌' +
+							'open+baidu.com' +
+							' ' +
+							'search+question' +
+							' ' +
+							'小恐龙🦖' +
+							' ' +
+							'RSite随机网站' +
 							'\n' +
-							'邮箱:zhou125disorder@gmail.com' +
-							'📭',
-						prompt: '>>>',
-					}
-				);
-			}
-		</script>
-	</body>
+							'更多功能加载中...'
+						);
+					},
+				},
+				{
+					greetings:
+						'主站📚code520.com.cn' +
+						'\n' +
+						'分站📑doc.code520.com.cn' +
+						'\n' +
+						'输入help查看帮助📌' +
+						'\n' +
+						'邮箱:zhou125disorder@gmail.com' +
+						'📭',
+					prompt: '>>>',
+				}
+			);
+		}
+	</script>
+</body>
+
 </html>
