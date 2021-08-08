@@ -36,19 +36,44 @@ export const MusicWapperLeftPic = styled.div`
 	left: 0;
 	margin: auto;
 	margin-left: 12px;
+	border-radius: 3px;
+	img {
+		width: 100%;
+		height: 100%;
+	}
+	img {
+		border-radius: 3px;
+	}
 `;
 
 export const MusicWapperLeftDes = styled.div`
-	width: 149px;
+	width: auto;
 	height: 49px;
-	background-color: red;
+	/* background-color: red; */
 	position: absolute;
 	top: 0;
 	right: 0;
 	bottom: 0;
 	left: 0;
 	margin: auto;
-	margin-right: 24px;
+	margin-left: 72px;
+	div {
+		width: 100%;
+		height: 100%;
+		p {
+			color: rgb(51, 51, 51);
+			display: block;
+			padding-top: 2px;
+			padding-left: 2px;
+		}
+		span {
+			color: rgb(120, 120, 120);
+			font-size: 13px;
+			padding-top: 9px;
+			/* display: block; */
+			padding-left: 2px;
+		}
+	}
 `;
 
 export const MusicWapperCenter = styled.div`

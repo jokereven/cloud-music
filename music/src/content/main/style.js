@@ -11,8 +11,8 @@ export const MainFindWapper = styled.div`
 	}
 	.carousel {
 		border-radius: 4px;
-		width: 600px;
-		height: 250px;
+		width: 456px;
+		height: 175px;
 		margin: 2px auto;
 		div {
 			width: 100%;
@@ -278,8 +278,9 @@ export const RecommendedMvList = styled.div`
 export const CodeMusicWapper = styled.div`
 	width:auto;
 	height: auto;
-	text-align: center;
-	margin: 32px auto;
-	font-size: 14px;
-	font-family: 宋体;
+	/* background-color:red; */
+	padding-left: 45px;
+	font-size: 12px;
+	/* font-family: 宋体; */
+	/* color:#096; */
 `;

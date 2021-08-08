@@ -7,6 +7,7 @@ import {
 	StepForwardOutlined,
 	SyncOutlined,
 	YoutubeOutlined,
+	HeartOutlined
 } from '@ant-design/icons';
 import 'antd/dist/antd.css';
 import React, { Fragment, PureComponent } from 'react';
@@ -21,24 +22,43 @@ import {
 	MusicWapperLeftDes,
 	MusicWapperLeftPic,
 	MusicWapperRight,
-	PlayList,
+	PlayList
 } from './style';
 
 class Footer extends PureComponent {
 	render() {
-		const { changeplaytype, count, onplay, play, bannermusicid, audioPicshow } =
+		const { changeplaytype, count, onplay, play, bannermusicid, onplaymusic } =
 			this.props;
 		let list = localStorage.getItem('musiclist');
-		// console.log(list);
 		return (
 			<Fragment>
 				<FooterWapper>
 					<MusicWapper>
 						<MusicWapperLeft>
 							<MusicWapperLeftPic>
-								<img src=''></img>
+								{onplaymusic
+									? onplaymusic.map((item) => {
+											return <img src={item.getIn(['al', 'picUrl'])}></img>;
+									  })
+									: ''}
 							</MusicWapperLeftPic>
-							<MusicWapperLeftDes></MusicWapperLeftDes>
+							<MusicWapperLeftDes>
+								{onplaymusic
+									? onplaymusic.map((item) => {
+											return (
+												<div>
+													<p>
+														{item.get('name')}
+														<HeartOutlined />
+													</p>
+													{item.get('ar').map((val) => {
+														return <span>{val.get('name')}</span>;
+													})}
+												</div>
+											);
+									  })
+									: ''}
+							</MusicWapperLeftDes>
 						</MusicWapperLeft>
 						<MusicWapperCenter>
 							<MusicWapperCenterBox>
@@ -89,10 +109,20 @@ class Footer extends PureComponent {
 	}
 	componentDidUpdate() {
 		if (this.props.play === 1) {
-			this.audio.play();
-			this.props.audioPicshow(this.audio);
+			const TheAudio = this.audio;
+			TheAudio.addEventListener('canplay', function () {
+				// 可以播放
+				TheAudio.play();
+			});
+			// console.log(TheAudio);
+			this.props.audioPicshow(TheAudio);
 			// this.audio.play();
 		}
+	}
+	componentDidMount() {
+		// console.log('播放历史');
+		// console.log(localStorage.getItem('musiclist'));
+		this.props.SetMusicList(localStorage.getItem('musiclist'));
 	}
 }
 
@@ -101,6 +131,7 @@ const MapStateToProps = (state) => {
 		count: state.getIn(['playtype', 'playtypecount']),
 		play: state.getIn(['playtype', 'playstatuscount']),
 		bannermusicid: state.getIn(['playtype', 'MusicList']),
+		onplaymusic: state.getIn(['playtype', 'onplaymusic', 'songs']),
 	};
 };
 
@@ -111,10 +142,17 @@ const MapDispatchToProps = (dispatch) => {
 		},
 		onplay(playcount, audioElem) {
 			if (playcount === 0) {
-				audioElem.play().catch(() => {
-					console.log('audio play error');
-					//  when an exception is played, the exception flow is followed
-				});
+				if (audioElem.src !== `${window.location.href}`) {
+					// console.log(audioElem.src.split('=')[1].split('.')[0]);
+					if (audioElem.src.split('=')[1].split('.')[0] === 'undefined') {
+						console.log('不可以播放没有music的id');
+					} else {
+						audioElem.play().catch(() => {
+							console.log('audio play error');
+							//  when an exception is played, the exception flow is followed
+						});
+					}
+				}
 			}
 			if (playcount === 1) {
 				audioElem.pause();
@@ -124,8 +162,22 @@ const MapDispatchToProps = (dispatch) => {
 			dispatch(actionCreators.changeplay(playcount));
 		},
 		audioPicshow(audioElem) {
-			const musicid = audioElem.src.split('=')[1].split('.')[0];
-			// dispatch(actionCreators.audiopicshow(musicid));
+			audioElem.addEventListener('canplay', function () {
+				// 可以播放
+				// console.log("ok");
+				if (audioElem.src !== `${window.location.href}`) {
+					// console.log(window.location.href);
+					const musicid = audioElem.src.split('=')[1].split('.')[0];
+					// console.log(musicid);
+					dispatch(actionCreators.ShowMusicPic(musicid));
+				}
+			});
+		},
+		SetMusicList(MusicList) {
+			if (MusicList !== null) {
+				dispatch(actionCreators.SetMusicList(MusicList));
+			}
+			// console.log(MusicList);
 		},
 	};
 };

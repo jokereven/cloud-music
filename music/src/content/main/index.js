@@ -7,12 +7,11 @@ import { actionCreators } from './store';
 import {
 	AddASongListWapper,
 	AddTitle,
+	CodeMusicWapper,
 	ExclusiveList,
 	ExclusiveListWapper,
 	ExclusiveTitle,
 	ExclusiveWapper,
-	ListenTitle,
-	ListenWapper,
 	MainFindWapper,
 	RecommendedMvBox,
 	RecommendedMvList,
@@ -25,7 +24,6 @@ import {
 	UpToDateList,
 	UpToDateTitle,
 	UpToDateWapper,
-	CodeMusicWapper,
 } from './style';
 
 const contentStyle = {
@@ -82,7 +80,10 @@ class Main extends PureComponent {
 													return (
 														<RecommendList key={index}>
 															<div className='redommend-box' key={index}>
-																<img src={item.get('picUrl')}></img>
+																<img
+																	src={item.get('picUrl')}
+																	alt={item.get('name')}
+																></img>
 																<p>{item.get('name')}</p>
 															</div>
 														</RecommendList>
@@ -99,7 +100,10 @@ class Main extends PureComponent {
 													return (
 														<ExclusiveList key={index}>
 															<div key={index}>
-																<img src={item.get('picUrl')}></img>
+																<img
+																	src={item.get('picUrl')}
+																	alt={item.get('copywriter')}
+																></img>
 																<p>{item.get('name')}</p>
 															</div>
 														</ExclusiveList>
@@ -115,7 +119,11 @@ class Main extends PureComponent {
 											? latestmusic.map((item, index) => {
 													return (
 														<UpToDateList key={index}>
-															<img src={item.get('picUrl')} key={index}></img>
+															<img
+																src={item.get('picUrl')}
+																alt={item.get('name')}
+																key={index}
+															></img>
 															<div className='uptodatename'>
 																<p>{item.get('name')}</p>
 																{item
@@ -140,7 +148,11 @@ class Main extends PureComponent {
 											? latestmv.map((item, index) => {
 													return index <= 2 ? (
 														<RecommendedMvList key={index}>
-															<img src={item.get('picUrl')}></img>
+															<img
+																title={item.get('copywriter')}
+																src={item.get('picUrl')}
+																alt={item.get('copywriter')}
+															></img>
 															<p>{item.get('name')}</p>
 															<span>{item.get('artistName')}</span>
 														</RecommendedMvList>
