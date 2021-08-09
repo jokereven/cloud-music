@@ -280,7 +280,8 @@ export const CodeMusicWapper = styled.div`
 	height: auto;
 	/* background-color:red; */
 	padding-left: 45px;
-	font-size: 12px;
-	/* font-family: 宋体; */
+	font-size: 13x;
+	font-family: 宋体;
 	/* color:#096; */
+	padding-top: 12px;
 `;

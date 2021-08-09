@@ -28,7 +28,7 @@ export const MusicWapperLeft = styled.div`
 export const MusicWapperLeftPic = styled.div`
 	width: 49px;
 	height: 49px;
-	background-color: red;
+	/* background-color: red; */
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -48,7 +48,7 @@ export const MusicWapperLeftPic = styled.div`
 
 export const MusicWapperLeftDes = styled.div`
 	width: auto;
-	height: 49px;
+	height: 100%;
 	/* background-color: red; */
 	position: absolute;
 	top: 0;
@@ -63,15 +63,19 @@ export const MusicWapperLeftDes = styled.div`
 		p {
 			color: rgb(51, 51, 51);
 			display: block;
-			padding-top: 2px;
+			padding-top: 12px;
 			padding-left: 2px;
 		}
 		span {
 			color: rgb(120, 120, 120);
-			font-size: 13px;
-			padding-top: 9px;
+			font-size: 12px;
+			padding-top: 8px;
 			/* display: block; */
 			padding-left: 2px;
+			/* display: inline-block; */
+			/* float: left; */
+			white-space: nowrap;
+			/* background-color: #096; */
 		}
 	}
 `;

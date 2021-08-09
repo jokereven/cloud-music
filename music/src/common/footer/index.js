@@ -37,22 +37,22 @@ class Footer extends PureComponent {
 						<MusicWapperLeft>
 							<MusicWapperLeftPic>
 								{onplaymusic
-									? onplaymusic.map((item) => {
-											return <img src={item.getIn(['al', 'picUrl'])}></img>;
+									? onplaymusic.map((item,index) => {
+											return <img src={item.getIn(['al', 'picUrl'])} key={index}></img>;
 									  })
 									: ''}
 							</MusicWapperLeftPic>
 							<MusicWapperLeftDes>
 								{onplaymusic
-									? onplaymusic.map((item) => {
+									? onplaymusic.map((item,index) => {
 											return (
-												<div>
-													<p>
+												<div key={index}>
+													<p key={index}>
 														{item.get('name')}
 														<HeartOutlined />
 													</p>
-													{item.get('ar').map((val) => {
-														return <span>{val.get('name')}</span>;
+													{item.get('ar').map((val,index) => {
+														return <span key={index+1}>{val.get('name')}</span>;
 													})}
 												</div>
 											);
