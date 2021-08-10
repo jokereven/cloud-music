@@ -118,7 +118,7 @@ class Main extends PureComponent {
 										{UpToDateList
 											? latestmusic.map((item, index) => {
 													return (
-														<UpToDateList key={index}>
+														<UpToDateList key={index} onClick={() => addmusic(item.get("id"))}>
 															<img
 																src={item.get('picUrl')}
 																alt={item.get('name')}

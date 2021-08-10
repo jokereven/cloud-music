@@ -159,7 +159,66 @@ export const PlayList = styled.div`
 `;
 
 export const MusicWapperRight = styled.div`
-	background-color: #096;
+	/* background-color: #096; */
 	width: 300px;
 	height: 100%;
+	.list {
+		line-height: 69px;
+		font-size: 24px;
+		float: right;
+		padding-right: 32px;
+	}
+`;
+
+export const SongListWapper = styled.div`
+	width: 275px;
+	height: 350px;
+	border: 1px solid #ddd;
+	background-color: #fff;
+	position: absolute;
+	overflow: auto;
+	bottom: 69px;
+	::-webkit-scrollbar {
+		width: 0px;
+		height: 0px;
+		background-color: rgba(240, 240, 240, 1);
+	}
+	div {
+		width: 100%;
+		height: 32px;
+		/* background-color: red; */
+		line-height: 32px;
+		border-radius: 4px;
+		margin-top: 4px;
+		cursor: pointer;
+		:hover {
+			background-color: rgb(244, 244, 244);
+		}
+		p {
+			float: left;
+			color: rgb(46, 46, 46);
+			font-size: 13px;
+			padding-left: 8px;
+		}
+		span {
+			float: right;
+			font-size: 12px;
+			padding-right: 4px;
+			color: rgb(102, 102, 102);
+		}
+	}
+`;
+
+export const LyricsWapper = styled.div`
+	width: 650px;
+	height: 145px;
+	background-color: rgb(201, 201, 201);
+	opacity: 0.618;
+	border: 1px solid rgb(62, 62, 62);
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	bottom: 300px;
+	right: 0px;
+	margin: auto;
 `;

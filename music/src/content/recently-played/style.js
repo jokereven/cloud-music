@@ -3,6 +3,13 @@ import styled from 'styled-components';
 export const RecentlyPlayedWapper = styled.div`
 	flex: 1;
 	/* background-color: #096; */
+	height: auto;
+	overflow: auto;
+	::-webkit-scrollbar {
+		width: 0px;
+		height: 0px;
+		background-color: rgba(240, 240, 240, 1);
+	}
 	#title {
 		width: 100%;
 		height: 32px;
@@ -112,7 +119,7 @@ export const RecentlyPlayedWapper = styled.div`
 					width: auto;
 					font-size: 12px;
 				}
-				td{
+				td {
 					font-size: 12px;
 				}
 			}

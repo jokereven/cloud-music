@@ -1,13 +1,15 @@
 import {
+	BarsOutlined,
+	CloseOutlined,
 	FieldBinaryOutlined,
+	HeartOutlined,
 	LayoutOutlined,
 	PauseCircleOutlined,
 	RetweetOutlined,
 	StepBackwardOutlined,
 	StepForwardOutlined,
 	SyncOutlined,
-	YoutubeOutlined,
-	HeartOutlined
+	YoutubeOutlined
 } from '@ant-design/icons';
 import 'antd/dist/antd.css';
 import React, { Fragment, PureComponent } from 'react';
@@ -15,6 +17,7 @@ import { connect } from 'react-redux';
 import { actionCreators } from './store';
 import {
 	FooterWapper,
+	LyricsWapper,
 	MusicWapper,
 	MusicWapperCenter,
 	MusicWapperCenterBox,
@@ -22,13 +25,28 @@ import {
 	MusicWapperLeftDes,
 	MusicWapperLeftPic,
 	MusicWapperRight,
-	PlayList
+	PlayList,
+	SongListWapper
 } from './style';
 
 class Footer extends PureComponent {
 	render() {
-		const { changeplaytype, count, onplay, play, bannermusicid, onplaymusic } =
-			this.props;
+		const {
+			changeplaytype,
+			count,
+			onplay,
+			play,
+			bannermusicid,
+			onplaymusic,
+			getASing,
+			Lyricstypecount,
+			changeLyricsType,
+			// Lyrics,
+			chengesongListtype,
+			songListcount,
+			songlist,
+			addmusic,
+		} = this.props;
 		let list = localStorage.getItem('musiclist');
 		return (
 			<Fragment>
@@ -37,22 +55,29 @@ class Footer extends PureComponent {
 						<MusicWapperLeft>
 							<MusicWapperLeftPic>
 								{onplaymusic
-									? onplaymusic.map((item,index) => {
-											return <img src={item.getIn(['al', 'picUrl'])} key={index}></img>;
+									? onplaymusic.map((item, index) => {
+											return (
+												<img
+													src={item.getIn(['al', 'picUrl'])}
+													key={index}
+												></img>
+											);
 									  })
 									: ''}
 							</MusicWapperLeftPic>
 							<MusicWapperLeftDes>
 								{onplaymusic
-									? onplaymusic.map((item,index) => {
+									? onplaymusic.map((item, index) => {
 											return (
 												<div key={index}>
 													<p key={index}>
 														{item.get('name')}
 														<HeartOutlined />
 													</p>
-													{item.get('ar').map((val,index) => {
-														return <span key={index+1}>{val.get('name')}</span>;
+													{item.get('ar').map((val, index) => {
+														return (
+															<span key={index + 1}>{val.get('name')}</span>
+														);
 													})}
 												</div>
 											);
@@ -84,7 +109,10 @@ class Footer extends PureComponent {
 									<StepForwardOutlined className='NextSong' />
 								</PlayList>
 								<PlayList>
-									<LayoutOutlined className='WordSong' />
+									<LayoutOutlined
+										className='WordSong'
+										onClick={() => getASing(this.audio, Lyricstypecount)}
+									/>
 								</PlayList>
 							</MusicWapperCenterBox>
 							<audio
@@ -101,7 +129,45 @@ class Footer extends PureComponent {
 								}
 							></audio>
 						</MusicWapperCenter>
-						<MusicWapperRight></MusicWapperRight>
+						<MusicWapperRight>
+							{songListcount
+								? songListcount === 1 && (
+										<SongListWapper>
+											{songlist
+												? songlist.map((item,index) => {
+														return (
+															<div key={index} onClick={() => addmusic(item.get("id"))}>
+																<p>{item.get('name')}</p>
+																{item.get('ar').map((val,index) => {
+																	return <span key={index}>{val.get('name')}</span>;
+																})}
+															</div>
+														);
+												  })
+												: ''}
+										</SongListWapper>
+								  )
+								: ''}
+							<BarsOutlined
+								className='list'
+								onClick={() => chengesongListtype(songListcount)}
+							/>
+						</MusicWapperRight>
+						{Lyricstypecount === 1 && (
+							<LyricsWapper>
+								{/* {Lyrics ? Lyrics: ''} */}
+								<CloseOutlined
+									onClick={changeLyricsType}
+									style={{
+										position: 'absolute',
+										top: '0',
+										right: '0',
+										padding: '4px',
+										color: '#fff',
+									}}
+								/>
+							</LyricsWapper>
+						)}
 					</MusicWapper>
 				</FooterWapper>
 			</Fragment>
@@ -132,6 +198,10 @@ const MapStateToProps = (state) => {
 		play: state.getIn(['playtype', 'playstatuscount']),
 		bannermusicid: state.getIn(['playtype', 'MusicList']),
 		onplaymusic: state.getIn(['playtype', 'onplaymusic', 'songs']),
+		Lyricstypecount: state.getIn(['playtype', 'Lyricstypecount']),
+		// Lyrics: state.getIn(['playtype', 'onplaymusiclyrics', 'lrc', 'lyric']),
+		songListcount: state.getIn(['playtype', 'songListcount']),
+		songlist: state.getIn(['playtype', 'songList', 'songs']),
 	};
 };
 
@@ -179,6 +249,33 @@ const MapDispatchToProps = (dispatch) => {
 			}
 			// console.log(MusicList);
 		},
+		getASing(audioElem, Lyricstypecount) {
+			// 可以播放
+			// console.log("ok");
+			if (audioElem.src.split(',').length === 1) {
+				if (audioElem.src !== `${window.location.href}`) {
+					// console.log(window.location.href);
+					const musicid = audioElem.src.split('=')[1].split('.')[0];
+					// console.log(musicid);
+					dispatch(actionCreators.LyricsStatus(Lyricstypecount));
+					// console.log(musicid);
+				}
+			}
+		},
+		changeLyricsType() {
+			dispatch(actionCreators.ChangeLyricsType());
+		},
+		chengesongListtype(songListcount) {
+			if (songListcount === 1) {
+				dispatch(actionCreators.showTheSongList());
+				dispatch(actionCreators.SongListData());
+			}
+			dispatch(actionCreators.ChengesongListtype(songListcount));
+		},
+		addmusic(musicid) {
+						dispatch(actionCreators.AddMusic(musicid));
+						dispatch(actionCreators.BannerMusicPlay());
+		}
 	};
 };
 

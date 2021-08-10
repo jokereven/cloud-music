@@ -1,9 +1,9 @@
 import { CaretRightOutlined, PlusOutlined } from '@ant-design/icons';
 import React, { Fragment, PureComponent } from 'react';
 import { connect } from 'react-redux';
+import { actionCreators as FooteractionCreators } from '../../common/footer/store';
 import { actionCreators } from './store';
 import { RecentlyPlayedWapper } from './style';
-import { actionCreators as FooteractionCreators } from '../../common/footer/store';
 
 class RecentlyPlayed extends PureComponent {
 	render() {
@@ -31,16 +31,18 @@ class RecentlyPlayed extends PureComponent {
 						</thead>
 						<tbody>
 							{historydata
-								? historydata.map((item) => {
+								? historydata.map((item, index) => {
 										return (
-											<div onClick={() => addtoplay(item.get('id'))}>
-												<tr className='content'>
-													<td>{item.get('name')}</td>
-													{item.getIn(['ar']).map((val) => {
-														return <td>{val.get('name')}</td>;
-													})}
-												</tr>
-											</div>
+											<tr
+												className='content'
+												key={index}
+												onClick={() => addtoplay(item.get('id'))}
+											>
+												<td key={index}>{item.get('name')}</td>
+												{item.getIn(['ar']).map((val, index) => {
+													return <td key={index + 1}>{val.get('name')}</td>;
+												})}
+											</tr>
 										);
 								  })
 								: ''}
@@ -72,9 +74,9 @@ export const MapDispatch = (dispatch) => {
 			dispatch(actionCreators.showHistoricalPlay());
 		},
 		addtoplay(musicid) {
-			dispatch(FooteractionCreators.AddMusic(musicid))
+			dispatch(FooteractionCreators.AddMusic(musicid));
 			dispatch(FooteractionCreators.BannerMusicPlay());
-		}
+		},
 	};
 };
 
