@@ -1,0 +1,1 @@
+export const SONG_LIST_INFORMATION = 'playlist/SONG_LIST_INFORMATION';
