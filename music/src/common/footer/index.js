@@ -9,7 +9,7 @@ import {
 	StepBackwardOutlined,
 	StepForwardOutlined,
 	SyncOutlined,
-	YoutubeOutlined
+	YoutubeOutlined,
 } from '@ant-design/icons';
 import 'antd/dist/antd.css';
 import React, { Fragment, PureComponent } from 'react';
@@ -26,7 +26,7 @@ import {
 	MusicWapperLeftPic,
 	MusicWapperRight,
 	PlayList,
-	SongListWapper
+	SongListWapper,
 } from './style';
 
 class Footer extends PureComponent {
@@ -46,6 +46,9 @@ class Footer extends PureComponent {
 			songListcount,
 			songlist,
 			addmusic,
+			playOneSOne,
+			playi,
+			playOne,
 		} = this.props;
 		let list = localStorage.getItem('musiclist');
 		return (
@@ -99,14 +102,20 @@ class Footer extends PureComponent {
 									)}
 								</PlayList>
 								<PlayList>
-									<StepBackwardOutlined className='LastSong' />
+									<StepBackwardOutlined
+										className='LastSong'
+										onClick={() => playOne(playi, this.audio, count)}
+									/>
 								</PlayList>
 								<PlayList onClick={() => onplay(play, this.audio)}>
 									{play === 0 && <YoutubeOutlined className='PlaySong' />}
 									{play === 1 && <PauseCircleOutlined className='PlaySong' />}
 								</PlayList>
 								<PlayList>
-									<StepForwardOutlined className='NextSong' />
+									<StepForwardOutlined
+										className='NextSong'
+										onClick={() => playOneSOne(playi, this.audio, count)}
+									/>
 								</PlayList>
 								<PlayList>
 									<LayoutOutlined
@@ -134,12 +143,17 @@ class Footer extends PureComponent {
 								? songListcount === 1 && (
 										<SongListWapper>
 											{songlist
-												? songlist.map((item,index) => {
+												? songlist.map((item, index) => {
 														return (
-															<div key={index} onClick={() => addmusic(item.get("id"))}>
+															<div
+																key={index}
+																onClick={() => addmusic(item.get('id'))}
+															>
 																<p>{item.get('name')}</p>
-																{item.get('ar').map((val,index) => {
-																	return <span key={index}>{val.get('name')}</span>;
+																{item.get('ar').map((val, index) => {
+																	return (
+																		<span key={index}>{val.get('name')}</span>
+																	);
 																})}
 															</div>
 														);
@@ -202,6 +216,7 @@ const MapStateToProps = (state) => {
 		// Lyrics: state.getIn(['playtype', 'onplaymusiclyrics', 'lrc', 'lyric']),
 		songListcount: state.getIn(['playtype', 'songListcount']),
 		songlist: state.getIn(['playtype', 'songList', 'songs']),
+		playi: state.getIn(['playtype', 'playonesonecount']),
 	};
 };
 
@@ -273,9 +288,62 @@ const MapDispatchToProps = (dispatch) => {
 			dispatch(actionCreators.ChengesongListtype(songListcount));
 		},
 		addmusic(musicid) {
-						dispatch(actionCreators.AddMusic(musicid));
-						dispatch(actionCreators.BannerMusicPlay());
-		}
+			dispatch(actionCreators.AddMusic(musicid));
+			dispatch(actionCreators.BannerMusicPlay());
+		},
+		playOneSOne(playi, audioElem, count) {
+			dispatch(actionCreators.PlayOneSOne(playi));
+			// console.log(audioElem.src);
+			if (count === 0) {
+				audioElem.src = `http://music.163.com/song/media/outer/url?id=${
+					localStorage.getItem('playlist').split(',')[playi]
+				}.mp3`;
+			}
+			if (count === 2) {
+				audioElem.src = `http://music.163.com/song/media/outer/url?id=${
+					localStorage.getItem('playlist').split(',')[
+						parseInt(
+							Math.random() *
+								(localStorage.getItem('playlist').split(',').length - 1)
+						)
+					]
+				}.mp3`;
+			}
+			if (count === 1) {
+				audioElem.src = `http://music.163.com/song/media/outer/url?id=${
+					localStorage.getItem('playlist').split(',')[playi]
+				}.mp3`;
+				audioElem.loop = true;
+			} else {
+				audioElem.loop = false;
+			}
+		},
+		playOne(playi, audioElem, count) {
+			dispatch(actionCreators.PlayOne(playi));
+			if (count === 0) {
+				audioElem.src = `http://music.163.com/song/media/outer/url?id=${
+					localStorage.getItem('playlist').split(',')[playi]
+				}.mp3`;
+			}
+			if (count === 2) {
+				audioElem.src = `http://music.163.com/song/media/outer/url?id=${
+					localStorage.getItem('playlist').split(',')[
+						parseInt(
+							Math.random() *
+								(localStorage.getItem('playlist').split(',').length)
+						)
+					]
+				}.mp3`;
+			}
+			if (count === 1) {
+				audioElem.src = `http://music.163.com/song/media/outer/url?id=${
+					localStorage.getItem('playlist').split(',')[playi]
+				}.mp3`;
+				audioElem.loop = true;
+			} else {
+				audioElem.loop = false;
+			}
+		},
 	};
 };
 

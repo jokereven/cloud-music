@@ -4,6 +4,7 @@ export const MainFindWapper = styled.div`
 	flex: 1;
 	height: auto;
 	overflow: auto;
+	/* background-color: #096; */
 	::-webkit-scrollbar {
 		width: 0px;
 		height: 0px;
@@ -130,7 +131,7 @@ export const ExclusiveList = styled.div`
 	width: 33%;
 	height: 175px;
 	/* background-color: red; */
-	margin-left:8px;
+	margin-left: 8px;
 	border-radius: 6px;
 	cursor: pointer;
 	img {
@@ -276,7 +277,7 @@ export const RecommendedMvList = styled.div`
 `;
 
 export const CodeMusicWapper = styled.div`
-	width:auto;
+	width: auto;
 	height: auto;
 	/* background-color:red; */
 	padding-left: 45px;
@@ -284,4 +285,46 @@ export const CodeMusicWapper = styled.div`
 	font-family: 宋体;
 	/* color:#096; */
 	padding-top: 12px;
+`;
+
+export const SongListWapper = styled.div`
+	/* background-color: #096; */
+	flex: 1;
+`;
+
+export const SongListHeader = styled.div`
+	width: 100%;
+	height: 75px;
+	background-color: #fff;
+	border-bottom: 3.14px solid rgb(194, 12, 12);
+	position: relative;
+	h2 {
+		font-size: 26px;
+		line-height: 75px;
+		font-family: 宋体;
+		float: left;
+	}
+	.type {
+		width: 520px;
+		height: 32px;
+		/* background-color: #096; */
+		position: absolute;
+		top: 0px;
+		right: 0px;
+		bottom: -16px;
+		left: 0px;
+		margin: auto;
+		margin-right: 45px;
+		line-height: 32px;
+		display: flex;
+		justify-content: space-between;
+		span {
+			color: rgb(55, 55, 55);
+			font-size: 12px;
+			cursor: pointer;
+			:hover {
+				color: rgb(55, 55, 127);
+			}
+		}
+	}
 `;

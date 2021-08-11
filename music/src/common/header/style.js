@@ -5,6 +5,7 @@ export const HeaderWapper = styled.div`
 	width: 100vw;
 	height: 69px;
 	background-color: rgb(36, 36, 36);
+	max-width: 1280px;
 	min-width: 1280px;
 	Input {
 		width: 175px;

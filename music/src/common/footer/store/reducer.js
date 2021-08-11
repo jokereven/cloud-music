@@ -11,6 +11,7 @@ const defaultState = fromJS({
 	songListcount: 0,
 	playList: [],
 	songList: [],
+	playonesonecount: 0,
 });
 
 const reducer = (state = defaultState, action) => {
@@ -105,6 +106,24 @@ const reducer = (state = defaultState, action) => {
 			return state.merge({
 				songList: action.data,
 			});
+		case actionTypes.PLAY_ONE_SONE:
+			var m;
+			m = action.data;
+			m++;
+			action.data = m;
+			if (action.data > localStorage.getItem('playlist').split(',').length) {
+				action.data = 0;
+			}
+			return state.set('playonesonecount', action.data);
+		case actionTypes.PLAY_ONE:
+			var k;
+			k = action.data;
+			k--;
+			action.data = k;
+			if (action.data < 0) {
+				action.data = localStorage.getItem('playlist').split(',').length-1;
+			}
+			return state.set('playonesonecount', action.data);
 		default:
 			return state;
 	}

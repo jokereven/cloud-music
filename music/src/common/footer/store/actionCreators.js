@@ -34,7 +34,9 @@ export const Audiopicshow = (data) => ({
 export const ShowMusicPic = (musicid) => {
 	return (dispatch) => {
 		axios
-			.get(`http://localhost:3000/song/detail?ids=${musicid}`)
+			.get(
+				`http://localhost:3000/song/detail?ids=${musicid}&t=${new Date().getTime()}`
+			)
 			.then((res) => {
 				const data = res.data;
 				dispatch(Audiopicshow(data));
@@ -73,6 +75,16 @@ export const ChangeLyricsType = () => ({
 	type: actionTypes.CHANGE_LYRICS_TYPE,
 });
 
+export const PlayOneSOne = (data) => ({
+	type: actionTypes.PLAY_ONE_SONE,
+	data: fromJS(data),
+});
+
+export const PlayOne = (data) => ({
+	type: actionTypes.PLAY_ONE,
+	data: fromJS(data),
+});
+
 export const ChengesongListtype = (data) => ({
 	type: actionTypes.CHANGE_SONG_LIST_TYPE,
 	data: fromJS(data),
@@ -90,7 +102,7 @@ export const SongListData = () => {
 				.get(
 					`http://localhost:3000/song/detail?ids=${localStorage.getItem(
 						'playlist'
-					)}`
+					)}&t=${new Date().getTime()}`
 				)
 				.then((res) => {
 					const data = res.data;

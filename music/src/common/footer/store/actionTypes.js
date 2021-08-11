@@ -10,3 +10,5 @@ export const CHANGE_LYRICS_TYPE = 'footer/CHANGE_LYRICS_TYPE';
 export const CHANGE_SONG_LIST_TYPE = 'footer/CHANGE_SONG_LIST_TYPE';
 export const SHOW_THE_SONG_LIST = 'footer/SHOW_THE_SONG_LIST';
 export const SHOW_MUSIC_LIST = 'footer/SHOW_MUSIC_LIST';
+export const PLAY_ONE_SONE = 'footer/PLAY_ONE_SONE';
+export const PLAY_ONE = 'footer/PLAY_ONE';

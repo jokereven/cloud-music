@@ -44,7 +44,9 @@ export const Disbanner = () => {
 export const Disrecommend = () => {
 	return (dispatch) => {
 		axios
-			.get(`http://localhost:3000/personalized?limit=10`)
+			.get(
+				`http://localhost:3000/personalized?limit=10&t=${new Date().getTime()}`
+			)
 			.then((res) => {
 				const data = res.data;
 				dispatch(DisrecommendList(data.result));
@@ -58,7 +60,9 @@ export const Disrecommend = () => {
 export const Exclusivedelivery = () => {
 	return (dispatch) => {
 		axios
-			.get(`http://localhost:3000/personalized/privatecontent/list?limit=3`)
+			.get(
+				`http://localhost:3000/personalized/privatecontent/list?limit=3&t=${new Date().getTime()}`
+			)
 			.then((res) => {
 				const data = res.data;
 				// console.log(data);
@@ -73,7 +77,9 @@ export const Exclusivedelivery = () => {
 export const LatestMusic = () => {
 	return (dispatch) => {
 		axios
-			.get(`http://localhost:3000/personalized/newsong?limit=12`)
+			.get(
+				`http://localhost:3000/personalized/newsong?limit=12&t=${new Date().getTime()}`
+			)
 			.then((res) => {
 				const data = res.data;
 				// console.log(data.result);
@@ -88,7 +94,9 @@ export const LatestMusic = () => {
 export const LatestMv = () => {
 	return (dispatch) => {
 		axios
-			.get(`http://localhost:3000/personalized/mv?limit=3`)
+			.get(
+				`http://localhost:3000/personalized/mv?limit=3&t=${new Date().getTime()}`
+			)
 			.then((res) => {
 				const data = res.data;
 				// console.log(data);
@@ -99,3 +107,38 @@ export const LatestMv = () => {
 			});
 	};
 };
+
+export const SongListClassification = () => {
+	return (dispatch) => {
+		axios
+			.get(`http://localhost:3000/playlist/hot`)
+			.then((res) => {
+				const data = res.data;
+				// console.log(data);
+				dispatch(ListClassification(data));
+			})
+			.catch(() => {
+				console.log('获取推荐歌单分类失败');
+			});
+	};
+};
+
+export const GetTherecommendSongList = () => {
+	return (dispatch) => {
+		axios
+			.get(`http://localhost:3000/top/playlist`)
+			.then((res) => {
+				const data = res.data;
+				console.log(data);
+				// dispatch(ListClassification(data));
+			})
+			.catch(() => {
+				console.log('获取推荐歌单失败');
+			});
+	};
+};
+
+export const ListClassification = (data) => ({
+	type: actionTypes.LIST_CLASS_IFICATION,
+	data: fromJS(data),
+});

@@ -18,10 +18,10 @@ export const showHistoricalPlay = () => {
 				.get(
 					`http://localhost:3000/song/detail?ids=${localStorage.getItem(
 						'playHistory'
-					)}`
+					)}&t=${new Date().getTime()}`
 				)
-        .then((res) => {
-					const data = res.data
+				.then((res) => {
+					const data = res.data;
 					dispatch(ShowHistoricalPlay(data));
 				});
 		}

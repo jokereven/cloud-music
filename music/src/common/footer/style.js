@@ -4,6 +4,8 @@ export const FooterWapper = styled.div`
 	width: 100vw;
 	height: 69px;
 	position: fixed;
+	min-width: 1280px;
+	max-width: 1280px;
 	bottom: 0;
 	background-color: rgb(255, 255, 255);
 	border-top: 1px solid #ddd;
@@ -191,6 +193,7 @@ export const SongListWapper = styled.div`
 		border-radius: 4px;
 		margin-top: 4px;
 		cursor: pointer;
+		overflow: hidden;
 		:hover {
 			background-color: rgb(244, 244, 244);
 		}

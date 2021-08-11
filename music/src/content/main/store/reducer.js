@@ -6,7 +6,8 @@ const defaultState = fromJS({
 	maindecommendlist: [],
 	exclusiveDelivery: [],
 	latestMusic: [],
-	latestMV:[],
+	latestMV: [],
+	songListType: [],
 });
 
 const reducer = (state = defaultState, action) => {
@@ -30,6 +31,10 @@ const reducer = (state = defaultState, action) => {
 		case actionTypes.LATEST_MV_LIST:
 			return state.merge({
 				latestMV: action.data,
+			});
+		case actionTypes.LIST_CLASS_IFICATION:
+			return state.merge({
+				songListType: action.data,
 			});
 		default:
 			return state;

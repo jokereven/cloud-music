@@ -19,11 +19,10 @@ import {
 	RecommendedMvWapper,
 	RecommendList,
 	RecommendListWapper,
-	RecommendWapper,
-	UpToDateBox,
+	RecommendWapper, SongListHeader, SongListWapper, UpToDateBox,
 	UpToDateList,
 	UpToDateTitle,
-	UpToDateWapper,
+	UpToDateWapper
 } from './style';
 
 const contentStyle = {
@@ -40,6 +39,7 @@ class Main extends PureComponent {
 			exclusivede,
 			latestmusic,
 			latestmv,
+			songListtype,
 		} = this.props;
 		return (
 			<Fragment>
@@ -118,7 +118,10 @@ class Main extends PureComponent {
 										{UpToDateList
 											? latestmusic.map((item, index) => {
 													return (
-														<UpToDateList key={index} onClick={() => addmusic(item.get("id"))}>
+														<UpToDateList
+															key={index}
+															onClick={() => addmusic(item.get('id'))}
+														>
 															<img
 																src={item.get('picUrl')}
 																alt={item.get('name')}
@@ -169,7 +172,16 @@ class Main extends PureComponent {
 							</RecommendWapper>
 						</TabPane>
 						<TabPane tab='歌单' key='2'>
-							2
+							<SongListWapper>
+								<SongListHeader>
+									<h2>歌单</h2>
+									<div className='type'>
+										{songListtype ? songListtype.map((item, index) => {
+											return <span key={index}>{item.get("name")}</span>;
+										}): ''}
+									</div>
+								</SongListHeader>
+							</SongListWapper>
 						</TabPane>
 						<TabPane tab='排行榜' key='3'>
 							3
@@ -191,6 +203,8 @@ class Main extends PureComponent {
 		this.props.exclusivedelivery();
 		this.props.latestMusic();
 		this.props.latestMv();
+		this.props.songListClassification();
+		this.props.getTherecommendSongList();
 	}
 }
 
@@ -202,6 +216,7 @@ export const MapStateToProps = (state) => {
 		latestmusic: state.getIn(['bannerlist', 'latestMusic']),
 		latestmv: state.getIn(['bannerlist', 'latestMV']),
 		listenlist: state.getIn(['bannerlist', 'listenlist', 'list']),
+		songListtype: state.getIn(['bannerlist', 'songListType', 'tags']),
 	};
 };
 
@@ -225,6 +240,12 @@ export const MapDispatchToProps = (dispatch) => {
 		addmusic(targetid) {
 			dispatch(FooteractionCreators.AddMusic(targetid));
 			dispatch(FooteractionCreators.BannerMusicPlay());
+		},
+		songListClassification() {
+			dispatch(actionCreators.SongListClassification());
+		},
+		getTherecommendSongList() {
+			dispatch(actionCreators.GetTherecommendSongList());
 		},
 	};
 };
