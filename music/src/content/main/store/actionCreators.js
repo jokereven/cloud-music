@@ -126,17 +126,21 @@ export const SongListClassification = () => {
 export const GetTherecommendSongList = () => {
 	return (dispatch) => {
 		axios
-			.get(`http://localhost:3000/top/playlist`)
+			.get(`http://localhost:3000/top/playlist?t=${new Date().getTime()}`)
 			.then((res) => {
 				const data = res.data;
-				console.log(data);
-				// dispatch(ListClassification(data));
+				dispatch(TherecommendSongList(data));
 			})
 			.catch(() => {
 				console.log('获取推荐歌单失败');
 			});
 	};
 };
+
+export const TherecommendSongList = (data) => ({
+	type: actionTypes.THE_RECOMMENDS_SONG_LIST,
+	data: fromJS(data),
+});
 
 export const ListClassification = (data) => ({
 	type: actionTypes.LIST_CLASS_IFICATION,

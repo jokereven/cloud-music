@@ -4,6 +4,7 @@ import Video from './flv-mas/index';
 import Login from './login/index';
 import Main from './main/index';
 import Nav from './nav/index';
+import PlayList from './playlist';
 import RecentlyPlayed from './recently-played';
 import SearchList from './searchlist/loadable';
 import { ContentWapper } from './style';
@@ -19,6 +20,7 @@ class Content extends PureComponent {
 						<Route path='/individuation/login' exact component={Login}></Route>
 						<Route path='/flv-mas' exact component={Video}></Route>
 						<Route path='/search-list/:key' component={SearchList}></Route>
+						<Route path='/playlist/:id' component={PlayList}></Route>
 						<Route
 							path='/recently-played'
 							exact

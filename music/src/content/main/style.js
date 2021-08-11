@@ -288,8 +288,38 @@ export const CodeMusicWapper = styled.div`
 `;
 
 export const SongListWapper = styled.div`
-	/* background-color: #096; */
-	flex: 1;
+	/* background-color: red; */
+	margin-bottom: 12px;
+	::-webkit-scrollbar {
+		width: 0px;
+		height: 0px;
+		background-color: rgba(240, 240, 240, 1);
+	}
+	height: auto;
+	overflow: auto;
+	.recommend {
+		width: 100%;
+		height: auto;
+		/* background-color: #096; */
+		display: grid;
+		grid-template-columns: 175px 175px 175px 175px 175px;
+		grid-gap: 22px;
+		/*  声明了两行，行高分别为 50px 50px  */
+		grid-template-rows: auto auto auto auto auto auto auto auto auto auto;
+		.father {
+			/* background-color: #096; */
+			cursor: pointer;
+			border-radius: 3px;
+			img {
+				width: 175px;
+				height: 175px;
+				border-radius: 3px;
+			}
+			p {
+				color: rgb(55, 55, 55);
+			}
+		}
+	}
 `;
 
 export const SongListHeader = styled.div`

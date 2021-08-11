@@ -19,7 +19,10 @@ import {
 	RecommendedMvWapper,
 	RecommendList,
 	RecommendListWapper,
-	RecommendWapper, SongListHeader, SongListWapper, UpToDateBox,
+	RecommendWapper,
+	SongListHeader,
+	SongListWapper,
+	UpToDateBox,
 	UpToDateList,
 	UpToDateTitle,
 	UpToDateWapper
@@ -40,6 +43,7 @@ class Main extends PureComponent {
 			latestmusic,
 			latestmv,
 			songListtype,
+			songList,
 		} = this.props;
 		return (
 			<Fragment>
@@ -176,11 +180,25 @@ class Main extends PureComponent {
 								<SongListHeader>
 									<h2>歌单</h2>
 									<div className='type'>
-										{songListtype ? songListtype.map((item, index) => {
-											return <span key={index}>{item.get("name")}</span>;
-										}): ''}
+										{songListtype
+											? songListtype.map((item, index) => {
+													return <span key={index}>{item.get('name')}</span>;
+											  })
+											: ''}
 									</div>
 								</SongListHeader>
+								<div className='recommend'>
+									{songList ? songList.map((item,index) => {
+										return (
+											<a href={`/playlist/${item.get("id")}/songs`}>
+												<div className='father' key={index}>
+													<img src={item.get('coverImgUrl')}></img>
+													<p>{item.get('name')}</p>
+												</div>
+											</a>
+										);
+									}):""}
+								</div>
 							</SongListWapper>
 						</TabPane>
 						<TabPane tab='排行榜' key='3'>
@@ -217,6 +235,7 @@ export const MapStateToProps = (state) => {
 		latestmv: state.getIn(['bannerlist', 'latestMV']),
 		listenlist: state.getIn(['bannerlist', 'listenlist', 'list']),
 		songListtype: state.getIn(['bannerlist', 'songListType', 'tags']),
+		songList: state.getIn(['bannerlist', 'recommendedSongList', 'playlists']),
 	};
 };
 
