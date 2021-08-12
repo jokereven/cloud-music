@@ -47,9 +47,7 @@ export const AddASongListWapper = styled.div`
 	display: block;
 `;
 
-export const AddTitle = styled.a.attrs({
-	href: 'song-list',
-})`
+export const AddTitle = styled.div`
 	height: 32px;
 	color: rgb(55, 55, 55);
 	display: block;
@@ -103,9 +101,7 @@ export const ExclusiveWapper = styled.div`
 	/* background-color: #096; */
 `;
 
-export const ExclusiveTitle = styled.a.attrs({
-	href: '/exclusive-delivery',
-})`
+export const ExclusiveTitle = styled.div`
 	height: 32px;
 	color: rgb(55, 55, 55);
 	display: block;
@@ -148,9 +144,7 @@ export const UpToDateWapper = styled.div`
 	margin-top: 72px;
 `;
 
-export const UpToDateTitle = styled.a.attrs({
-	href: '/latest-music',
-})`
+export const UpToDateTitle = styled.div`
 	height: 32px;
 	color: rgb(55, 55, 55);
 	/* display: block; */
@@ -229,9 +223,7 @@ export const RecommendedMvWapper = styled.div`
 	/* margin-top: 12px; */
 `;
 
-export const RecommendedMvTitle = styled.a.attrs({
-	href: '/latest-mv',
-})`
+export const RecommendedMvTitle = styled.div`
 	height: 32px;
 	color: rgb(55, 55, 55);
 	/* display: block; */
@@ -360,16 +352,61 @@ export const SongListHeader = styled.div`
 `;
 
 export const LeaderboardWapper = styled.div`
-	flex:1;
+	flex: 1;
 	/* background-color: #096; */
-	h2:nth-of-type(1){
+	margin-bottom:24px;
+	h2:nth-of-type(1) {
 		font-size: 20px;
 		font-weight: 600;
 	}
+	h2:nth-of-type(2) {
+		font-size: 20px;
+		font-weight: 600;
+		padding-top: 4px;
+	}
 `;
 export const OfficialListWapper = styled.div`
-	width:100%;
+	width: 100%;
 	margin-top: 12px;
 	height: 175px;
-	background-color: #096;
+	/* background-color: #096; */
+	img {
+		float: left;
+		width: 175px;
+		height: 175px;
+		border-radius: 6px;
+		margin-right: 12px;
+		cursor: pointer;
+	}
+	p {
+		font-size: 13px;
+		white-space: nowrap;
+		font-weight: 600;
+		line-height: 55px;
+	}
+`;
+
+export const GlobalListWapper = styled.div`
+	width: 100%;
+	height: auto;
+	display: grid;
+	/*  声明了三列，宽度分别为 200px 100px 200px */
+	grid-template-columns: 175px 175px 175px 175px 175px;
+	grid-gap: 22px;
+	/*  声明了两行，行高分别为 50px 50px  */
+	grid-template-rows: 190px 190px 190px 190px 190px 190px;
+	/* background-color: #096; */
+`;
+
+export const GlobalList = styled.div`
+	/* background-color: #096; */
+	img {
+		width: 175px;
+		border-radius: 6px;
+		height: 175px;
+		cursor: pointer;
+	}
+	p {
+		/* text-align: center; */
+	}
 `;

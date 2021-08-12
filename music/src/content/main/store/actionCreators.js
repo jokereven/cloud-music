@@ -164,14 +164,19 @@ export const ListClassification = (data) => ({
 	data: fromJS(data),
 });
 
+export const getALeaderboard = (data) => ({
+	type: actionTypes.GET_ALEADER_BOARD,
+	data: fromJS(data),
+});
+
 export const GetALeaderboard = () => {
 	return (dispatch) => {
 		axios
 			.get(`http://localhost:3000/toplist`)
 			.then((res) => {
 				const data = res.data;
-				console.log(data);
-				// dispatch(TherecommendSongList(data));
+				// console.log(data);
+				dispatch(getALeaderboard(data));
 			})
 			.catch(() => {
 				console.log('获取排行失败');

@@ -9,6 +9,7 @@ const defaultState = fromJS({
 	latestMV: [],
 	songListType: [],
 	recommendedSongList: [],
+	ranking: [],
 });
 
 const reducer = (state = defaultState, action) => {
@@ -40,6 +41,10 @@ const reducer = (state = defaultState, action) => {
 		case actionTypes.THE_RECOMMENDS_SONG_LIST:
 			return state.merge({
 				recommendedSongList: action.data,
+			});
+		case actionTypes.GET_ALEADER_BOARD:
+			return state.merge({
+				ranking: action.data,
 			});
 		default:
 			return state;

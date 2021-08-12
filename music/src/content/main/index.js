@@ -12,6 +12,8 @@ import {
 	ExclusiveListWapper,
 	ExclusiveTitle,
 	ExclusiveWapper,
+	GlobalList,
+	GlobalListWapper,
 	LeaderboardWapper,
 	MainFindWapper,
 	OfficialListWapper,
@@ -47,6 +49,8 @@ class Main extends PureComponent {
 			songListtype,
 			songList,
 			changeTheSongListType,
+			leaderboard,
+			singerList,
 		} = this.props;
 		return (
 			<Fragment>
@@ -87,10 +91,15 @@ class Main extends PureComponent {
 													return (
 														<RecommendList key={index}>
 															<div className='redommend-box' key={index}>
-																<img
-																	src={item.get('picUrl')}
-																	alt={item.get('name')}
-																></img>
+																<a
+																	href={`/playlist/${item.get('id')}/songs`}
+																	key={index}
+																>
+																	<img
+																		src={item.get('picUrl')}
+																		alt={item.get('name')}
+																	></img>
+																</a>
 																<p>{item.get('name')}</p>
 															</div>
 														</RecommendList>
@@ -208,7 +217,10 @@ class Main extends PureComponent {
 														key={index}
 													>
 														<div className='father' key={index}>
-															<img src={item.get('coverImgUrl')} alt="code520"></img>
+															<img
+																src={item.get('coverImgUrl')}
+																alt='code520'
+															></img>
 															<p>{item.get('name')}</p>
 														</div>
 													</a>
@@ -221,14 +233,70 @@ class Main extends PureComponent {
 						<TabPane tab='排行榜' key='3'>
 							<LeaderboardWapper>
 								<h2>官方榜</h2>
-								<OfficialListWapper></OfficialListWapper>
+								{leaderboard
+									? leaderboard.map((item, index) => {
+											return index < 4 ? (
+												<OfficialListWapper key={index}>
+													<a
+														href={`/playlist/${item.get('id')}/songs`}
+														key={index}
+													>
+														<img
+															src={item.get('coverImgUrl')}
+															alt={item.get('name')}
+														></img>
+													</a>
+													<p>{item.get('updateFrequency')}</p>
+													<p>{item.get('description')}</p>
+													<p>{item.get('name')}</p>
+												</OfficialListWapper>
+											) : (
+												''
+											);
+									  })
+									: ''}
+								<OfficialListWapper>
+									{singerList ? (
+										<Fragment>
+											<img src={singerList.get('coverUrl')}></img>
+											<p>{singerList.get('name')}</p>
+											<p>{singerList.get('upateFrequency')}</p>
+											<p>{singerList.get('updateFrequency')}</p>
+										</Fragment>
+									) : (
+										''
+									)}
+								</OfficialListWapper>
+								<h2>全球榜</h2>
+								<GlobalListWapper>
+									{leaderboard
+										? leaderboard.map((item, index) => {
+												return index >= 4 ? (
+													<GlobalList key={index}>
+														<a
+															key={index}
+															href={`/playlist/${item.get('id')}/songs`}
+														>
+															<img
+																src={item.get('coverImgUrl')}
+																alt={item.get('name')}
+															></img>
+														</a>
+														<p>{item.get('name')}</p>
+													</GlobalList>
+												) : (
+													''
+												);
+										  })
+										: ''}
+								</GlobalListWapper>
 							</LeaderboardWapper>
 						</TabPane>
 						<TabPane tab='歌手' key='4'>
-							4
+							明天结束
 						</TabPane>
 						<TabPane tab='最新音乐' key='5'>
-							5
+							明天结束
 						</TabPane>
 					</Tabs>
 				</MainFindWapper>
@@ -257,6 +325,8 @@ export const MapStateToProps = (state) => {
 		listenlist: state.getIn(['bannerlist', 'listenlist', 'list']),
 		songListtype: state.getIn(['bannerlist', 'songListType', 'tags']),
 		songList: state.getIn(['bannerlist', 'recommendedSongList', 'playlists']),
+		leaderboard: state.getIn(['bannerlist', 'ranking', 'list']),
+		singerList: state.getIn(['bannerlist', 'ranking', 'artistToplist']),
 	};
 };
 
