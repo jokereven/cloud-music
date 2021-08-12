@@ -7,6 +7,16 @@ export const GetTheSongListInformation = (data) => ({
 	data: fromJS(data),
 });
 
+export const GetASongListCollector = (data) => ({
+	type: actionTypes.SONG_LIST_COLLECTOR,
+	data: fromJS(data),
+});
+
+export const GetCommentsDis = (data) => ({
+	type: actionTypes.GET_COMMENTS_DIS,
+	data: fromJS(data),
+});
+
 export const getTheSongListInformation = (id) => {
 	return (dispatch) => {
 		axios
@@ -19,6 +29,38 @@ export const getTheSongListInformation = (id) => {
 			})
 			.catch(() => {
 				console.error('获取歌单信息失败');
+			});
+	};
+};
+
+export const getASongListCollector = (id) => {
+	return (dispatch) => {
+		axios
+			.get(
+				`http://localhost:3000/playlist/subscribers?id=${id}&limit=20&t=${new Date().getTime()}`
+			)
+			.then((res) => {
+				const data = res;
+				dispatch(GetASongListCollector(data.data));
+			})
+			.catch(() => {
+				console.error('获取歌单收藏者信息失败');
+			});
+	};
+};
+
+export const GetComments = (id) => {
+	return (dispatch) => {
+		axios
+			.get(
+				`http://localhost:3000/comment/playlist?id=${id}&limit=20&t=${new Date().getTime()}`
+			)
+			.then((res) => {
+				const data = res;
+				dispatch(GetCommentsDis(data.data));
+			})
+			.catch(() => {
+				console.error('获取歌单收藏者信息失败');
 			});
 	};
 };

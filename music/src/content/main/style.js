@@ -358,3 +358,18 @@ export const SongListHeader = styled.div`
 		}
 	}
 `;
+
+export const LeaderboardWapper = styled.div`
+	flex:1;
+	/* background-color: #096; */
+	h2:nth-of-type(1){
+		font-size: 20px;
+		font-weight: 600;
+	}
+`;
+export const OfficialListWapper = styled.div`
+	width:100%;
+	margin-top: 12px;
+	height: 175px;
+	background-color: #096;
+`;

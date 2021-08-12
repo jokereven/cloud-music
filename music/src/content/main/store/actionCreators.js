@@ -137,6 +137,23 @@ export const GetTherecommendSongList = () => {
 	};
 };
 
+export const ChangeTheSongListType = (type) => {
+	return (dispatch) => {
+		axios
+			.get(
+				`http://localhost:3000/top/playlist?cat=${type}&limit=50&t=${new Date().getTime()}`
+			)
+			.then((res) => {
+				const data = res.data;
+				// console.log(data);
+				dispatch(TherecommendSongList(data));
+			})
+			.catch(() => {
+				console.log('获取推荐歌单分类失败');
+			});
+	};
+};
+
 export const TherecommendSongList = (data) => ({
 	type: actionTypes.THE_RECOMMENDS_SONG_LIST,
 	data: fromJS(data),
@@ -146,3 +163,18 @@ export const ListClassification = (data) => ({
 	type: actionTypes.LIST_CLASS_IFICATION,
 	data: fromJS(data),
 });
+
+export const GetALeaderboard = () => {
+	return (dispatch) => {
+		axios
+			.get(`http://localhost:3000/toplist`)
+			.then((res) => {
+				const data = res.data;
+				console.log(data);
+				// dispatch(TherecommendSongList(data));
+			})
+			.catch(() => {
+				console.log('获取排行失败');
+			});
+	};
+};

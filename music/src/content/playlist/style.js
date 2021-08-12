@@ -113,7 +113,7 @@ export const PlayListHeaderWapper = styled.div`
 export const ListListWapper = styled.div`
 	width: 100%;
 	height: auto;
-  overflow: auto;
+	overflow: auto;
 	/* background-color: #096; */
 	table {
 		width: 100%;
@@ -121,7 +121,7 @@ export const ListListWapper = styled.div`
 			width: 100%;
 			height: 24px;
 			/* background-color: red; */
-      line-height: 24px;
+			line-height: 24px;
 			tr {
 				width: 100%;
 			}
@@ -133,6 +133,156 @@ export const ListListWapper = styled.div`
 			}
 			td:nth-of-type(3) {
 				width: 30%;
+			}
+		}
+		tbody {
+			width: 100%;
+			height: auto;
+			tr {
+				width: 100%;
+				height: 32px;
+				font-size: 12px;
+				color: #333;
+				line-height: 32px;
+				cursor: pointer;
+				/* background-color: #096; */
+				:hover {
+					background-color: rgb(240, 241, 242);
+				}
+			}
+		}
+	}
+`;
+
+export const SongCollectionWapper = styled.div`
+	margin-top: 0px;
+	height: auto;
+	flex: 1;
+	/* background-color: #096; */
+	::-webkit-scrollbar {
+		width: 0px;
+		height: 0px;
+		background-color: rgba(240, 240, 240, 1);
+	}
+	display: grid;
+	/*  声明了三列，宽度分别为 200px 100px 200px */
+	grid-template-columns: 456px 456px;
+	grid-gap: 5px;
+	/*  声明了两行，行高分别为 50px 50px  */
+	grid-template-rows: 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px;
+`;
+
+export const SongListbyList = styled.div`
+	/* background-color: #096; */
+	overflow: hidden;
+	cursor: pointer;
+	img {
+		width: 80px;
+		height: 80px;
+		border: 1px solid rgb(250, 248, 248);
+		float: left;
+	}
+	span {
+		line-height: 45px;
+		font-size: 14px;
+		padding-left: 4px;
+		color: rgb(55, 55, 55);
+	}
+	p {
+		white-space: nowrap;
+		line-height: 25px;
+		color: rgb(55, 55, 55);
+		padding-left: 4px;
+		font-size: 12px;
+		// 溢出显示省略号
+		text-overflow: ellipsis;
+		// 溢出的部分隐藏
+		overflow: hidden;
+	}
+`;
+
+export const LatestComment = styled.div`
+	width: 100%;
+	height: auto;
+	overflow: auto;
+	/* background-color: #096; */
+	textarea {
+		outline: none;
+		border: 1px solid rgb(229, 229, 229);
+		width: 800px;
+		height: 100px;
+		resize: none;
+		float: left;
+	}
+	button {
+		margin-left: 2px;
+		float: left;
+		margin-top: 72px;
+		background-color: #fff;
+		border: 1px solid rgb(226, 226, 226);
+		cursor: pointer;
+		width: 75px;
+		:hover {
+			background-color: rgb(242, 242, 242);
+		}
+	}
+	#comment {
+		width: 100%;
+		height: auto;
+		/* background-color: #096; */
+		float: left;
+		margin-top: 24px;
+		h2 {
+			font-size: 16px;
+			font-weight: 600;
+			padding: 8px;
+		}
+		.box {
+			/* background-color: #096; */
+			width: 100%;
+			margin-top: 4px;
+			height: auto;
+			float: left;
+			img {
+				width: 45px;
+				/* height: 45px; */
+				float: left;
+				cursor: pointer;
+			}
+			p {
+				width: auto;
+				height: 45px;
+				float: left;
+				color: #0c73c2;
+				font-size: 12px;
+				padding-left: 6px;
+				cursor: pointer;
+			}
+			span {
+				float: left;
+				padding-left: 2px;
+				font-size: 12px;
+			}
+			.time {
+				float: left;
+				padding-left: 4px;
+				font-size: 12px;
+			}
+		}
+		.backMessage {
+			width: 100%;
+			height: auto;
+			background-color: rgb(244, 244, 244);
+			float: left;
+			span {
+				float: left;
+				color: #0c73c2;
+				font-size: 12px;
+			}
+			p {
+				float: left;
+				padding-left: 8px;
+				font-size: 12px;
 			}
 		}
 	}

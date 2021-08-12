@@ -1,1 +1,3 @@
 export const SONG_LIST_INFORMATION = 'playlist/SONG_LIST_INFORMATION';
+export const SONG_LIST_COLLECTOR = 'playlist/SONG_LIST_COLLECTOR';
+export const GET_COMMENTS_DIS = 'playlist/GET_COMMENTS_DIS';

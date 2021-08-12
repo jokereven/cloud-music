@@ -12,7 +12,9 @@ import {
 	ExclusiveListWapper,
 	ExclusiveTitle,
 	ExclusiveWapper,
+	LeaderboardWapper,
 	MainFindWapper,
+	OfficialListWapper,
 	RecommendedMvBox,
 	RecommendedMvList,
 	RecommendedMvTitle,
@@ -25,7 +27,7 @@ import {
 	UpToDateBox,
 	UpToDateList,
 	UpToDateTitle,
-	UpToDateWapper
+	UpToDateWapper,
 } from './style';
 
 const contentStyle = {
@@ -44,6 +46,7 @@ class Main extends PureComponent {
 			latestmv,
 			songListtype,
 			songList,
+			changeTheSongListType,
 		} = this.props;
 		return (
 			<Fragment>
@@ -182,27 +185,44 @@ class Main extends PureComponent {
 									<div className='type'>
 										{songListtype
 											? songListtype.map((item, index) => {
-													return <span key={index}>{item.get('name')}</span>;
+													return (
+														<span
+															key={index}
+															onClick={() =>
+																changeTheSongListType(item.get('name'))
+															}
+														>
+															{item.get('name')}
+														</span>
+													);
 											  })
 											: ''}
 									</div>
 								</SongListHeader>
 								<div className='recommend'>
-									{songList ? songList.map((item,index) => {
-										return (
-											<a href={`/playlist/${item.get("id")}/songs`}>
-												<div className='father' key={index}>
-													<img src={item.get('coverImgUrl')}></img>
-													<p>{item.get('name')}</p>
-												</div>
-											</a>
-										);
-									}):""}
+									{songList
+										? songList.map((item, index) => {
+												return (
+													<a
+														href={`/playlist/${item.get('id')}/songs`}
+														key={index}
+													>
+														<div className='father' key={index}>
+															<img src={item.get('coverImgUrl')} alt="code520"></img>
+															<p>{item.get('name')}</p>
+														</div>
+													</a>
+												);
+										  })
+										: ''}
 								</div>
 							</SongListWapper>
 						</TabPane>
 						<TabPane tab='排行榜' key='3'>
-							3
+							<LeaderboardWapper>
+								<h2>官方榜</h2>
+								<OfficialListWapper></OfficialListWapper>
+							</LeaderboardWapper>
 						</TabPane>
 						<TabPane tab='歌手' key='4'>
 							4
@@ -223,6 +243,7 @@ class Main extends PureComponent {
 		this.props.latestMv();
 		this.props.songListClassification();
 		this.props.getTherecommendSongList();
+		this.props.getALeaderboard();
 	}
 }
 
@@ -265,6 +286,13 @@ export const MapDispatchToProps = (dispatch) => {
 		},
 		getTherecommendSongList() {
 			dispatch(actionCreators.GetTherecommendSongList());
+		},
+		changeTheSongListType(type) {
+			// console.log(type);
+			dispatch(actionCreators.ChangeTheSongListType(type));
+		},
+		getALeaderboard() {
+			dispatch(actionCreators.GetALeaderboard());
 		},
 	};
 };

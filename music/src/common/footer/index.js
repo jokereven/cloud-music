@@ -61,6 +61,7 @@ class Footer extends PureComponent {
 									? onplaymusic.map((item, index) => {
 											return (
 												<img
+													alt='code520'
 													src={item.getIn(['al', 'picUrl'])}
 													key={index}
 												></img>
