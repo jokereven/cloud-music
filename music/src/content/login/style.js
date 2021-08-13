@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const LoginWapper = styled.div`
 	flex: 1;
-	height: 456px;
 	border-left: 1px solid #ddd;
 	position: relative;
 	overflow: hidden;

@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const MainFindWapper = styled.div`
 	flex: 1;
-	height: auto;
 	overflow: auto;
 	/* background-color: #096; */
 	::-webkit-scrollbar {

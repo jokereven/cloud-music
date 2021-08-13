@@ -9,6 +9,7 @@ import { reducer as songListReducer } from '../content/playlist/store';
 import { reducer as privateFMReducer } from '../content/private-fm/store';
 import { reducer as RecentlyReducer } from '../content/recently-played/store';
 import { reducer as SearchListReducer } from '../content/searchlist/store';
+import { reducer as VideoReducer } from '../content/flv-mas/store';
 
 const reducer = combineReducers({
 	header: HeaderReducer,
@@ -21,6 +22,7 @@ const reducer = combineReducers({
 	songList: songListReducer,
 	liveStreaming: liveStreamingReducer,
 	privatefm: privateFMReducer,
+	vediomv: VideoReducer,
 });
 
 export default reducer;

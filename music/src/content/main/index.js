@@ -51,6 +51,7 @@ class Main extends PureComponent {
 			changeTheSongListType,
 			leaderboard,
 			singerList,
+			playExclusiveDelivery,
 		} = this.props;
 		return (
 			<Fragment>
@@ -117,6 +118,9 @@ class Main extends PureComponent {
 														<ExclusiveList key={index}>
 															<div key={index}>
 																<img
+																	onClick={() =>
+																		playExclusiveDelivery(item.get('id'))
+																	}
 																	src={item.get('picUrl')}
 																	alt={item.get('copywriter')}
 																></img>
@@ -327,6 +331,7 @@ export const MapStateToProps = (state) => {
 		songList: state.getIn(['bannerlist', 'recommendedSongList', 'playlists']),
 		leaderboard: state.getIn(['bannerlist', 'ranking', 'list']),
 		singerList: state.getIn(['bannerlist', 'ranking', 'artistToplist']),
+		thevedio: state.getIn(['vediomv', 'videoData', 'data']),
 	};
 };
 
@@ -364,6 +369,7 @@ export const MapDispatchToProps = (dispatch) => {
 		getALeaderboard() {
 			dispatch(actionCreators.GetALeaderboard());
 		},
+		playExclusiveDelivery(id) {},
 	};
 };
 export default connect(MapStateToProps, MapDispatchToProps)(Main);

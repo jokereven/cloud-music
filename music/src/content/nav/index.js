@@ -1,7 +1,8 @@
 import React, { Fragment, PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import {actionCreators} from './store'
+import { actionCreators as FMactionCreators } from '../private-fm/store';
+import { actionCreators } from './store';
 import {
 	CollectionSongListWapper,
 	ILikeMusicWapper,
@@ -13,7 +14,7 @@ import {
 
 class Nav extends PureComponent {
 	render() {
-		const { loginstatus } = this.props;
+		const { loginstatus, changePrivateFM } = this.props;
 		return (
 			<Fragment>
 				<NavWapper>
@@ -30,7 +31,7 @@ class Nav extends PureComponent {
 						<NavWapperList>商城</NavWapperList>
 					</a>
 					<Link to='/private-fm'>
-						<NavWapperList>私人FM</NavWapperList>
+						<NavWapperList onClick={changePrivateFM}>私人FM</NavWapperList>
 					</Link>
 					<MyMusicWapper>我的音乐</MyMusicWapper>
 					<Link to='/recently-played'>
@@ -75,6 +76,9 @@ export const MapDispatch = (dispatch) => {
 	return {
 		getloginstatus() {
 			dispatch(actionCreators.GetLoginStatus());
+		},
+		changePrivateFM() {
+			dispatch(FMactionCreators.GetPrivateFmData());
 		},
 	};
 };

@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const SearchListWapper = styled.div`
 	flex: 1;
-	height: 456px;
 	overflow: auto;
 	::-webkit-scrollbar {
 		width: 0px;

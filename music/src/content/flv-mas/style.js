@@ -1,12 +1,42 @@
 import styled from 'styled-components';
 
-export const VideoWapper = styled.div`
+export const VideoMVWapper = styled.div`
 	flex: 1;
-	height: 456px;
 	overflow: auto;
+	/* background-color: #096; */
 	::-webkit-scrollbar {
 		width: 6px;
 		height: 6px;
 		background-color: rgba(240, 240, 240, 1);
+	}
+	margin-bottom: 35px;
+`;
+
+export const VideoWapper = styled.div`
+	width: 100%;
+	height: auto;
+	/* background-color: #096; */
+	h2 {
+		font-size: 21px;
+		font-weight: 600;
+		padding: 6px;
+	}
+	.father {
+		display: grid;
+		/*  声明了三列，宽度分别为 200px 100px 200px */
+		grid-template-columns: 320px 320px 320px;
+		grid-gap: 21px;
+		/*  声明了两行，行高分别为 50px 50px  */
+		grid-template-rows: auto auto;
+	}
+	img {
+		width: 300px;
+		height: 145px;
+		cursor: pointer;
+		float: left;
+	}
+	span:nth-of-type(1) {
+		font-size: 12px;
+		float: left;
 	}
 `;

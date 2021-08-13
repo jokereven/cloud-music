@@ -9,7 +9,7 @@ export const PrivateFMBox = styled.div`
 	width: 400px;
 	height: 400px;
   margin-left: 35px;
-	background-color: #096;
+	/* background-color: #096; */
   position: relative;
   img{
     width: 100%;
