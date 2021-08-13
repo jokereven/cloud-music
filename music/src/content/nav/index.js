@@ -23,14 +23,8 @@ class Nav extends PureComponent {
 					<Link to='/flv-mas'>
 						<NavWapperList>视频</NavWapperList>
 					</Link>
-					<Link to='/companion '>
-						<NavWapperList>朋友</NavWapperList>
-					</Link>
 					<Link to='/live-broadcast'>
 						<NavWapperList>直播</NavWapperList>
-					</Link>
-					<Link to='/private-fm'>
-						<NavWapperList>私人FM</NavWapperList>
 					</Link>
 					<MyMusicWapper>我的音乐</MyMusicWapper>
 					<Link to='/recently-played'>

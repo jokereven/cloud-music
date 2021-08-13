@@ -1,6 +1,7 @@
 import React, { Fragment, PureComponent } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Video from './flv-mas/index';
+import LiveStreaming from './live-broadcast/index';
 import Login from './login/index';
 import Main from './main/index';
 import Nav from './nav/index';
@@ -25,6 +26,11 @@ class Content extends PureComponent {
 							path='/recently-played'
 							exact
 							component={RecentlyPlayed}
+						></Route>
+						<Route
+							path='/live-broadcast'
+							exact
+							component={LiveStreaming}
 						></Route>
 					</BrowserRouter>
 				</ContentWapper>

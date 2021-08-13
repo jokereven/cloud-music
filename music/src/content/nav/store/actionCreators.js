@@ -19,8 +19,11 @@ export const GetLoginStatus = () => {
 			.then((res) => {
 				const data = res;
 				if (data.status === 200) {
-					dispatch(loginsouttatus());
-				}
+					if (JSON.parse(localStorage.getItem('login'))['code'] === 200) {
+						dispatch(loginstatus());
+					} else {
+						dispatch(loginsouttatus());
+					}				}
 			})
 			.catch(() => {
 				console.error('GetLoginStatus failed');

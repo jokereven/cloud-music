@@ -17,6 +17,7 @@ export const login = (account, password) => {
 			)
 			.then(function (res, value) {
 				const data = res.data;
+				// console.log(data);
 				if (data.code === 200) {
 					alert('登录成功');
 					localStorage.setItem('login', `${JSON.stringify(data)}`);
@@ -38,7 +39,7 @@ export const Logout = () => {
 			.post('http://localhost:3000/logout')
 			.then(function (res) {
 				const data = res.data;
-				if (res.data.code === 200) {
+				if (data.code === 200) {
 					alert("再见📌")
 					// eslint-disable-next-line no-restricted-globals
 					history.go(0);
