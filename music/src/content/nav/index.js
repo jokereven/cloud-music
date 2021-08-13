@@ -26,6 +26,9 @@ class Nav extends PureComponent {
 					<Link to='/live-broadcast'>
 						<NavWapperList>直播</NavWapperList>
 					</Link>
+					<a href='https://music.163.com/store/product' target="_new">
+						<NavWapperList>商城</NavWapperList>
+					</a>
 					<MyMusicWapper>我的音乐</MyMusicWapper>
 					<Link to='/recently-played'>
 						<NavWapperList>最近播放</NavWapperList>

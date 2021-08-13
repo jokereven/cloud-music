@@ -38,6 +38,12 @@ export const NavWapperList = styled.div`
 	:hover {
 		background-color: rgb(246, 246, 247);
 	}
+	:visited {
+		color: #000;
+	}
+	:link {
+		color: #000;
+	}
 `;
 
 // 我的音乐
