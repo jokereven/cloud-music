@@ -6,6 +6,7 @@ import Login from './login/index';
 import Main from './main/index';
 import Nav from './nav/index';
 import PlayList from './playlist';
+import PrivateFM from './private-fm/index';
 import RecentlyPlayed from './recently-played';
 import SearchList from './searchlist/loadable';
 import { ContentWapper } from './style';
@@ -32,6 +33,7 @@ class Content extends PureComponent {
 							exact
 							component={LiveStreaming}
 						></Route>
+						<Route path='/private-fm' exact component={PrivateFM}></Route>
 					</BrowserRouter>
 				</ContentWapper>
 			</Fragment>

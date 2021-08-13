@@ -6,6 +6,7 @@ import { reducer as LoginReducer } from '../content/login/store';
 import { reducer as BannerListReducer } from '../content/main/store';
 import { reducer as NavReducer } from '../content/nav/store';
 import { reducer as songListReducer } from '../content/playlist/store';
+import { reducer as privateFMReducer } from '../content/private-fm/store';
 import { reducer as RecentlyReducer } from '../content/recently-played/store';
 import { reducer as SearchListReducer } from '../content/searchlist/store';
 
@@ -19,6 +20,7 @@ const reducer = combineReducers({
 	history: RecentlyReducer,
 	songList: songListReducer,
 	liveStreaming: liveStreamingReducer,
+	privatefm: privateFMReducer,
 });
 
 export default reducer;
