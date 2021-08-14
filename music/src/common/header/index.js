@@ -237,6 +237,9 @@ class Header extends PureComponent {
 	}
 	componentDidMount() {
 		this.props.localstorage(JSON.parse(localStorage.getItem('login')));
+		if (window.location.href === 'http://localhost:8000/') {
+			window.open('/individuation', '_self');
+		}
 	}
 }
 
@@ -313,7 +316,7 @@ const MapDispatchToProps = (dispatch) => {
 		},
 		search(key) {
 			window.open(`/search-list/${key}/songs`);
-		}
+		},
 	};
 };
 
