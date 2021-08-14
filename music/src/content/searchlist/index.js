@@ -2,23 +2,20 @@ import { Tabs } from 'antd';
 import 'antd/dist/antd.css';
 import React, { Fragment, PureComponent } from 'react';
 import { connect } from 'react-redux';
-import { actionCreators } from './store';
 // 获取路由参数
 import { withRouter } from 'react-router-dom';
+import { actionCreators as FooteractionCreators } from '../../common/footer/store';
+import { actionCreators } from './store';
 import {
 	SearchListWapper,
-	SearchListWapperAlbum,
-	SearchListWapperFlv,
-	SearchListWapperPlaylist,
-	SearchListWapperSinger,
 	SearchListWapperSingle,
-	SearchListWapperSingleList,
+	SearchListWapperSingleList
 } from './style';
 const { TabPane } = Tabs;
 
 class SearchList extends PureComponent {
 	render() {
-		const { searchsinglelist } = this.props;
+		const { searchsinglelist, addmusic } = this.props;
 		return (
 			<Fragment>
 				<SearchListWapper>
@@ -32,31 +29,25 @@ class SearchList extends PureComponent {
 								{searchsinglelist
 									? searchsinglelist.map((item, index) => {
 											return (
-												<SearchListWapperSingleList>
-													<td>{index}</td>
+												<SearchListWapperSingleList onClick={(() => addmusic(item.get("id")))}>
+													<td>{index + 1}</td>
 													<td>{item.get('name')}</td>
-													{item.getIn(['ar']).map((content) => {
-														return <td>{content.get('name')}</td>;
+													{item.getIn(['ar']).map((content, index) => {
+														if (index === 0) {
+															return <td>{content.get('name')}</td>;
+														}
 													})}
-													<td>{item.getIn(["al", "name"])}</td>
-													<td>{item.get("dt")}</td>
+													<td>{item.getIn(['al', 'name'])}</td>
+													<td>
+														0{parseInt(item.get('dt') / 60 / 1000)}:
+														{parseInt(item.get('dt') / 1000) -
+															parseInt(item.get('dt') / 60 / 1000) * 60}
+													</td>
 												</SearchListWapperSingleList>
 											);
 									  })
 									: ''}
 							</SearchListWapperSingle>
-						</TabPane>
-						<TabPane tab='歌手' key='2'>
-							<SearchListWapperSinger></SearchListWapperSinger>
-						</TabPane>
-						<TabPane tab='歌单' key='3'>
-							<SearchListWapperPlaylist></SearchListWapperPlaylist>
-						</TabPane>
-						<TabPane tab='专辑' key='4'>
-							<SearchListWapperAlbum></SearchListWapperAlbum>
-						</TabPane>
-						<TabPane tab='MV' key='5'>
-							<SearchListWapperFlv></SearchListWapperFlv>
 						</TabPane>
 					</Tabs>
 				</SearchListWapper>
@@ -83,6 +74,10 @@ const MapDispatchToProps = (dispatch) => {
 	return {
 		tosearchlist(key) {
 			dispatch(actionCreators.ToSearchSingleList(key));
+		},
+		addmusic(targetid) {
+			dispatch(FooteractionCreators.AddMusic(targetid));
+			dispatch(FooteractionCreators.BannerMusicPlay());
 		},
 	};
 };

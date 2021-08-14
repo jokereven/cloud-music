@@ -51,6 +51,7 @@ class Header extends PureComponent {
 			logout,
 			historytolast,
 			historytonext,
+			search,
 		} = this.props;
 		return (
 			<Fragment>
@@ -84,7 +85,10 @@ class Header extends PureComponent {
 						>
 							{firelist.map((item, index) => {
 								return (
-									<HeaderFireBoxWare key={index}>
+									<HeaderFireBoxWare
+										key={index}
+										onClick={() => search(item.get('searchWord'))}
+									>
 										<span>{index + 1}</span>
 										<div>
 											<h3>{item.get('searchWord')}</h3>
@@ -307,6 +311,9 @@ const MapDispatchToProps = (dispatch) => {
 			// eslint-disable-next-line no-restricted-globals
 			history.go(1);
 		},
+		search(key) {
+			window.open(`/search-list/${key}/songs`);
+		}
 	};
 };
 

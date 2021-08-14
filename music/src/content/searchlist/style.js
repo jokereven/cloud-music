@@ -20,41 +20,39 @@ export const SearchListWapper = styled.div`
 
 export const SearchListWapperSingle = styled.table`
 	flex: 1;
-	height: 375px;
-	background-color: #096;
+	height: auto;
+	width: 100%;
+	/* background-color: #096; */
 	overflow: auto;
 `;
 
-export const SearchListWapperSingleList = styled.tr`
-	width: 95%;
+export const SearchListWapperSingleList = styled.div`
+	width: 100%;
 	height: 32px;
-	background-color: red;
-`;
-
-export const SearchListWapperSinger = styled.div`
-	flex: 1;
-	height: 375px;
-	background-color: #648;
-	overflow: auto;
-`;
-
-export const SearchListWapperPlaylist = styled.div`
-	flex: 1;
-	height: 375px;
-	background-color: #ddd;
-	overflow: auto;
-`;
-
-export const SearchListWapperAlbum = styled.div`
-	flex: 1;
-	height: 375px;
-	background-color: #317;
-	overflow: auto;
-`;
-
-export const SearchListWapperFlv = styled.div`
-	flex: 1;
-	height: 375px;
-	background-color: red;
-	overflow: auto;
+	/* background-color: red; */
+	cursor: pointer;
+	:hover {
+		background-color: rgb(240, 241, 242);
+	}
+	td {
+		height: 32px;
+		display: block;
+		float: left;
+		line-height: 32px;
+	}
+	td:nth-of-type(1) {
+		width: 5%;
+	}
+	td:nth-of-type(2) {
+		width: 30%;
+	}
+	td:nth-of-type(3) {
+		width: 20%;
+	}
+	td:nth-of-type(4) {
+		width: 20%;
+	}
+	td:nth-of-type(5) {
+		width: 20%;
+	}
 `;

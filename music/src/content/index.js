@@ -10,6 +10,7 @@ import PrivateFM from './private-fm/index';
 import RecentlyPlayed from './recently-played';
 import SearchList from './searchlist/loadable';
 import { ContentWapper } from './style';
+import User from './user/index';
 
 class Content extends PureComponent {
 	render() {
@@ -21,8 +22,9 @@ class Content extends PureComponent {
 						<Route path='/individuation' exact component={Main}></Route>
 						<Route path='/individuation/login' exact component={Login}></Route>
 						<Route path='/flv-mas' exact component={Video}></Route>
-						<Route path='/search-list/:key' component={SearchList}></Route>
-						<Route path='/playlist/:id' component={PlayList}></Route>
+						<Route path='/search-list/:key/music' component={SearchList}></Route>
+						<Route path='/playlist/:id/songs' component={PlayList}></Route>
+						<Route path='/user/:id/music' exact component={User}></Route>
 						<Route
 							path='/recently-played'
 							exact

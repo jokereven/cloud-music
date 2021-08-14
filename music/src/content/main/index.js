@@ -3,6 +3,7 @@ import 'antd/dist/antd.css';
 import React, { Fragment, PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { actionCreators as FooteractionCreators } from '../../common/footer/store';
+import { actionCreators as FlvMasactionCreators } from '../flv-mas/store';
 import { actionCreators } from './store';
 import {
 	AddASongListWapper,
@@ -172,6 +173,9 @@ class Main extends PureComponent {
 													return index <= 2 ? (
 														<RecommendedMvList key={index}>
 															<img
+																onClick={() =>
+																	playExclusiveDelivery(item.get('id'))
+																}
 																title={item.get('copywriter')}
 																src={item.get('picUrl')}
 																alt={item.get('copywriter')}
@@ -259,18 +263,6 @@ class Main extends PureComponent {
 											);
 									  })
 									: ''}
-								<OfficialListWapper>
-									{singerList ? (
-										<Fragment>
-											<img src={singerList.get('coverUrl')}></img>
-											<p>{singerList.get('name')}</p>
-											<p>{singerList.get('upateFrequency')}</p>
-											<p>{singerList.get('updateFrequency')}</p>
-										</Fragment>
-									) : (
-										''
-									)}
-								</OfficialListWapper>
 								<h2>全球榜</h2>
 								<GlobalListWapper>
 									{leaderboard
@@ -295,12 +287,6 @@ class Main extends PureComponent {
 										: ''}
 								</GlobalListWapper>
 							</LeaderboardWapper>
-						</TabPane>
-						<TabPane tab='歌手' key='4'>
-							明天结束
-						</TabPane>
-						<TabPane tab='最新音乐' key='5'>
-							明天结束
 						</TabPane>
 					</Tabs>
 				</MainFindWapper>
@@ -369,7 +355,9 @@ export const MapDispatchToProps = (dispatch) => {
 		getALeaderboard() {
 			dispatch(actionCreators.GetALeaderboard());
 		},
-		playExclusiveDelivery(id) {},
+		playExclusiveDelivery(id) {
+			dispatch(FlvMasactionCreators.GetmvPlayAddress(id));
+		},
 	};
 };
 export default connect(MapStateToProps, MapDispatchToProps)(Main);

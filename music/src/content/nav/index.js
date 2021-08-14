@@ -37,24 +37,20 @@ class Nav extends PureComponent {
 					<Link to='/recently-played'>
 						<NavWapperList>最近播放</NavWapperList>
 					</Link>
-					{loginstatus === true && (
-						<Link to='/music-cloud-tray'>
-							<NavWapperList>音乐云盘</NavWapperList>
-						</Link>
-					)}
-					{loginstatus === true && (
-						<Link to='/my-collection'>
-							<NavWapperList>我的收藏</NavWapperList>
-						</Link>
-					)}
 					<SongListWapper>
 						<summary style={{ cursor: 'pointer' }}>创建的歌单</summary>
 						<ILikeMusicWapper>我喜欢的音乐</ILikeMusicWapper>
 					</SongListWapper>
 					{loginstatus === true && (
 						<CollectionSongListWapper>
-							<summary style={{ cursor: 'pointer' }}>收藏的歌单</summary>
-							<ILikeMusicWapper>code520</ILikeMusicWapper>
+							<summary style={{ cursor: 'pointer' }}>个人中心</summary>
+							<Link
+								to={`/user/${
+									JSON.parse(localStorage.getItem('login')).account.id
+								}/music`}
+							>
+								<ILikeMusicWapper>code520</ILikeMusicWapper>
+							</Link>
 						</CollectionSongListWapper>
 					)}
 				</NavWapper>

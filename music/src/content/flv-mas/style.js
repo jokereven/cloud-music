@@ -28,6 +28,16 @@ export const VideoWapper = styled.div`
 		grid-gap: 21px;
 		/*  声明了两行，行高分别为 50px 50px  */
 		grid-template-rows: auto auto;
+		.refresh {
+			cursor: pointer;
+			font-size: 15px;
+			font-weight: 600;
+			padding: 35px;
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+			background-color:rgb(165, 29, 29);
+		}
 	}
 	img {
 		width: 300px;
@@ -38,5 +48,39 @@ export const VideoWapper = styled.div`
 	span:nth-of-type(1) {
 		font-size: 12px;
 		float: left;
+	}
+`;
+
+export const MVWapper = styled.div`
+	width: 100%;
+	height: auto;
+	/* background-color: #096; */
+	h2 {
+		font-size: 21px;
+		font-weight: 600;
+		padding: 6px;
+	}
+	.father {
+		width: 100%;
+		height: auto;
+		/* background-color: #096; */
+		display: grid;
+		/*  声明了三列，宽度分别为 200px 100px 200px */
+		grid-template-columns: 320px 320px 320px;
+		grid-gap: 21px;
+		/*  声明了两行，行高分别为 50px 50px  */
+		grid-template-rows: auto auto auto auto auto auto auto auto;
+		div {
+			/* background-color: #096; */
+			img {
+				width: 320px;
+				height: 145px;
+				cursor: pointer;
+			}
+			span{
+				font-size: 12px;
+				color: #666;
+			}
+		}
 	}
 `;

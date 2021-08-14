@@ -15,6 +15,7 @@ export const ToSearchSingleList = (key) => {
 			)
 			.then((res) => {
 				const data = res;
+				console.log(data);
 				dispatch(Tosearchsinglelist(data.data));
 			})
 			.catch(() => {
