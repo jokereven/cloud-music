@@ -8,8 +8,8 @@
 
 #### 安装教程
 
-1.  `后端文档`:[https://neteasecloudmusicapi.vercel.app/#/](https://neteasecloudmusicapi.vercel.app/#/)
-2. `下载项目CloudMusic分支代码`
+1. 后端: `后端文档`:[https://neteasecloudmusicapi.vercel.app/#/](https://neteasecloudmusicapi.vercel.app/#/)
+2. 前端: `下载项目代码进入/music`
 #### 使用说明
 
 1. 在本地启动后端项目
