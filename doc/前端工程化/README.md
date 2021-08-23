@@ -101,10 +101,9 @@ create-react-app
 
 `SPA（单页面应用）和MPA（多页面应用）`：[SPA（单页面应用）和MPA（多页面应用）](https://www.jianshu.com/p/a02eb15d2d70)
 
-
 #### 服务端渲染
 ```
-Next.js（React）
+Next.js（React）https://www.nextjs.cn/docs
 
 Nuxt.js（Vue）
 ```
@@ -134,3 +133,178 @@ single-spa
 `CSS Modules`：[CSS Modules](http://www.ruanyifeng.com/blog/2016/06/css_modules.html)
 
 `styled-components`：[styled-components](https://github.com/hengg/styled-components-docs-zh)
+
+
+### 开发调试
+```
+💬 描述：本地开发时热更新，提升开发效率。
+
+webpack-dev-server
+
+serve
+```
+
+#### 内网穿透
+```
+💬 描述：将内网外网通过 nat 隧道打通，让内网的网站、数据让外网可以访问。
+
+Ngrok https://ngrok.com/(国外)
+
+NATAPP https://natapp.cn/(国内)
+```
+
+### CSS 预编译
+```
+Sass
+https://www.bilibili.com/video/BV17W411w7nL
+https://www.sass.hk/docs/
+Less
+PostCSS
+Stylus
+```
+
+### 测试
+
+#### 测试分类
+```
+⭐️ UT 单元测试
+SIT 系统集成测试
+E2E 端到端测试
+UAT 用户验收测试
+```
+
+#### Mock
+```
+mock http://mockjs.com/
+```
+
+#### 测试框架
+```
+✅ Jest
+
+Enzyme
+
+✅ Puppeteer（Headless Browser）
+
+Mocha
+
+Jasmine
+```
+
+### 代码质量
+
+#### 开发规范
+```
+💬 描述：依照规范写出的代码会更加合理。
+
+📚 资源：Airbnb 代码规范 https://github.com/BingKui/javascript-zh
+
+CSS Style Guide
+
+JavaScript Style Guide
+```
+
+#### 类型校验
+```
+TypeScript
+```
+
+#### 代码检查
+```
+ESLint
+StyleLint
+```
+
+#### 代码风格
+```
+💬 描述：根据配置自动格式化代码，统一格式。
+
+Prettier
+```
+
+#### 提交规范
+```
+约定式提交
+提交检查
+💬 描述：在提交代码时触发一些操作，比如检查代码的风格等。
+
+pre-commit
+
+husky
+```
+
+### 构建工具
+
+#### 自动化构建
+```
+💬 描述：按照配置好的流程自动打包构建项目，提高团队的开发效率，降低项目的维护难度。
+
+Gulp
+
+✅ npm script
+
+Grunt
+```
+
+#### 打包工具
+```
+💬 描述：将各种零散的📚 资源文件打包为可在浏览器等环境运行的代码。
+
+⭐️ Webpack
+
+✅ Rollup
+
+✅ Vite
+
+Parcel
+
+Snowpack
+```
+
+#### CI / CD
+`bilibili视频`：[CI/CD到底是什么？十分钟理解企业级DevOps](https://www.bilibili.com/video/BV1zf4y127vu)
+```
+💬 描述：通过在应用开发阶段引入自动化来频繁向客户交付应用。
+GitLab CI
+✅ Jenkins
+```
+
+### 部署
+
+####  Web 服务器
+
+##### Nginx
+```
+💬 描述：高性能的 HTTP 和反向代理 web 服务器。
+
+📚 资源：腾讯云动手实验室 https://cloud.tencent.com/developer/labs/gallery
+
+反向代理
+
+解决跨域
+
+改写请求
+```
+
+##### 容器
+```
+✅ Docker
+💬 描述：容器是一个标准化的软件单元，它将代码及其所有依赖关系打包，以便应用程序从一个计算环境可靠快速地运行到另一个计算环境。Docker容器镜像是一个轻量的独立的可执行的软件包。包含程序运行的时候所需的一切：代码，运行时间，系统工具，系统库和设置。
+
+📚 资源：Docker 从入门到实践 https://vuepress.mirror.docker-practice.com/
+
+Dockerfile
+
+Kubernetes
+部署策略
+全量发布
+蓝绿部署
+滚动发布
+灰度发布
+
+监控告警
+前端埋点
+错误监控
+性能监控
+行为监控
+```
