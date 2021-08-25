@@ -13,4 +13,4 @@
 - [13.transform变形](/HTMLCSS/13-transform变形.md)
 - [14.弹性盒模型](/HTMLCSS/14-弹性盒模型.md)
 - [15.响应式布局、阿里图标等](/HTMLCSS/15-响应式布局、阿里图标等.md)
-- [HTML+CSS规范](/HTMLCSS/HTML+CSS规范.md)
+- [16.HTML+CSS规范](/HTMLCSS/HTML+CSS规范.md)
