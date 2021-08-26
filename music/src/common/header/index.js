@@ -237,7 +237,7 @@ class Header extends PureComponent {
 	}
 	componentDidMount() {
 		this.props.localstorage(JSON.parse(localStorage.getItem('login')));
-		if (window.location.href === 'http://localhost:8000/') {
+		if (window.location.pathname === '/') {
 			window.open('/individuation', '_self');
 		}
 	}
