@@ -9,7 +9,7 @@
 #### 安装教程
 
 1. 后端: `后端文档`:[https://neteasecloudmusicapi.vercel.app/#/](https://neteasecloudmusicapi.vercel.app/#/)
-2. 前端: `下载项目代码进入/music`
+2. 前端: `下载前端代码`
 #### 使用说明
 
 1. 在本地启动后端项目
